@@ -5,13 +5,7 @@ var fs = require('fs');
 
 var server = http.createServer((request, response) => {
     console.log(request.method + ': ' + request.url);
-    if (request.method === 'GET') {
-        if (request.url === '/favicon.ico') {
-            fs.createReadStream('./favicon.ico').pipe(response);
-        } else {
-            response.writeHead(200, { 'Content-Type': 'text/html' });
-        }
-    }
+            fs.createReadStream('./demo.html').pipe(response);
 });
 
 var serverPort = process.env.PORT || 5000;
