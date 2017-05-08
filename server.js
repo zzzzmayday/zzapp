@@ -11,7 +11,7 @@ var server = http.createServer((request, response) => {
     var filePath = path.join(root, pathName);
     var fileName = path.basename(filePath);
     console.log(request.method + ': ' + request.url);
-    fs.createReadStream(filePath).pipe(response);
+//     fs.createReadStream(filePath).pipe(response);
 });
 
 var serverPort = process.env.PORT || 5000;
