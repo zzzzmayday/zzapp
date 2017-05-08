@@ -1,38 +1,47 @@
-var http = require('http');
-var url=require('url');
-var fs=require('fs');
-var path=require('path');
+var url  = require("url"),
+    fs=require("fs"),
+    http=require("http"),
+    path = require("path");
+http.createServer(function (req, res) {
+    var pathname=__dirname+url.parse(req.url).pathname;
+    if (path.extname(pathname)=="") {
+        pathname+="/";
+    }
+    if (pathname.charAt(pathname.length-1)=="/"){
+        pathname+="index.html";
+    }
 
-var server = http.createServer(function (request, response) {
-    var pathname = url.parse(request.url).pathname;
-    var realPath = path.join("assets", pathname);
-    //console.log(realPath);
-    var ext = path.extname(realPath);
-    ext = ext ? ext.slice(1) : 'unknown';
-    fs.exists(realPath, function (exists) {
-        if (!exists) {
-            response.writeHead(404, {
-                'Content-Type': 'text/plain'
+    fs.exists(pathname,function(exists){
+        if(exists){
+            switch(path.extname(pathname)){
+                case ".html":
+                    res.writeHead(200, {"Content-Type": "text/html"});
+                    break;
+                case ".js":
+                    res.writeHead(200, {"Content-Type": "text/javascript"});
+                    break;
+                case ".css":
+                    res.writeHead(200, {"Content-Type": "text/css"});
+                    break;
+                case ".gif":
+                    res.writeHead(200, {"Content-Type": "image/gif"});
+                    break;
+                case ".jpg":
+                    res.writeHead(200, {"Content-Type": "image/jpeg"});
+                    break;
+                case ".png":
+                    res.writeHead(200, {"Content-Type": "image/png"});
+                    break;
+                default:
+                    res.writeHead(200, {"Content-Type": "application/octet-stream"});
+            }
+
+            fs.readFile(pathname,function (err,data){
+                res.end(data);
             });
-
-            response.write("This request URL " + pathname + " was not found on this server.");
-            response.end();
         } else {
-            fs.readFile(realPath, "binary", function (err, file) {
-                if (err) {
-                    response.writeHead(500, {
-                        'Content-Type': 'text/plain'
-                    });
-                    response.end(err);
-                } else {
-                    var contentType = "text/plain";
-                    response.writeHead(200, {
-                        'Content-Type': contentType
-                    });
-                    response.write(file, "binary");
-                    response.end();
-                }
-            });
+            res.writeHead(404, {"Content-Type": "text/html"});
+            res.end("<h1>404 Not Found</h1>");
         }
     });
 });
