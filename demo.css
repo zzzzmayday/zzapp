@@ -1,0 +1,46 @@
+.button-login{
+	top: 45%;
+}
+.button-sign{
+	top: 50%;
+}
+.cancel-button{
+	position: absolute;
+	top: 4%;
+	left: 10px;
+	font-size: 20px;
+}
+.swiper-container {
+	height: 100%;
+	background-color: #2474ab;
+}
+.swiper-slide {
+	background:#2474ab;
+	/*width: 80%!important;*/
+	/*margin: 5% 0 0 8%;*/
+}
+.swiper-slide>.card{
+	height: 92%;
+	margin: 20px;
+	background-color: #eae8e8;
+}
+.swiper-slide>.card .card-content-inner{
+	padding: 0;
+}
+.swiper-slide>.card>.card-footer .link{
+	color: #5f5b5b;
+}
+.card-content-inner .card{
+	background-color: #fff;
+	margin: 5px;
+	padding: 8px;
+}
+.add-button{
+	width: 100%;
+	text-align: center;
+	font-size: 18px;
+	color: #6d6d72;
+}
+.swiper-pagination .swiper-pagination-bullet-active{
+	background-color: #fff;
+}
