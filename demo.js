@@ -14,4 +14,3 @@
 // 			pagination: '.swiper-pagination'
 // 		});
 // });
-document.write("111");
