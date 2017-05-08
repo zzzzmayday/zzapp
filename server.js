@@ -2,7 +2,7 @@ var url  = require("url"),
     fs=require("fs"),
     http=require("http"),
     path = require("path");
-http.createServer(function (req, res) {
+var server = http.createServer(function (req, res) {
     var pathname=__dirname+url.parse(req.url).pathname;
     if (path.extname(pathname)=="") {
         pathname+="/";
