@@ -6,9 +6,9 @@
     "node":"6.2.0",
     "npm":"4.3.0"
   },
-  "main": "service.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node service.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
