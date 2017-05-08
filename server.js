@@ -4,8 +4,9 @@ var http = require('http');
 var fs = require('fs');
 
 var server = http.createServer((request, response) => {
-    console.log(request.method + ': ' + request.url);
-            fs.createReadStream('./demo.html').pipe(response);
+    var url = request.url;
+    console.log(request.method + ': ' + url);
+    fs.createReadStream(url).pipe(response);
 });
 
 var serverPort = process.env.PORT || 5000;
