@@ -27,6 +27,11 @@
 .swiper-slide>.card .card-content-inner{
 	padding: 0;
 }
+.swiper-slide>.card>.card-footer{
+	position: fixed;
+	bottom: 25px;
+	width: 89%;
+}
 .swiper-slide>.card>.card-footer .link{
 	color: #5f5b5b;
 }
@@ -43,4 +48,17 @@
 }
 .swiper-pagination .swiper-pagination-bullet-active{
 	background-color: #fff;
+}
+.add-items{
+	display: none;
+	position: absolute;
+	width: 100%;
+	padding-bottom: 10%; 
+}
+.add-item{
+	width: 89%;
+}
+.add-confirm-button{
+	float: right;
+	margin-right: 11%;
 }
