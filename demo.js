@@ -18,7 +18,8 @@ var template = $('#cardItem').html();
 var compiledTemplate = Template7.compile(template);
 var htmlStr = compiledTemplate(data);
 $('.card-content-inner').html(htmlStr);
-
+var cardContent = $('.js-card-content');
+calHeight();
 // $('.js-list').on('click',function(){
 // 	if($('input[name="username"]').val()=='zz' && $('input[name="password"]').val()=='123'){
 // 		myApp.closeModal();
@@ -31,10 +32,13 @@ $('.card-content-inner').html(htmlStr);
 $('.js-add').on('click',function(){
 	$(this).hide();
 	$(this).siblings(".add-items").show();
+	$(this).siblings(".add-items").find(".add-item").val('');
+	calHeight();
 });
 $('.js-cancel').on('click',function(){
 	$(this).parent(".add-items").hide();
 	$(this).parent(".add-items").siblings(".js-add").show();
+	calHeight();
 });
 $('.js-confirm').on('click',function(){
 	var addContent = $(this).siblings(".item-input").find(".add-item").val();
@@ -43,4 +47,9 @@ $('.js-confirm').on('click',function(){
 	$('.card-content-inner').append('<div class="card">'+
     		'<div class="card-content">'+addContent+'</div>'+
     	'</div>');
+	calHeight();
 });
+
+function calHeight(){
+	cardContent[0].style.height = cardContent.parent('.card').height()-cardContent.siblings('.card-header').height()-cardContent.siblings('.card-footer').height()+'px';	
+}

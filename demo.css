@@ -20,17 +20,22 @@
 	/*margin: 5% 0 0 8%;*/
 }
 .swiper-slide>.card{
+	position: relative;
 	height: 92%;
 	margin: 20px;
 	background-color: #eae8e8;
+	word-wrap: break-word;
+}
+.swiper-slide>.card>.card-content{
+	overflow: scroll;
 }
 .swiper-slide>.card .card-content-inner{
 	padding: 0;
 }
 .swiper-slide>.card>.card-footer{
-	position: fixed;
-	bottom: 25px;
-	width: 89%;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }
 .swiper-slide>.card>.card-footer .link{
 	color: #5f5b5b;
@@ -51,14 +56,11 @@
 }
 .add-items{
 	display: none;
-	position: absolute;
 	width: 100%;
-	padding-bottom: 10%; 
 }
 .add-item{
-	width: 89%;
+	width: 100%;
 }
 .add-confirm-button{
 	float: right;
-	margin-right: 11%;
 }
