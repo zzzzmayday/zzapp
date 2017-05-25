@@ -1,3 +1,47 @@
+/*navbar*/
+.navbar{
+	background-color: #133044;
+	color: #fff;
+}
+.navbar-inner .left{
+	padding-left: 10px;
+}
+.icon{
+	margin-left: 10px;
+}
+.searchbar{
+	display: none;
+	padding: 0;
+	background-color: #133044;
+}
+.searchbar .searchbar-input{
+	width: 90%;
+	margin-top: 8px;
+}
+.searchbar input[type=search]{
+	background-image: none;
+	background-color: #6c94af;
+	color: #ddd;
+	padding: 0 8px;
+}
+.cancel-icon{
+	position: absolute;
+	top: 10px;
+	right: 0;
+}
+.searchbar input[type=search]::-webkit-input-placeholder { /* WebKit browsers */ 
+color: #ddd; 
+} 
+.searchbar input[type=search]:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+color: #ddd; 
+} 
+.searchbar input[type=search]::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+color: #ddd; 
+} 
+.searchbar input[type=search]:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+color: #ddd; 
+} 
+
 .button-login{
 	top: 45%;
 }
@@ -16,8 +60,6 @@
 }
 .swiper-slide {
 	background:#2474ab;
-	/*width: 80%!important;*/
-	/*margin: 5% 0 0 8%;*/
 }
 .swiper-slide>.card{
 	position: relative;
@@ -63,4 +105,33 @@
 }
 .add-confirm-button{
 	float: right;
+}
+
+/*popover*/
+.popover{
+	width: 90%;
+	background-color: #f6f7f9;
+}
+.popover-inner{
+	border-radius: 15px;
+}
+.popover-head{
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+.list-block .item-link.list-button{
+	text-align: left;
+}
+
+/*panel*/
+.panel{
+	background-color: #fff;
+}
+
+/*common*/
+.bgc-white{
+	background-color: white;
 }

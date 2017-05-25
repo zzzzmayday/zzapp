@@ -27,7 +27,7 @@ calHeight();
 // 	} else {
 // 		myApp.alert('wrong!','attention');
 // 	}
-// });
+// }); 
 
 $('.js-add').on('click',function(){
 	$(this).hide();
@@ -49,6 +49,17 @@ $('.js-confirm').on('click',function(){
     	'</div>');
 	calHeight();
 });
+$('.js-search-icon').on('click',function(){
+	$('.left,.js-search-icon,.js-alert-icon').hide();
+	$('.js-search').show();
+});
+$('.js-search-cancel').on('click',function(){
+	$('.js-search').hide();
+	$('.left,.js-search-icon,.js-alert-icon').show();
+});
+// $('.js-search-cancel').on('click',function(){
+// 	myApp.openPanel('right');
+// });
 
 function calHeight(){
 	cardContent[0].style.height = cardContent.parent('.card').height()-cardContent.siblings('.card-header').height()-cardContent.siblings('.card-footer').height()+'px';	

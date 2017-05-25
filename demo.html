@@ -44,11 +44,25 @@
 				<div class="page navbar-fixed" data-page="index">
 					<div class="navbar">
 						<div class="navbar-inner">
-							<div class="left"></div>
-							<div class="center">index</div>
-							<div class="right"></div>
+							<!-- Search Bar -->
+							<form class="searchbar js-search">
+								<div class="searchbar-input">
+									<input type="search" placeholder="Search">
+									<a href="#" class="searchbar-clear"></a>
+								</div>
+								<img class="js-search-cancel cancel-icon" src="./image/cancel.png"></img>
+							</form>
+							<div class="left">index</div>
+							<div class="center"></div>
+							<div class="right">
+								<img class="js-search-icon icon" src="./image/search.png"></img>
+								<img class="js-alert-icon icon open-popup" data-popup='.popup-alert' src="./image/alert.png"></img>
+								<img class="js-ellipsis-icon icon open-panel" data-panel="right" src="./image/ellipsis.png"></img>
+							</div>
 						</div>
 					</div>
+
+					<!-- page-content -->
 					<div class="page-content">
 						<div class="swiper-container">
 							<!-- Slides wrapper -->
@@ -56,7 +70,9 @@
 								<!-- Slides -->
 								<div class="swiper-slide">
 									<div class="card">
-										<div class="card-header">Backlog</div>
+										<div class="card-header">Backlog
+											<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
+										</div>
 										<div class="card-content js-card-content">
 											<div class="card-content-inner">
 											</div>
@@ -96,6 +112,15 @@
 							<div class="swiper-pagination"></div>
 						</div>
 					</div>
+
+					<!-- panel -->
+					<div class="panel-overlay"></div>
+					<div class="panel panel-right panel-cover">
+						
+					</div>
+
+					<!-- popup-alert -->
+					<div class="popup popup-alert"></div>
 				</div>
 			</div>	
 		</div>
@@ -134,6 +159,24 @@
 						</div>
 					</form>
 				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- more popover -->
+	<div class="popover popover-more">
+		<div class="popover-angle"></div>
+		<div class="popover-inner">
+			<div class="popover-head bgc-white">
+				Backlog
+			</div>
+			<div class="list-block bgc-white">
+				<ul>
+					<li><a href="#" class="list-button item-link">Link 1</a></li>
+					<li><a href="#" class="list-button item-link">Link 2</a></li>
+					<li><a href="#" class="list-button item-link">Link 3</a></li>
+					<li><a href="#" class="list-button item-link">Link 4</a></li>
+				</ul>
 			</div>
 		</div>
 	</div>
