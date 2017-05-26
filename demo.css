@@ -130,8 +130,20 @@ color: #ddd;
 .panel{
 	background-color: #fff;
 }
+.panel-head{
+	padding: 5px;
+	background-color: #ddd;
+}
+
+/*popup*/
+.popup-overlay.modal-overlay-visible{
+	opacity: 0;
+}
 
 /*common*/
 .bgc-white{
 	background-color: white;
+}
+.fr{
+	float: right;
 }

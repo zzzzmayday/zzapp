@@ -56,7 +56,7 @@
 							<div class="center"></div>
 							<div class="right">
 								<img class="js-search-icon icon" src="./image/search.png"></img>
-								<img class="js-alert-icon icon open-popup" data-popup='.popup-alert' src="./image/alert.png"></img>
+								<img class="js-alert-icon icon" data-popup='.popup-alert' src="./image/alert.png"></img>
 								<img class="js-ellipsis-icon icon open-panel" data-panel="right" src="./image/ellipsis.png"></img>
 							</div>
 						</div>
@@ -116,19 +116,54 @@
 					<!-- panel -->
 					<div class="panel-overlay"></div>
 					<div class="panel panel-right panel-cover">
-						
+						<div class="panel-content">
+							<div class="panel-head">
+								<img class="star-icon" src="./image/star.png"></img>
+								<img class="lock-icon" src="./image/lock.png"></img>
+								<img class="setting-icon icon fr" src="./image/setting.png"></img>
+								<img class="share-icon fr" src="./image/share.png"></img>
+							</div>
+						</div>
 					</div>
 
 					<!-- popup-alert -->
-					<div class="popup popup-alert"></div>
-				</div>
-			</div>	
+					<div class="popup popup-alert">
+						<div class="popup-content">
+							<img class="js-popup-cancel cancel-icon close-popup" src="./image/cancel.png"></img>
+							<div class="buttons-row">
+								<a href="#tab1" class="tab-link active button">Tab 1</a>
+								<a href="#tab2" class="tab-link button">Tab 2</a>
+								<a href="#tab3" class="tab-link button">Tab 3</a>
+							</div>
+							<div class="tabs">
+								<div id="tab1" class="tab active">
+									<div class="content-block">
+										<p>This is tab 1 content</p>
+										...
+									</div>
+								</div>
+								<div id="tab2" class="tab">
+									<div class="content-block">
+										<p>This is tab 2 content</p>
+										...
+									</div>
+								</div>
+								<div id="tab3" class="tab">
+									<div class="content-block">
+										<p>This is tab 3 content</p>
+										...
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
 		</div>
-	</div>
-	<div class="login-screen">
-		<div class="view">
-			<div class="page">
-				<div class="page-content login-screen-content">
+		<div class="login-screen">
+			<div class="view">
+				<div class="page">
+					<div class="page-content login-screen-content">
 					<div class="login-screen-title">Login In</div>
 					<a href="#" class="close-login-screen cancel-button">cancel</a>
 					<form>
