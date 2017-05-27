@@ -139,6 +139,16 @@ color: #ddd;
 .popup-overlay.modal-overlay-visible{
 	opacity: 0;
 }
+.popup-content{
+	padding: 10px;
+}
+.buttons-row{
+	margin-left: 12%;
+}
+.blue-cancel-icon{
+	width: 18px;
+	margin: 6px 0 0 3%;
+}
 
 /*common*/
 .bgc-white{
@@ -146,4 +156,7 @@ color: #ddd;
 }
 .fr{
 	float: right;
+}
+.fl{
+	float: left;
 }

@@ -61,6 +61,9 @@ $('.js-alert-icon').on('click',function(){
 	myApp.popup('.popup-alert');
 	$('.popup-overlay').hide();
 });
+$('.js-popup-cancel').on('click',function(){
+	myApp.closeModal('.popup-alert');
+});
 
 function calHeight(){
 	cardContent[0].style.height = cardContent.parent('.card').height()-cardContent.siblings('.card-header').height()-cardContent.siblings('.card-footer').height()+'px';	
