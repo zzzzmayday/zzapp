@@ -67,9 +67,9 @@ $('.js-popup-cancel').on('click',function(){
 $('.js-star').on('click',function(){
 	var src = this.src;
 	if(src == 'https://zzapp.herokuapp.com/image/star.png'){
-		src == 'https://zzapp.herokuapp.com/image/blue-star.png';
+		src = 'https://zzapp.herokuapp.com/image/blue-star.png';
 	} else {
-		src == 'https://zzapp.herokuapp.com/image/star.png';
+		src = 'https://zzapp.herokuapp.com/image/star.png';
 	}
 });
 $('.js-setting').on('click',function(){
