@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
 	<head>
-		  <!-- Required meta tags-->
-		  <meta charset="utf-8">
-		  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-		  <meta name="apple-mobile-web-app-capable" content="yes">
-		  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-		  <!-- Your app title -->
-		  <title>My App</title>
-		  <!-- Path to Framework7 iOS CSS theme styles-->
-		  <link rel="stylesheet" href="./Framework7-1.5.2/dist/css/framework7.ios.min.css" type="text/css">
-		  <!-- Path to Framework7 iOS related color styles -->
-		  <link rel="stylesheet" href="./Framework7-1.5.2/dist/css/framework7.ios.colors.min.css" type="text/css">
-		  <!-- Path to your custom app styles-->
-		  <link rel="stylesheet" href="./demo.css" type="text/css">
-    </head>
+		<!-- Required meta tags-->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!-- Your app title -->
+		<title>My App</title>
+		<!-- Path to Framework7 iOS CSS theme styles-->
+		<link rel="stylesheet" href="./Framework7-1.5.2/dist/css/framework7.ios.min.css" type="text/css">
+		<!-- Path to Framework7 iOS related color styles -->
+		<link rel="stylesheet" href="./Framework7-1.5.2/dist/css/framework7.ios.colors.min.css" type="text/css">
+		<!-- Path to your custom app styles-->
+		<link rel="stylesheet" href="./demo.css" type="text/css">
+	</head>
 </head>
 <body>
 	<div class="views">
@@ -118,9 +118,9 @@
 					<div class="panel panel-right panel-cover">
 						<div class="panel-content">
 							<div class="panel-head">
-								<img class="star-icon" src="./image/star.png"></img>
+								<img class="star-icon js-star" src="./image/star.png"></img>
 								<img class="lock-icon" src="./image/lock.png"></img>
-								<img class="setting-icon icon fr" src="./image/setting.png"></img>
+								<img class="setting-icon icon fr js-setting" src="./image/setting.png"></img>
 								<img class="share-icon fr" src="./image/share.png"></img>
 							</div>
 						</div>
@@ -159,6 +159,74 @@
 							</div>
 						</div>
 					</div>
+
+					<!-- popup-setting -->
+					<div class="popup popup-setting">
+						<div class="popup-content">
+							<div class="popup-head">
+								<img class="js-popup-cancel blue-cancel-icon fl" src="./image/blue-cancel.png"></img>
+								setting
+							</div>
+						</div>
+						<div class="popup-body">
+							<div class="list-block">
+								<ul>
+									<li>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title label">Name</div>
+												<div class="item-input">
+													<input type="text">
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title label">Team</div>
+												<div class="item-input">
+													<input type="text">
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title label">Switch</div>
+												<div class="item-input">
+													<label class="label-switch fr">
+														<input type="checkbox">
+														<div class="checkbox"></div>
+													</label>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="list-block">
+								<ul>
+									<li>
+										<a href="#" class="item-link smart-select">
+									        <select name="范围">
+									          <option value="apple" selected>private</option>
+									          <option value="pineapple">common</option>
+									        </select>
+									        <div class="item-content">
+									          <div class="item-inner">
+									            <div class="item-title">可见范围</div>
+									            <div class="item-after">private</div>
+									          </div>
+									        </div>
+									    </a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
 				</div>	
 			</div>
 		</div>
@@ -166,68 +234,68 @@
 			<div class="view">
 				<div class="page">
 					<div class="page-content login-screen-content">
-					<div class="login-screen-title">Login In</div>
-					<a href="#" class="close-login-screen cancel-button">cancel</a>
-					<form>
-						<div class="list-block">
-							<ul>
-								<li class="item-content">
-									<div class="item-inner">
-										<div class="item-title label">Username</div>
-										<div class="item-input">
-											<input type="text" name="username" placeholder="Your username">
+						<div class="login-screen-title">Login In</div>
+						<a href="#" class="close-login-screen cancel-button">cancel</a>
+						<form>
+							<div class="list-block">
+								<ul>
+									<li class="item-content">
+										<div class="item-inner">
+											<div class="item-title label">Username</div>
+											<div class="item-input">
+												<input type="text" name="username" placeholder="Your username">
+											</div>
 										</div>
-									</div>
-								</li>
-								<li class="item-content">
-									<div class="item-inner">
-										<div class="item-title label">Password</div>
-										<div class="item-input">
-											<input type="password" name="password" placeholder="Your password">
+									</li>
+									<li class="item-content">
+										<div class="item-inner">
+											<div class="item-title label">Password</div>
+											<div class="item-input">
+												<input type="password" name="password" placeholder="Your password">
+											</div>
 										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="list-block">
-							<ul>
-								<li><a href="#index" class="item-link list-button js-list">Login In</a></li>
-							</ul>
-						</div>
-					</form>
+									</li>
+								</ul>
+							</div>
+							<div class="list-block">
+								<ul>
+									<li><a href="#index" class="item-link list-button js-list">Login In</a></li>
+								</ul>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- more popover -->
-	<div class="popover popover-more">
-		<div class="popover-angle"></div>
-		<div class="popover-inner">
-			<div class="popover-head bgc-white">
-				Backlog
-			</div>
-			<div class="list-block bgc-white">
-				<ul>
-					<li><a href="#" class="list-button item-link">Link 1</a></li>
-					<li><a href="#" class="list-button item-link">Link 2</a></li>
-					<li><a href="#" class="list-button item-link">Link 3</a></li>
-					<li><a href="#" class="list-button item-link">Link 4</a></li>
-				</ul>
+		<!-- more popover -->
+		<div class="popover popover-more">
+			<div class="popover-angle"></div>
+			<div class="popover-inner">
+				<div class="popover-head bgc-white">
+					Backlog
+				</div>
+				<div class="list-block bgc-white">
+					<ul>
+						<li><a href="#" class="list-button item-link">Link 1</a></li>
+						<li><a href="#" class="list-button item-link">Link 2</a></li>
+						<li><a href="#" class="list-button item-link">Link 3</a></li>
+						<li><a href="#" class="list-button item-link">Link 4</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
-	<script type="text/javascript" src="./Framework7-1.5.2/dist/js/framework7.min.js"></script>
-	<script type="text/javascript" src="./template7.min.js"></script>
-	<script type="text/template7" id="cardItem">
-    	{{#each items}}
-    	<div class="card">
-    		<div class="card-content">
-    			{{content}}
-    		</div>
-    	</div>
-    	{{/each}}
-    </script>
-    <script type="text/javascript" src="./demo.js"></script>
-</body>
-</html>
+		<script type="text/javascript" src="./Framework7-1.5.2/dist/js/framework7.min.js"></script>
+		<script type="text/javascript" src="./template7.min.js"></script>
+		<script type="text/template7" id="cardItem">
+			{{#each items}}
+			<div class="card">
+				<div class="card-content">
+					{{content}}
+				</div>
+			</div>
+			{{/each}}
+		</script>
+		<script type="text/javascript" src="./demo.js"></script>
+	</body>
+	</html>

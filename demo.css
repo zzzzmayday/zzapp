@@ -142,12 +142,21 @@ color: #ddd;
 .popup-content{
 	padding: 10px;
 }
+.popup-head{
+	text-align: center;
+}
 .buttons-row{
 	margin-left: 12%;
 }
 .blue-cancel-icon{
 	width: 18px;
 	margin: 6px 0 0 3%;
+}
+
+/*list*/
+.smart-select-page .navbar{
+	background-color: #e8e7e7;
+	color: #000;
 }
 
 /*common*/
