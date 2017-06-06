@@ -65,7 +65,7 @@ color: #ddd;
 	position: relative;
 	height: 92%;
 	margin: 20px;
-	background-color: #eae8e8;
+	background-color: #E2E4E6;
 	word-wrap: break-word;
 }
 .swiper-slide>.card>.card-content{
@@ -80,7 +80,7 @@ color: #ddd;
 	width: 100%;
 }
 .swiper-slide>.card>.card-footer .link{
-	color: #5f5b5b;
+	color: #8c8c8c;
 }
 .card-content-inner .card{
 	background-color: #fff;

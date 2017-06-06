@@ -6,7 +6,7 @@ var mainView = myApp.addView('.view-main',{
 var mySwiper = myApp.swiper('.swiper-container', {
 			pagination: '.swiper-pagination'
 });
-var data = {
+var data1 = {
 	items:[
 	{content:'blahblah'},
 	{content:'blahblah'},
@@ -14,10 +14,30 @@ var data = {
 	{content:'blahblah'}
 	]
 };
+var data2 = {
+	items:[
+	{content:'1'},
+	{content:'2'},
+	{content:'3'},
+	{content:'4'}
+	]
+};
+var data3 = {
+	items:[
+	{content:'a'},
+	{content:'b'},
+	{content:'c'},
+	{content:'d'}
+	]
+};
 var template = $('#cardItem').html();
 var compiledTemplate = Template7.compile(template);
-var htmlStr = compiledTemplate(data);
-$('.card-content-inner').html(htmlStr);
+var htmlStrCard1 = compiledTemplate(data1);
+var htmlStrCard2 = compiledTemplate(data2);
+var htmlStrCard3 = compiledTemplate(data3);
+$('.card1').find('.card-content-inner').html(htmlStrCard1);
+$('.card2').find('.card-content-inner').html(htmlStrCard2);
+$('.card3').find('.card-content-inner').html(htmlStrCard3);
 var cardContent = $('.js-card-content');
 calHeight();
 // $('.js-list').on('click',function(){
@@ -44,7 +64,7 @@ $('.js-confirm').on('click',function(){
 	var addContent = $(this).siblings(".item-input").find(".add-item").val();
 	$(this).parent(".add-items").hide();
 	$(this).parent(".add-items").siblings(".js-add").show();
-	$('.card-content-inner').append('<div class="card">'+
+	$(this).parents('.card-footer').siblings('.js-card-content').find('.card-content-inner').append('<div class="card">'+
     		'<div class="card-content">'+addContent+'</div>'+
     	'</div>');
 	calHeight();
