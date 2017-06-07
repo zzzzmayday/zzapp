@@ -4,7 +4,7 @@ var mainView = myApp.addView('.view-main',{
 	domCache: true
 });
 var mySwiper = myApp.swiper('.swiper-container', {
-			pagination: '.swiper-pagination'
+	pagination: '.swiper-pagination'
 });
 var data1 = {
 	items:[
@@ -39,7 +39,11 @@ $('.card1').find('.card-content-inner').html(htmlStrCard1);
 $('.card2').find('.card-content-inner').html(htmlStrCard2);
 $('.card3').find('.card-content-inner').html(htmlStrCard3);
 var cardContent = $('.js-card-content');
-calHeight();
+var swiperContent = $('.swiper-slide>.card');
+var flag = true;
+for(var i=0;i<cardContent.length;i++){
+	calHeight(i,flag);
+}
 // $('.js-list').on('click',function(){
 // 	if($('input[name="username"]').val()=='zz' && $('input[name="password"]').val()=='123'){
 // 		myApp.closeModal();
@@ -50,24 +54,30 @@ calHeight();
 // }); 
 
 $('.js-add').on('click',function(){
+	var i = $(this).parents('.swiper-slide').index();
 	$(this).hide();
 	$(this).siblings(".add-items").show();
 	$(this).siblings(".add-items").find(".add-item").val('');
-	calHeight();
+	flag = false;
+	calHeight(i,flag);
 });
 $('.js-cancel').on('click',function(){
+	var i = $(this).parents('.swiper-slide').index();
 	$(this).parent(".add-items").hide();
 	$(this).parent(".add-items").siblings(".js-add").show();
-	calHeight();
+	flag = true;
+	calHeight(i,flag);
 });
 $('.js-confirm').on('click',function(){
 	var addContent = $(this).siblings(".item-input").find(".add-item").val();
-	$(this).parent(".add-items").hide();
-	$(this).parent(".add-items").siblings(".js-add").show();
-	$(this).parents('.card-footer').siblings('.js-card-content').find('.card-content-inner').append('<div class="card">'+
-    		'<div class="card-content">'+addContent+'</div>'+
-    	'</div>');
-	calHeight();
+	var i = $(this).parents('.swiper-slide').index();
+	if(addContent != ""){
+		$(this).siblings(".item-input").find(".add-item").val('');
+		$(this).parents('.card-footer').siblings('.js-card-content').find('.card-content-inner').append('<div class="card">'+
+			'<div class="card-content">'+addContent+'</div>'+
+			'</div>');
+		calHeight(i,flag);
+	}
 });
 $('.js-search-icon').on('click',function(){
 	$('.left,.js-search-icon,.js-alert-icon').hide();
@@ -97,6 +107,16 @@ $('.js-setting').on('click',function(){
 	$('.popup-overlay').hide();
 });
 
-function calHeight(){
-	cardContent[0].style.height = cardContent.parent('.card').height()-cardContent.siblings('.card-header').height()-cardContent.siblings('.card-footer').height()+'px';	
+function calHeight(index,flag){
+	var maxScreenHeight = screen.height;
+	// if(cardContent[index].style.height >=maxScreenHeight*0.92){
+		// cardContent[index].style.height = cardContent.parent('.card')[index].height()-cardContent.siblings('.card-header')[index].height()-cardContent.siblings('.card-footer')[index].height()+'px';	
+	// } else {
+		if(flag == true){
+			cardContent[index].style.maxHeight = maxScreenHeight*0.72+'px';
+		} else {
+			cardContent[index].style.maxHeight = maxScreenHeight*0.65+'px';
+		}
+		swiperContent[index].style.height = swiperContent.find('.js-card-content')[index].offsetHeight+swiperContent.find('.card-header')[index].offsetHeight+swiperContent.find('.card-footer')[index].offsetHeight+'px';
+	// }
 }
