@@ -41,7 +41,7 @@
 				</div> -->
 
 				<!-- page2 -->
-				<div class="page navbar-fixed" data-page="index">
+				<div class="page navbar-fixed page-index" data-page="index">
 					<div class="navbar">
 						<div class="navbar-inner">
 							<!-- Search Bar -->
@@ -319,6 +319,19 @@
 			<div class="card">
 				<div class="card-content">
 					{{content}}
+					<div class="card-information">
+						{{#if list}}
+						<img class="list-icon" src="./image/list.png">
+						{{/if}}
+						{{#if talk}}
+						<img class="talk-icon" src="./image/talk.png">{{talk}}
+						{{/if}}
+						{{#if img}}
+						{{#each img}}
+						<img class="head-img fr" src={{this}}>
+						{{/each}}
+						{{/if}}
+					</div>
 				</div>
 			</div>
 			{{/each}}

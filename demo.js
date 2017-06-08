@@ -8,10 +8,26 @@ var mySwiper = myApp.swiper('.swiper-container', {
 });
 var data1 = {
 	items:[
-	{content:'blahblah'},
-	{content:'blahblah'},
-	{content:'blahblah'},
-	{content:'blahblah'}
+	{
+		content:'blahblah',
+		list:true,
+		talk:1,
+		img:['./image/bob.jpg','./image/bob2.png']
+	},
+	{
+		content:'blahblah',
+		list:false,
+		talk:2
+	},
+	{
+		content:'blahblah',
+		img:['./image/bob2.png']
+	},
+	{
+		content:'blahblah',
+		list:true,
+		talk:3
+	}
 	]
 };
 var data2 = {
