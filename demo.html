@@ -50,7 +50,7 @@
 									<input type="search" placeholder="Search">
 									<a href="#" class="searchbar-clear"></a>
 								</div>
-								<img class="js-search-cancel cancel-icon" src="./image/cancel.png"></img>
+								<img class="js-search-cancel cancel-icon icon" src="./image/cancel.png"></img>
 							</form>
 							<div class="left">
 								<img class="js-cancel-board cancel-board" src="./image/cancel.png"></img>
@@ -72,65 +72,16 @@
 							<div class="swiper-wrapper">
 								<!-- Slides -->
 								<div class="swiper-slide">
-									<div class="card card1">
-										<div class="card-header">Backlog
-											<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
+									<div class="card new-list">
+										<div class="add-list-button js-add-lists">
+											Add List
 										</div>
-										<div class="card-content js-card-content">
-											<div class="card-content-inner">
-											</div>
-										</div>
-										<div class="card-footer">
-											<a class="add-button js-add">Add card</a>
-											<div class="add-items">
-												<div class="item-input">
-													<textarea class="add-item"></textarea>
-												</div>   
-												<a class="add-cancel-button js-cancel">cancel</a>
-												<a class="add-confirm-button js-confirm">add</a>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="card card2">
-										<div class="card-header">Todo
-											<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
-										</div>
-										<div class="card-content js-card-content">
-											<div class="card-content-inner">
-											</div>
-										</div>
-										<div class="card-footer">
-											<a class="add-button js-add">Add card</a>
-											<div class="add-items">
-												<div class="item-input">
-													<textarea class="add-item"></textarea>
-												</div>   
-												<a class="add-cancel-button js-cancel">cancel</a>
-												<a class="add-confirm-button js-confirm">add</a>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="card card3">
-										<div class="card-header">Doing
-											<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
-										</div>
-										<div class="card-content js-card-content">
-											<div class="card-content-inner">
-											</div>
-										</div>
-										<div class="card-footer">
-											<a class="add-button js-add">Add card</a>
-											<div class="add-items">
-												<div class="item-input">
-													<textarea class="add-item"></textarea>
-												</div>   
-												<a class="add-cancel-button js-cancel">cancel</a>
-												<a class="add-confirm-button js-confirm">add</a>
-											</div>
+										<div class="add-lists">
+											<div class="item-input">
+												<input type="text" class="add-list"></input>
+											</div>   
+											<a class="add-cancel-button js-list-cancel">cancel</a>
+											<a class="add-confirm-button js-list-confirm">add</a>
 										</div>
 									</div>
 								</div>
@@ -257,7 +208,7 @@
 				</div>	
 			</div>
 		</div>
-		<div class="login-screen">
+		<!-- <div class="login-screen">
 			<div class="view">
 				<div class="page">
 					<div class="page-content login-screen-content">
@@ -293,7 +244,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<!-- more popover -->
 		<div class="popover popover-more">
@@ -314,7 +265,7 @@
 		</div>
 		<script type="text/javascript" src="./Framework7-1.5.2/dist/js/framework7.min.js"></script>
 		<script type="text/javascript" src="./template7.min.js"></script>
-		<script type="text/template7" id="cardItem">
+		<!-- <script type="text/template7" id="cardItem">
 			{{#each items}}
 			<div class="card">
 				<div class="card-content">
@@ -335,6 +286,74 @@
 				</div>
 			</div>
 			{{/each}}
+		</script> -->
+		<script type="text/template7" id="newList">
+			{{#each lists}}
+			<div class="swiper-slide">
+				<div class="card">
+					<div class="card-header">{{listName}}
+						<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
+					</div>
+					<div class="card-content js-card-content">
+						<div class="card-content-inner">
+							{{#each this.items}}
+							<div class="card">
+								<div class="card-content">
+									{{content}}
+									<div class="card-information">
+										{{#if list}}
+										<img class="list-icon" src="./image/list.png">
+										{{/if}}
+										{{#if talk}}
+										<img class="talk-icon" src="./image/talk.png">{{talk}}
+										{{/if}}
+										{{#if img}}
+										{{#each img}}
+										<img class="head-img fr" src={{this}}>
+										{{/each}}
+										{{/if}}
+									</div>
+								</div>
+							</div>
+							{{/each}}
+						</div>
+					</div>
+					<div class="card-footer">
+						<a class="add-button js-add">Add card</a>
+						<div class="add-items">
+							<div class="item-input">
+								<textarea class="add-item"></textarea>
+							</div>   
+							<a class="add-cancel-button js-cancel">cancel</a>
+							<a class="add-confirm-button js-confirm">add</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</script>
+		<script type="text/template7" id="newListTemplate">
+			<div class="swiper-slide">
+				<div class="card">
+					<div class="card-header">{{newListName}}
+						<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
+					</div>
+					<div class="card-content js-card-content">
+						<div class="card-content-inner">
+						</div>
+					</div>
+					<div class="card-footer">
+						<a class="add-button js-add">Add card</a>
+						<div class="add-items">
+							<div class="item-input">
+								<textarea class="add-item"></textarea>
+							</div>   
+							<a class="add-cancel-button js-cancel">cancel</a>
+							<a class="add-confirm-button js-confirm">add</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</script>
 		<script type="text/javascript" src="./demo.js"></script>
 	</body>
