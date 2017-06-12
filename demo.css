@@ -3,8 +3,11 @@
 }
 /*navbar*/
 .navbar{
-	background-color: #00395d;
+	background: #00395d;
 	color: #fff;
+}
+.navbar:after{
+	background: #00395d;
 }
 .cancel-board{
 	width: 20px;
@@ -62,12 +65,13 @@ color: #ddd;
 .swiper-container {
 	height: 100%;
 }
-.swiper-slide {
+.swiper-wrapper .swiper-slide {
+	width: 85%;
 }
 .swiper-slide>.card{
 	position: relative;
 	max-height: 92%;
-	margin: 20px;
+	margin: 20px 10px;
 	background-color: #d5dadd;
 	word-wrap: break-word;
 	border-radius: 5px;

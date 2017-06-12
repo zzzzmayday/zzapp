@@ -55,7 +55,10 @@ var compiledTemplate = Template7.compile(template);
 var htmlStrCard = compiledTemplate(data);
 $('.swiper-wrapper').prepend(htmlStrCard);
 var mySwiper = myApp.swiper('.swiper-container', {
-	pagination: '.swiper-pagination'
+	pagination: '.swiper-pagination',
+	centeredSlides: true,
+	slidesPerView: 'auto',
+	spaceBetween: 10
 });
 var flag = true;
 for(var i=0;i<$('.js-card-content').length;i++){
@@ -137,7 +140,10 @@ $(document).on('click','.js-list-confirm',function(){
 			'</div>');
 		$(this).parents('.swiper-slide').remove();
 		var mySwiper = myApp.swiper('.swiper-container', {
-			pagination: '.swiper-pagination'
+			pagination: '.swiper-pagination',
+			centeredSlides: true,
+			slidesPerView: 'auto',
+			spaceBetween: 10
 		});
 		calHeight(i,flag);
 	} else {
