@@ -182,7 +182,7 @@ $('.js-setting').on('click',function(){
 function calHeight(index,flag){
 	var cardContent = $('.js-card-content');
 	var swiperContent = $('.swiper-slide>.card');
-	var maxScreenHeight = screen.height;
+	var maxScreenHeight = document.body.clientHeight;
 	// if(cardContent[index].style.height >=maxScreenHeight*0.92){
 		// cardContent[index].style.height = cardContent.parent('.card')[index].height()-cardContent.siblings('.card-header')[index].height()-cardContent.siblings('.card-footer')[index].height()+'px';	
 	// } else {
