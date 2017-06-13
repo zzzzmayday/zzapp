@@ -187,9 +187,9 @@ function calHeight(index,flag){
 		// cardContent[index].style.height = cardContent.parent('.card')[index].height()-cardContent.siblings('.card-header')[index].height()-cardContent.siblings('.card-footer')[index].height()+'px';	
 	// } else {
 		if(flag == true){
-			cardContent[index].style.maxHeight = maxScreenHeight*0.60+'px';
+			cardContent[index].style.maxHeight = maxScreenHeight*0.62+'px';
 		} else {
-			cardContent[index].style.maxHeight = maxScreenHeight*0.50+'px';
+			cardContent[index].style.maxHeight = maxScreenHeight*0.52+'px';
 		}
 		swiperContent[index].style.height = swiperContent.find('.js-card-content')[index].offsetHeight+swiperContent.find('.card-header')[index].offsetHeight+swiperContent.find('.card-footer')[index].offsetHeight+'px';
 	// }
