@@ -42,14 +42,82 @@ var data = {
 	{
 		listName:"Doing",
 		items:[
-		// {content:'a'},
-		// {content:'b'},
-		// {content:'c'},
-		// {content:'d'}
+		{content:'a'},
+		{content:'b'},
+		{content:'c'},
+		{content:'d'}
 		]
 	}
 	]
 };
+var alertTabData1 = {
+	lists:[
+	{
+		img:'./image/bob.jpg',
+		name:'Aa',
+		cardName:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+		board:'index',
+		content:'Display the alert information.Display the alert information.Display the alert information',
+		time:'yesterday at 00:00'
+	},
+	{
+		img:'./image/bob2.png',
+		name:'Bb',
+		cardName:'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+		board:'index',
+		content:'Display the alert information',
+		time:'yesterday at 10:00'
+	},
+	{
+		img:'./image/bob2.png',
+		name:'Cc',
+		cardName:'ccccccccccccccccccccccccccccccccccccccccccccccccc',
+		board:'index',
+		content:'Display the alert information',
+		time:'2 days ago at 00:00'
+	}
+	]
+};
+var alertTabData2 = {
+	lists:[
+	{
+		img:'./image/bob.jpg',
+		name:'Aa',
+		cardName:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+		board:'index',
+		content:'Display the alert information.Display the alert information.Display the alert information',
+		time:'yesterday at 00:00'
+	},
+	{
+		img:'./image/bob2.png',
+		name:'Bb',
+		cardName:'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+		board:'index',
+		content:'Display the alert information',
+		time:'yesterday at 10:00'
+	},
+	]
+};
+var alertTabData3 = {
+	lists:[
+	{
+		img:'./image/bob2.png',
+		name:'Bb',
+		cardName:'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+		board:'index',
+		content:'Display the alert information',
+		time:'yesterday at 10:00'
+	},
+	{
+		img:'./image/bob2.png',
+		name:'Cc',
+		cardName:'ccccccccccccccccccccccccccccccccccccccccccccccccc',
+		board:'index',
+		content:'Display the alert information',
+		time:'2 days ago at 00:00'
+	}
+	]
+}
 var template = $('#newList').html();
 var compiledTemplate = Template7.compile(template);
 var htmlStrCard = compiledTemplate(data);
@@ -162,6 +230,14 @@ $(document).on('click','.js-search-cancel',function(){
 $('.js-alert-icon').on('click',function(){
 	myApp.popup('.popup-alert');
 	$('.popup-overlay').hide();
+	var alertTemplate = $('#alertTemplate').html();
+	var compiledTemplate = Template7.compile(alertTemplate);
+	var tab1 = compiledTemplate(alertTabData1);
+	var tab2 = compiledTemplate(alertTabData2);
+	var tab3 = compiledTemplate(alertTabData3);
+	$('#tab1').html(tab1);
+	$('#tab2').html(tab2);
+	$('#tab3').html(tab3);
 });
 $('.js-popup-cancel').on('click',function(){
 	myApp.closeModal();

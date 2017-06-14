@@ -234,6 +234,38 @@ color: #ddd;
 	background: #2474ab;
 	color: #fff;
 }
+.popup-alert .tab{
+	padding: 0 10px;
+}
+.alert-info{
+	position: relative;
+	padding: 10px 10px 10px 12%;
+	border-bottom: 1px solid #f2f2f2;
+	word-break: break-all;
+	font-size: 16px;
+}
+.alert-img{
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	border-radius: 50px;
+	left: 0px;
+	top: 12px;
+}
+.alert-card-name{
+	text-decoration: underline;
+}
+.alert-content-content{
+	background: #fff;
+	margin: 5px 0;
+	padding: 10px;
+	border: 1px solid #ececec;
+	border-radius: 2px;
+}
+.alert-time{
+	color: #878a8f;
+	font-size: 14px;
+}
 
 /*list*/
 .smart-select-page .navbar{
@@ -250,4 +282,7 @@ color: #ddd;
 }
 .fl{
 	float: left;
+}
+.bold{
+	font-weight: bolder;
 }

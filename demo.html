@@ -110,17 +110,14 @@
 							<div class="popup-head">
 								<img class="js-popup-cancel blue-cancel-icon fl" src="./image/blue-cancel.png"></img>
 								<div class="buttons-row">
-									<a href="#tab1" class="tab-link active button">Tab 1</a>
-									<a href="#tab2" class="tab-link button">Tab 2</a>
-									<a href="#tab3" class="tab-link button">Tab 3</a>
+									<a href="#tab1" class="tab-link active button">All</a>
+									<a href="#tab2" class="tab-link button">Me</a>
+									<a href="#tab3" class="tab-link button">Comments</a>
 								</div>
 							</div>
 							<div class="tabs">
 								<div id="tab1" class="tab active">
-									<div class="content-block">
-										<p>This is tab 1 content</p>
-										...
-									</div>
+									
 								</div>
 								<div id="tab2" class="tab">
 									<div class="content-block">
@@ -332,6 +329,26 @@
 					</div>
 				</div>
 			</div>
+		</script>
+		<script type="text/template7" id="alertTemplate">
+			{{#each lists}}
+			<div class="alert-info">
+				<img class="alert-img" src="{{img}}"></img>
+				<div class="alert-info-content">
+					<div class="alert-content-title">
+						<span class="alert-name bold">{{name}}</span> commented on the card 
+						<span class="alert-card-name bold">{{cardName}}</span> on 
+						<span class="board-name bold">{{board}}</span>
+					</div>
+					<div class="alert-content-content">
+						{{content}}
+					</div>
+					<div class="alert-time">
+						{{time}}
+					</div>
+				</div>
+			</div>
+			{{/each}}
 		</script>
 		<script type="text/javascript" src="./demo.js"></script>
 	</body>
