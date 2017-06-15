@@ -197,16 +197,25 @@ color: #ddd;
 	width: 300px;
 }
 .panel-content{
+	position: relative;
 	height: 100%;
 	background-color: #f9f9f9;
-	font-size: 18px;
+	font-size: 16px;
 }
-.panel-head{
+.panel-head,.panel-bottom{
 	height: 34px;
 	line-height: 34px;
 	color: #acacac;
 	padding: 5px;
+}
+.panel-head{
 	border-bottom: 1px solid #acacac;
+}
+.panel-bottom{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	border-top: 1px solid #acacac;
 }
 .setting-icon,.share-icon{
 	margin-top: 5px;
