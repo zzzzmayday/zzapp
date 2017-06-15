@@ -194,11 +194,44 @@ color: #ddd;
 
 /*panel*/
 .panel{
-	background-color: #fff;
+	width: 300px;
+}
+.panel-content{
+	height: 100%;
+	background-color: #f9f9f9;
+	font-size: 18px;
 }
 .panel-head{
+	height: 34px;
+	line-height: 34px;
+	color: #acacac;
 	padding: 5px;
-	background-color: #ddd;
+	border-bottom: 1px solid #acacac;
+}
+.setting-icon,.share-icon{
+	margin-top: 5px;
+}
+.panel-title{
+	height: 44px;
+	line-height: 44px;
+	background: #fff;
+	color: #494949;
+	padding: 0 10px;
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+}
+.add-member-button{
+	height: 44px;
+	line-height: 44px;
+	width: 90%;
+	color: #0571b2;
+	border: 2px solid #0571b2;
+	border-radius: 5px;
+	text-align: center;
+	margin: 15px auto;
+}
+.power-up-title{
+	margin-bottom: 10px;
 }
 
 /*popup*/
@@ -285,4 +318,7 @@ color: #ddd;
 }
 .bold{
 	font-weight: bolder;
+}
+.vertical-middle{
+	vertical-align: middle;
 }
