@@ -105,7 +105,16 @@
 							<div class="panel-body">
 								<div class="member-block">
 									<div class="member-title panel-title">Members</div>
-									<div class="member-head-imgs"></div>
+									<div class="member-head-imgs">
+										<img src="./image/bob.jpg" class="panel-head-img">
+										<img src="./image/bob2.png" class="panel-head-img">
+										<img src="./image/bob.jpg" class="panel-head-img">
+										<img src="./image/bob2.png" class="panel-head-img">
+										<img src="./image/bob.jpg" class="panel-head-img">
+										<img src="./image/bob2.png" class="panel-head-img">
+										<img src="./image/bob.jpg" class="panel-head-img">
+										<img src="./image/bob2.png" class="panel-head-img">
+									</div>
 									<div class="add-member-button">Add Members</div>
 								</div>
 								<div class="power-up-block">
@@ -113,6 +122,7 @@
 								</div>
 								<div class="activity-block">
 									<div class="activity-title panel-title">Activity</div>
+									<div class="activity-content"></div>
 								</div>
 							</div>
 							<div class="panel-bottom">
@@ -361,6 +371,23 @@
 						{{content}}
 					</div>
 					<div class="alert-time">
+						{{time}}
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</script>
+		<script type="text/template7" id="activityTemplate">
+			{{#each lists}}
+			<div class="activity-info">
+				<img class="activity-img" src="{{img}}"></img>
+				<div class="activity-info-content">
+					<div class="activity-content-title">
+						<span class="activity-name bold">{{name}}</span> commented on the card 
+						<span class="activity-card-name bold">{{cardName}}</span> on 
+						<span class="board-name bold">{{board}}</span>
+					</div>
+					<div class="activity-time">
 						{{time}}
 					</div>
 				</div>

@@ -132,6 +132,10 @@ var flag = true;
 for(var i=0;i<$('.js-card-content').length;i++){
 	calHeight(i,flag);
 }
+var activityTemplate = $('#activityTemplate').html();
+var compiledActivityTemplate = Template7.compile(activityTemplate);
+var htmlStrActivity = compiledActivityTemplate(alertTabData1);
+$('.activity-content').html(htmlStrActivity);
 // $('.js-list').on('click',function(){
 // 	if($('input[name="username"]').val()=='zz' && $('input[name="password"]').val()=='123'){
 // 		myApp.closeModal();

@@ -70,7 +70,7 @@ color: #ddd;
 }
 .swiper-slide>.card{
 	position: relative;
-	max-height: 92%;
+	max-height: 93%;
 	margin: 20px 10px;
 	background-color: #d5dadd;
 	word-wrap: break-word;
@@ -160,7 +160,7 @@ color: #ddd;
 	width: 97%;
 }
 .add-list{
-	width: 100%;
+	width: 98%;
 	height: 35px;
 	border: 0;
 	border-radius: 3px;
@@ -204,17 +204,25 @@ color: #ddd;
 	font-size: 16px;
 }
 .panel-head,.panel-bottom{
+	position: fixed;
+	width: 290px;
 	height: 34px;
 	line-height: 34px;
 	color: #acacac;
 	padding: 5px;
 }
 .panel-head{
+	top: 0;
 	border-bottom: 1px solid #acacac;
+}
+.panel-body{
+	position: absolute;
+	top: 45px;
+	bottom: 45px;
+	overflow: auto;
 }
 .panel-bottom{
 	width: 100%;
-	position: absolute;
 	bottom: 0;
 	border-top: 1px solid #acacac;
 }
@@ -229,6 +237,7 @@ color: #ddd;
 	padding: 0 10px;
 	border-top: 1px solid #e6e6e6;
 	border-bottom: 1px solid #e6e6e6;
+	font-weight: bold;
 }
 .add-member-button{
 	height: 44px;
@@ -242,6 +251,37 @@ color: #ddd;
 }
 .power-up-title{
 	margin-bottom: 10px;
+}
+.member-head-imgs{
+	padding: 15px 15px 0;
+}
+.panel-head-img{
+	width: 45px;
+	height: 45px;
+	border-radius: 45px;
+	margin-left: 5px;
+}
+.activity-info{
+	position: relative;
+	padding: 20px 20px 20px 18%;
+	border-bottom: 1px solid #f2f2f2;
+	word-break: break-all;
+	font-size: 16px;
+}
+.activity-img{
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	border-radius: 50px;
+	left: 15px;
+	top: 18px;
+}
+.activity-card-name{
+	text-decoration: underline;
+}
+.activity-time{
+	color: #878a8f;
+	font-size: 14px;
 }
 
 /*popup*/
