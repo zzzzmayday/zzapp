@@ -164,6 +164,7 @@ color: #ddd;
 	height: 35px;
 	border: 0;
 	border-radius: 3px;
+	font-size: 15px;
 }
 .add-cancel-button,.add-confirm-button{
 	display: inline-block;
