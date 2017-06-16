@@ -211,12 +211,8 @@ $(document).on('click','.js-list-confirm',function(){
 			'</div>'+
 			'</div>');
 		$(this).parents('.swiper-slide').remove();
-		var mySwiper = myApp.swiper('.swiper-container', {
-			pagination: '.swiper-pagination',
-			centeredSlides: true,
-			slidesPerView: 'auto',
-			spaceBetween: 10
-		});
+		mySwiper.updatePagination();
+		mySwiper.slideTo(mySwiper.slides.length-2);
 		calHeight(i,flag);
 	} else {
 		$(this).parent(".add-lists").hide();
