@@ -211,6 +211,7 @@ $(document).on('click','.js-list-confirm',function(){
 			'</div>'+
 			'</div>');
 		$(this).parents('.swiper-slide').remove();
+		mySwiper.updateSlidesSize();
 		mySwiper.updatePagination();
 		mySwiper.slideTo(mySwiper.slides.length-2);
 		calHeight(i,flag);
