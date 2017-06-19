@@ -212,11 +212,11 @@ color: #ddd;
 }
 .panel-head,.panel-bottom{
 	position: fixed;
-	width: 290px;
-	height: 34px;
-	line-height: 34px;
+	width: 280px;
+	height: 24px;
+	line-height: 24px;
 	color: #acacac;
-	padding: 5px;
+	padding: 10px;
 }
 .panel-head{
 	top: 0;
@@ -233,8 +233,23 @@ color: #ddd;
 	bottom: 0;
 	border-top: 1px solid #acacac;
 }
-.setting-icon,.share-icon{
-	margin-top: 5px;
+.star-icon{
+	width: 20px;
+}
+.lock-icon{
+	margin-left: 15px;
+	width: 18px;
+}
+.setting-icon,.share-icon,.file-icon{
+	margin-top: 2px;
+}
+.share-icon,.file-icon{
+	width: 17px;
+}
+.member-icon,.rocket-icon,.activity-list-icon,.sync-icon{
+	width: 20px;
+	vertical-align: middle;
+	margin-right: 15px;
 }
 .panel-title{
 	height: 44px;
@@ -378,4 +393,10 @@ color: #ddd;
 }
 .vertical-middle{
 	vertical-align: middle;
+}
+.swiper-pagination-bullet{
+	background: #fff;
+}
+.swiper-pagination-bullet:last-child{
+	background: url(./image/add.png);
 }
