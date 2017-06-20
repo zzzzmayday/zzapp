@@ -75,6 +75,22 @@ var alertTabData1 = {
 		board:'index',
 		content:'Display the alert information',
 		time:'2 days ago at 00:00'
+	},
+	{
+		img:'./image/bob2.png',
+		name:'Dd',
+		cardName:'ddddddddddddddddddddddddddddddddddd',
+		board:'index',
+		content:'Display the alert information',
+		time:'3 days ago at 03:00'
+	},
+	{
+		img:'./image/bob2.png',
+		name:'Ee',
+		cardName:'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+		board:'index',
+		content:'Display the alert information',
+		time:'4 days ago at 07:00'
 	}
 	]
 };
@@ -255,19 +271,18 @@ $('.js-setting').on('click',function(){
 	myApp.popup('.popup-setting');
 	$('.popup-overlay').hide();
 });
+$('.panel-body').on('scroll',function(){
+	var top = $(this).scrollTop();
+});
 
 function calHeight(index,flag){
 	var cardContent = $('.js-card-content');
 	var swiperContent = $('.swiper-slide>.card');
 	var maxScreenHeight = document.body.clientHeight;
-	// if(cardContent[index].style.height >=maxScreenHeight*0.92){
-		// cardContent[index].style.height = cardContent.parent('.card')[index].height()-cardContent.siblings('.card-header')[index].height()-cardContent.siblings('.card-footer')[index].height()+'px';	
-	// } else {
-		if(flag == true){
-			cardContent[index].style.maxHeight = maxScreenHeight*0.64+'px';
-		} else {
-			cardContent[index].style.maxHeight = maxScreenHeight*0.54+'px';
-		}
-		swiperContent[index].style.height = swiperContent.find('.js-card-content')[index].offsetHeight+swiperContent.find('.card-header')[index].offsetHeight+swiperContent.find('.card-footer')[index].offsetHeight+'px';
-	// }
+	if(flag == true){
+		cardContent[index].style.maxHeight = maxScreenHeight*0.64+'px';
+	} else {
+		cardContent[index].style.maxHeight = maxScreenHeight*0.54+'px';
+	}
+	swiperContent[index].style.height = swiperContent.find('.js-card-content')[index].offsetHeight+swiperContent.find('.card-header')[index].offsetHeight+swiperContent.find('.card-footer')[index].offsetHeight+'px';
 }

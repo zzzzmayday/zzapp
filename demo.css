@@ -226,7 +226,7 @@ color: #ddd;
 	position: absolute;
 	top: 45px;
 	bottom: 45px;
-	overflow: auto;
+	overflow: scroll;
 }
 .panel-bottom{
 	width: 100%;
@@ -237,7 +237,7 @@ color: #ddd;
 	width: 20px;
 }
 .lock-icon{
-	margin-left: 15px;
+	margin-left: 10px;
 	width: 18px;
 }
 .setting-icon,.share-icon,.file-icon{
@@ -249,7 +249,7 @@ color: #ddd;
 .member-icon,.rocket-icon,.activity-list-icon,.sync-icon{
 	width: 20px;
 	vertical-align: middle;
-	margin-right: 15px;
+	margin-right: 10px;
 }
 .panel-title{
 	height: 44px;
