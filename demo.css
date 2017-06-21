@@ -265,6 +265,7 @@ color: #ddd;
 	border-top: 0;
 	position: fixed;
 	width: 280px;
+	top: 45px;
 }
 .member-block{
 	margin-top: 46px;
