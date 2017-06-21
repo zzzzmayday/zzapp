@@ -271,23 +271,17 @@ $('.js-setting').on('click',function(){
 	myApp.popup('.popup-setting');
 	$('.popup-overlay').hide();
 });
-var topArray = [0];
-$('.panel-body').on('scroll',function(event){
+$('.panel-body').on('scroll',function(){
 	var top = $(this).scrollTop();
 	var memberTitle = $('.member-title');
-	var memberBlockHeight = $('.member-block')[0].offsetHeight + 2;
-	topArray.push(top);
-	if(top>topArray[topArray.length-2]){
-		if(top<=memberBlockHeight) {
-			memberTitle[0].style.top = top +'px';
-		} else {
-			$('.member-block')[0].style.opacity = '0';			
-		}
-	} else {
-		if(top<=memberBlockHeight){
-			memberTitle.removeAttr('style');
-			$('.member-block')[0].style.opacity = '1';
-		}
+	var activityTitle = $('.activity-title');
+	var memberBlockHeight = $('.member-block')[0].offsetHeight - 7;
+	var otherBlockHeight = 46 + $('.member-block')[0].offsetHeight + $('.power-up-block')[0].offsetHeight;
+	if(top<=memberBlockHeight) {
+		memberTitle[0].style.top = top +'px';
+	}
+	if(top>=otherBlockHeight) {
+		activityTitle[0].style.top = top +'px';
 	}
 });
 

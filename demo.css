@@ -265,10 +265,10 @@ color: #ddd;
 	border-top: 0;
 	position: absolute;
 	width: 280px;
-	/*top: 45px;*/
 }
 .member-block{
 	margin-top: 46px;
+	overflow: hidden;
 }
 .add-member-button{
 	height: 44px;
@@ -278,9 +278,9 @@ color: #ddd;
 	border: 2px solid #0571b2;
 	border-radius: 5px;
 	text-align: center;
-	margin: 15px auto 10px;
+	margin: 15px auto;
 }
-.power-up-title{
+.member-title,.power-up-title{
 	margin-bottom: 10px;
 }
 .member-head-imgs{
@@ -291,6 +291,17 @@ color: #ddd;
 	height: 45px;
 	border-radius: 45px;
 	margin-left: 5px;
+}
+.power-up-block{
+	overflow: hidden;
+}
+.activity-title{
+	position: absolute;
+	width: 280px;
+	z-index: 1;
+}
+.activity-block{
+	margin-top: 46px;
 }
 .activity-info{
 	position: relative;
