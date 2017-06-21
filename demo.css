@@ -262,6 +262,7 @@ color: #ddd;
 	font-weight: bold;
 }
 .member-title{
+	-webkit-transform: translateZ(0);
 	border-top: 0;
 	position: absolute;
 	width: 280px;
@@ -296,6 +297,7 @@ color: #ddd;
 	overflow: hidden;
 }
 .activity-title{
+	-webkit-transform: translateZ(0);
 	position: absolute;
 	width: 280px;
 	z-index: 1;
