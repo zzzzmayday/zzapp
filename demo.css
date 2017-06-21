@@ -261,6 +261,14 @@ color: #ddd;
 	border-bottom: 1px solid #e6e6e6;
 	font-weight: bold;
 }
+.member-title{
+	border-top: 0;
+	position: fixed;
+	width: 100%;
+}
+.member-block{
+	margin-top: 46px;
+}
 .add-member-button{
 	height: 44px;
 	line-height: 44px;
@@ -271,7 +279,7 @@ color: #ddd;
 	text-align: center;
 	margin: 15px auto;
 }
-.power-up-title{
+.member-title,.power-up-title{
 	margin-bottom: 10px;
 }
 .member-head-imgs{

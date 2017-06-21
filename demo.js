@@ -271,8 +271,24 @@ $('.js-setting').on('click',function(){
 	myApp.popup('.popup-setting');
 	$('.popup-overlay').hide();
 });
+var topArray = [0];
 $('.panel-body').on('scroll',function(){
 	var top = $(this).scrollTop();
+	var memberTitle = $('.member-title');
+	var memberBlockHeight = $('.member-block')[0].offsetHeight;
+	topArray.push(top);
+	if(top>topArray[topArray.length-2]){
+		if(top>=memberBlockHeight) {
+			memberTitle[0].style.position = 'absolute';
+			memberTitle[0].style.top = memberBlockHeight+'px';
+			$('.member-block')[0].style.opacity = '0';
+		}
+	} else {
+		if(top<=memberBlockHeight){
+			memberTitle.removeAttr('style');
+			$('.member-block')[0].style.opacity = '1';
+		}
+	}
 });
 
 function calHeight(index,flag){
