@@ -272,10 +272,11 @@ $('.js-setting').on('click',function(){
 	$('.popup-overlay').hide();
 });
 var topArray = [0];
-$('.panel-body').on('scroll',function(){
+$('.panel-body').on('touchmove',function(event){
 	var top = $(this).scrollTop();
 	var memberTitle = $('.member-title');
 	var memberBlockHeight = $('.member-block')[0].offsetHeight;
+	event.preventDefault();
 	topArray.push(top);
 	if(top>topArray[topArray.length-2]){
 		if(top>=memberBlockHeight) {
