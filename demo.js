@@ -272,17 +272,16 @@ $('.js-setting').on('click',function(){
 	$('.popup-overlay').hide();
 });
 var topArray = [0];
-$('.panel-body').on('touchmove',function(event){
+$('.panel-body').on('scroll',function(event){
 	var top = $(this).scrollTop();
 	var memberTitle = $('.member-title');
-	var memberBlockHeight = $('.member-block')[0].offsetHeight;
-	// event.preventDefault();
+	var memberBlockHeight = $('.member-block')[0].offsetHeight + 2;
 	topArray.push(top);
 	if(top>topArray[topArray.length-2]){
-		if(top>=memberBlockHeight) {
-			memberTitle[0].style.position = 'absolute';
-			memberTitle[0].style.top = memberBlockHeight+'px';
-			$('.member-block')[0].style.opacity = '0';
+		if(top<=memberBlockHeight) {
+			memberTitle[0].style.top = top +'px';
+		} else {
+			$('.member-block')[0].style.opacity = '0';			
 		}
 	} else {
 		if(top<=memberBlockHeight){

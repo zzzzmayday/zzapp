@@ -263,9 +263,9 @@ color: #ddd;
 }
 .member-title{
 	border-top: 0;
-	position: fixed;
+	position: absolute;
 	width: 280px;
-	top: 45px;
+	/*top: 45px;*/
 }
 .member-block{
 	margin-top: 46px;
@@ -278,9 +278,9 @@ color: #ddd;
 	border: 2px solid #0571b2;
 	border-radius: 5px;
 	text-align: center;
-	margin: 15px auto;
+	margin: 15px auto 10px;
 }
-.member-title,.power-up-title{
+.power-up-title{
 	margin-bottom: 10px;
 }
 .member-head-imgs{
