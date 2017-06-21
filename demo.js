@@ -276,7 +276,7 @@ $('.panel-body').on('touchmove',function(event){
 	var top = $(this).scrollTop();
 	var memberTitle = $('.member-title');
 	var memberBlockHeight = $('.member-block')[0].offsetHeight;
-	event.preventDefault();
+	// event.preventDefault();
 	topArray.push(top);
 	if(top>topArray[topArray.length-2]){
 		if(top>=memberBlockHeight) {
