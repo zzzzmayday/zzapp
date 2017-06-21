@@ -226,7 +226,7 @@ color: #ddd;
 	position: absolute;
 	top: 45px;
 	bottom: 45px;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 .panel-bottom{
 	width: 100%;
@@ -264,7 +264,7 @@ color: #ddd;
 .member-title{
 	border-top: 0;
 	position: fixed;
-	width: 100%;
+	width: 280px;
 }
 .member-block{
 	margin-top: 46px;
