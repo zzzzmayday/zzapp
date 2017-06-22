@@ -91,7 +91,7 @@
 						</div>
 					</div>
 
-					<!-- panel -->
+					<!-- panel begin-->
 					<div class="panel-overlay"></div>
 					<div class="panel panel-right panel-cover">
 						<div class="panel-content">
@@ -129,9 +129,9 @@
 									</div>
 								</div>
 								<div class="activity-title panel-title">
-										<img class="activity-list-icon" src="./image/images/activity-list.png"></img>
-										Activity
-									</div>
+									<img class="activity-list-icon" src="./image/images/activity-list.png"></img>
+									Activity
+								</div>
 								<div class="activity-block">
 									<div class="activity-content"></div>
 								</div>
@@ -142,8 +142,9 @@
 							</div>
 						</div>
 					</div>
+					<!-- panel end -->
 
-					<!-- popup-alert -->
+					<!-- popup-alert begin-->
 					<div class="popup popup-alert">
 						<div class="popup-content">
 							<div class="popup-head">
@@ -173,8 +174,9 @@
 							</div>
 						</div>
 					</div>
+					<!-- popup-alert end-->
 
-					<!-- popup-setting -->
+					<!-- popup-setting begin-->
 					<div class="popup popup-setting">
 						<div class="popup-content">
 							<div class="popup-head">
@@ -240,6 +242,37 @@
 							</div>
 						</div>
 					</div>
+					<!-- popup-setting end-->
+
+					<!-- popup-card-content begin-->
+					<div class="popup popup-card-content">
+						<div class="popup-content">
+							<div class="popup-header">
+								<div class="popup-header-above">
+								<img class="js-popup-cancel white-cancel fl" src="./image/cancel.png"></img>
+									<div class="card-name"></div>
+									<img class="js-card-ellipsis-icon card-ellipsis-icon fr"src="./image/ellipsis.png"></img>
+								</div>
+								<div class="card-title">
+									blahblah
+								</div>
+								<div class="card-place">
+									In List backlog
+								</div>
+							</div>
+							<div class="card-description">
+								<input class="card-description-input" type="text" placeholder="click to add description"></input>
+							</div>
+							<div class="card-activity-block">
+								<div class="card-activity-title">
+									<img class="card-activity-list-icon" src="./image/images/activity-list.png"></img>
+									Activity
+								</div>
+								<div class="card-activity-list"></div>
+							</div>
+						</div>
+					</div>
+					<!-- popup-card-content end -->
 
 				</div>	
 			</div>
@@ -311,7 +344,7 @@
 					<div class="card-content js-card-content">
 						<div class="card-content-inner">
 							{{#each this.items}}
-							<div class="card">
+							<div class="card open-popup" data-popup=".popup-card-content">
 								<div class="card-content">
 									{{content}}
 									<div class="card-information">
@@ -398,6 +431,22 @@
 						<span class="activity-name bold">{{name}}</span> commented on the card 
 						<span class="activity-card-name bold">{{cardName}}</span> on 
 						<span class="board-name bold">{{board}}</span>
+					</div>
+					<div class="activity-time">
+						{{time}}
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</script>
+		<script type="text/template7" id="cardActivityTemplate">
+			{{#each lists}}
+			<div class="card-activity-info">
+				<img class="card-activity-img" src="{{img}}"></img>
+				<div class="card-activity-info-content">
+					<div class="card-activity-content-title">
+						<div class="card-activity-name bold">{{name}}</div>
+						<div class="card-activity-detail">{{cardName}}</div>
 					</div>
 					<div class="activity-time">
 						{{time}}

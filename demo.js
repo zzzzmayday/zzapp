@@ -152,6 +152,10 @@ var activityTemplate = $('#activityTemplate').html();
 var compiledActivityTemplate = Template7.compile(activityTemplate);
 var htmlStrActivity = compiledActivityTemplate(alertTabData1);
 $('.activity-content').html(htmlStrActivity);
+var cardActivityTemplate = $('#cardActivityTemplate').html();
+var compiledCardActivityTemplate = Template7.compile(cardActivityTemplate);
+var htmlCardActivity = compiledCardActivityTemplate(alertTabData1);
+$('.card-activity-list').html(htmlCardActivity);
 // $('.js-list').on('click',function(){
 // 	if($('input[name="username"]').val()=='zz' && $('input[name="password"]').val()=='123'){
 // 		myApp.closeModal();
