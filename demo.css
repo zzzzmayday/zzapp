@@ -253,6 +253,10 @@ color: #ddd;
 	vertical-align: middle;
 	margin-right: 10px;
 }
+.right-icon{
+	width: 16px;
+	margin-top: 14px;
+}
 .panel-title{
 	height: 44px;
 	line-height: 44px;
