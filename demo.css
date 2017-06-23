@@ -435,7 +435,7 @@ color: #ddd;
 	position: absolute;
 	overflow-y: auto;
 	top: 39px;
-	bottom: 20px;
+	bottom: 50px;
 }
 .card-place{
 	opacity: .7;
@@ -496,18 +496,27 @@ color: #ddd;
 	position: fixed;
 	bottom: 0;
 	width: 100%;
+	height: 50px;
+	line-height: 50px;
+}
+.comment-add-button{
+	width: 30px;
+	vertical-align: middle;
+	margin-left: 10px;
 }
 .comment-input{
-	padding: 15px;
-	width: 92%;
+	width: 75%;
 	border: 0;
-	border-bottom: 1px solid #e8e8e8;
 	font-size: 18px;
+	padding-left: 10px;
 }
 .comment-input::-webkit-input-placeholder{
 	color: #adadad;
 }
-
+.add-image{
+	width: 24px;
+	vertical-align: text-bottom;
+}
 /*list*/
 .smart-select-page .navbar{
 	background-color: #e8e7e7;
