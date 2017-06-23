@@ -271,6 +271,10 @@ $('.js-star').on('click',function(){
 		src = 'https://zzapp.herokuapp.com/image/star.png';
 	}
 });
+$(document).on('click','.js-card-content .card',function(){
+	myApp.popup('.popup-card-content');
+	$('.popup-overlay').hide();
+})
 $('.js-setting').on('click',function(){
 	myApp.popup('.popup-setting');
 	$('.popup-overlay').hide();
@@ -286,6 +290,16 @@ $('.panel-body').on('scroll',function(){
 	}
 	if(top>=otherBlockHeight) {
 		activityTitle[0].style.top = top +'px';
+	}
+});
+$('.scroll-part').on('scroll',function(){
+	var top = $(this).scrollTop();
+	var cardTitle = $('.card-title').text();
+	var headerHeight = $('.popup-header')[0].offsetHeight;
+	if(top >= headerHeight){
+		$('.card-name').text(cardTitle);
+	} else {
+		$('.card-name').text('');
 	}
 });
 

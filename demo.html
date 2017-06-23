@@ -247,28 +247,35 @@
 					<!-- popup-card-content begin-->
 					<div class="popup popup-card-content">
 						<div class="popup-content">
-							<div class="popup-header">
-								<div class="popup-header-above">
+							<div class="popup-header-above">
 								<img class="js-popup-cancel white-cancel fl" src="./image/cancel.png"></img>
-									<div class="card-name"></div>
-									<img class="js-card-ellipsis-icon card-ellipsis-icon fr"src="./image/ellipsis.png"></img>
+								<div class="card-name"></div>
+								<img class="js-card-ellipsis-icon card-ellipsis-icon fr"src="./image/ellipsis.png"></img>
+							</div>
+							<div class="scroll-part">
+								<div class="popup-header">
+									<div class="card-title">
+										blahblah blahblah blahblah blahblah blahblah
+									</div>
+									<div class="card-place">
+										In List backlog
+									</div>
 								</div>
-								<div class="card-title">
-									blahblah
+								<div class="card-description">
+									<input class="card-description-input" type="text" placeholder="click to add description"></input>
 								</div>
-								<div class="card-place">
-									In List backlog
+								<div class="card-activity-block">
+									<div class="card-activity-title">
+										<img class="card-activity-list-icon" src="./image/images/activity-list.png"></img>
+										Activity
+									</div>
+									<div class="card-activity-list"></div>
 								</div>
 							</div>
-							<div class="card-description">
-								<input class="card-description-input" type="text" placeholder="click to add description"></input>
-							</div>
-							<div class="card-activity-block">
-								<div class="card-activity-title">
-									<img class="card-activity-list-icon" src="./image/images/activity-list.png"></img>
-									Activity
-								</div>
-								<div class="card-activity-list"></div>
+							<div class="comment-block">
+								<!-- <div class="comment-add-button"></div> -->
+								<input class="comment-input" type="text" placeholder="Add comment..."></input>
+								<!-- <img class="add-photos"></img> -->
 							</div>
 						</div>
 					</div>
@@ -344,7 +351,7 @@
 					<div class="card-content js-card-content">
 						<div class="card-content-inner">
 							{{#each this.items}}
-							<div class="card open-popup" data-popup=".popup-card-content">
+							<div class="card">
 								<div class="card-content">
 									{{content}}
 									<div class="card-information">
@@ -446,7 +453,7 @@
 				<div class="card-activity-info-content">
 					<div class="card-activity-content-title">
 						<div class="card-activity-name bold">{{name}}</div>
-						<div class="card-activity-detail">{{cardName}}</div>
+						<div class="card-activity-detail">{{content}}</div>
 					</div>
 					<div class="activity-time">
 						{{time}}
