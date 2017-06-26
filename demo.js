@@ -287,19 +287,29 @@ $('.panel-body').on('scroll',function(){
 	var otherBlockHeight = 46 + $('.member-block')[0].offsetHeight + $('.power-up-block')[0].offsetHeight;
 	if(top<=memberBlockHeight) {
 		memberTitle[0].style.top = top +'px';
+	} else {
+		memberTitle[0].style.top = memberBlockHeight +'px';
 	}
 	if(top>=otherBlockHeight) {
 		activityTitle[0].style.top = top +'px';
+	} else {
+		activityTitle[0].style.top = otherBlockHeight +'px';
 	}
 });
 $('.scroll-part').on('scroll',function(){
 	var top = $(this).scrollTop();
 	var cardTitle = $('.card-title').text();
 	var headerHeight = $('.popup-header')[0].offsetHeight;
+	var otherBlockHeight = $('.popup-header')[0].offsetHeight + $('.card-description')[0].offsetHeight; 
 	if(top >= headerHeight){
 		$('.card-name').text(cardTitle);
 	} else {
 		$('.card-name').text('');
+	}
+	if(top >= otherBlockHeight){
+		$('.card-activity-title')[0].style.top = top + 'px';
+	} else {
+		$('.card-activity-title')[0].style.top = otherBlockHeight + 'px';
 	}
 });
 

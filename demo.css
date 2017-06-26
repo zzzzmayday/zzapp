@@ -446,16 +446,19 @@ color: #ddd;
 	border: 0;
 	border-bottom: 1px solid #e8e8e8;
 	font-size: 18px;
+	margin-bottom: 10px;
 }
 .card-description-input::-webkit-input-placeholder{
 	color: #adadad;
 	font-style: italic;
 }
 .card-activity-block{
-	margin-top: 10px;
+	margin-top: 46px;
 	font-size: 16px;
 }
 .card-activity-title{
+	position: absolute;
+	width: 94%;
 	height: 44px;
 	line-height: 44px;
 	background: #fff;
@@ -464,6 +467,8 @@ color: #ddd;
 	border-top: 1px solid #e6e6e6;
 	border-bottom: 1px solid #e6e6e6;
 	font-weight: bold;
+	font-size: 16px;
+	z-index: 1;
 }
 .card-activity-list-icon{
 	width: 20px;
