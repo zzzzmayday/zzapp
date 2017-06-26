@@ -223,11 +223,10 @@ color: #ddd;
 	border-bottom: 1px solid #acacac;
 }
 .panel-body{
-	background-image:url(about:blank);
-    background-attachment:fixed;
 	position: absolute;
 	top: 45px;
 	bottom: 45px;
+	width: 100%;
 	overflow-y: scroll;
 }
 .panel-bottom{
@@ -469,6 +468,10 @@ color: #ddd;
 .card-activity-list-icon{
 	width: 20px;
     margin-right: 10px;
+}
+.card-activity-setting-icon{
+	width: 20px;
+	margin-top: 12px;
 }
 .card-activity-info{
 	position: relative;
