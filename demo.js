@@ -312,6 +312,25 @@ $('.scroll-part').on('scroll',function(){
 		$('.card-activity-title')[0].style.top = otherBlockHeight + 'px';
 	}
 });
+$(document).on('click','.js-activity-setting',function(){
+	var buttons1 = [
+ 
+        {
+            text: 'Button1',
+        },
+        {
+            text: 'Button2',
+        }
+    ];
+    var buttons2 = [
+        {
+            text: 'Cancel',
+            bold: true
+        }
+    ];
+    var groups = [buttons1, buttons2];
+    myApp.actions(groups);
+});
 
 function calHeight(index,flag){
 	var cardContent = $('.js-card-content');
