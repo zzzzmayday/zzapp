@@ -314,12 +314,11 @@ $('.scroll-part').on('scroll',function(){
 });
 $(document).on('click','.js-activity-setting',function(){
 	var buttons1 = [
- 
         {
-            text: 'Button1',
+            text: '显示所有活动',
         },
         {
-            text: 'Button2',
+            text: '只显示评论',
         }
     ];
     var buttons2 = [
@@ -331,6 +330,32 @@ $(document).on('click','.js-activity-setting',function(){
     var groups = [buttons1, buttons2];
     myApp.actions(groups);
 });
+$(document).on('click','.js-add-image',function(){
+	var buttons1 = [
+		{
+			text: '上传附件',
+			label: true
+		},
+        {
+            text: '使用最近一张图片',
+        },
+        {
+            text: '拍照',
+        },
+        {
+            text: '从资料库选择',
+        }
+    ];
+    var buttons2 = [
+        {
+            text: 'Cancel',
+            bold: true
+        }
+    ];
+    var groups = [buttons1, buttons2];
+    myApp.actions(groups);
+});
+
 
 function calHeight(index,flag){
 	var cardContent = $('.js-card-content');
