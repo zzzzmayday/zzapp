@@ -430,6 +430,12 @@ $(document).on('click','.js-card-ellipsis-icon',function(){
     var groups = [buttons1, buttons2];
     myApp.actions(groups);
 });
+$(document).on('touchstart','.actions-modal-button',function(){
+	$(this).addClass('bg-gray');
+});
+$(document).on('touchend','.actions-modal-button',function(){
+	$(this).removeClass('bg-gray');
+});
 
 
 function calHeight(index,flag){

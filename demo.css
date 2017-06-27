@@ -547,6 +547,9 @@ color: #ddd;
 	margin-right: 13px;
 	vertical-align: text-bottom;
 }
+.bg-gray{
+	background: #e3e4e6;
+}
 
 /*list*/
 .smart-select-page .navbar{
