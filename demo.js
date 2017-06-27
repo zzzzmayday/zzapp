@@ -355,6 +355,81 @@ $(document).on('click','.js-add-image',function(){
     var groups = [buttons1, buttons2];
     myApp.actions(groups);
 });
+$(document).on('click','.js-add-comment',function(){
+	var buttons1 = [
+		{
+			text: '<img class="add-member-icon add-comment-icon" src="./image/images/add-member.png"></img>成员',
+			color: 'black',
+			bold: true
+		},
+        {
+            text: '<img class="add-tag-icon add-comment-icon" src="./image/images/add-tag.png"></img>标签',
+			color: 'black',
+			bold: true
+        },
+        {
+            text: '<img class="add-time-icon add-comment-icon" src="./image/images/add-time.png"></img>到期日',
+			color: 'black',
+			bold: true
+        },
+        {
+            text: '<img class="add-attachment-icon add-comment-icon" src="./image/images/add-attachment.png"></img>附件',
+			color: 'black',
+			bold: true
+        },
+        {
+            text: '<img class="add-list-icon add-comment-icon" src="./image/images/add-list.png"></img>清单',
+			color: 'black',
+			bold: true
+        }
+    ];
+    var buttons2 = [
+        {
+            text: '<img class="add-cancel-icon add-comment-icon" src="./image/images/add-cancel.png"></img>Cancel',
+			color: 'red',
+			bold: true
+        }
+    ];
+    var groups = [buttons1, buttons2];
+    myApp.actions(groups);
+    $('.actions-modal').addClass('add-comment-action');
+});
+$(document).on('click','.js-card-ellipsis-icon',function(){
+	var cardName = $('.card-title').text();
+	var buttons1 = [
+		{
+			text: cardName,
+			label: true
+		},
+        {
+            text: '移动卡片...',
+        },
+        {
+            text: '复制卡片',
+        },
+        {
+            text: '复制链接',
+        },
+        {
+            text: '取消订阅',
+        },
+        {
+            text: '归档卡片',
+        },
+        {
+            text: '删除卡片',
+            color: 'red'
+        }
+    ];
+    var buttons2 = [
+        {
+            text: 'Cancel',
+            bold: true
+        }
+    ];
+    var groups = [buttons1, buttons2];
+    myApp.actions(groups);
+});
 
 
 function calHeight(index,flag){

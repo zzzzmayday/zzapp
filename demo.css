@@ -525,6 +525,29 @@ color: #ddd;
 	width: 24px;
 	vertical-align: text-bottom;
 }
+.add-comment-action .actions-modal-group{
+	margin: 0;
+	border-radius: 0;
+}
+.add-comment-action .actions-modal-group .actions-modal-button{
+	position: initial;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 13px;
+	text-align: left;
+	font-size: 16px;
+	background: #fff;
+	border-radius: 0;
+}
+.add-comment-action .actions-modal-group .color-red{
+	color: #de5e57;
+}
+.add-comment-icon{
+	width: 16px;
+	margin-right: 13px;
+	vertical-align: text-top;
+}
+
 /*list*/
 .smart-select-page .navbar{
 	background-color: #e8e7e7;
