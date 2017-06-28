@@ -315,10 +315,10 @@ $('.scroll-part').on('scroll',function(){
 $(document).on('click','.js-activity-setting',function(){
 	var buttons1 = [
         {
-            text: '显示所有活动',
+            text: 'Show All Activity',
         },
         {
-            text: '只显示评论',
+            text: 'Show Only Comments',
         }
     ];
     var buttons2 = [
@@ -358,27 +358,27 @@ $(document).on('click','.js-add-image',function(){
 $(document).on('click','.js-add-comment',function(){
 	var buttons1 = [
 		{
-			text: '<img class="add-member-icon add-comment-icon" src="./image/images/add-member.png"></img>成员',
+			text: '<img class="add-member-icon add-comment-icon" src="./image/images/add-member.png"></img>Members',
 			color: 'black',
 			bold: true
 		},
         {
-            text: '<img class="add-tag-icon add-comment-icon" src="./image/images/add-tag.png"></img>标签',
+            text: '<img class="add-tag-icon add-comment-icon" src="./image/images/add-tag.png"></img>Labels',
 			color: 'black',
 			bold: true
         },
         {
-            text: '<img class="add-time-icon add-comment-icon" src="./image/images/add-time.png"></img>到期日',
+            text: '<img class="add-time-icon add-comment-icon" src="./image/images/add-time.png"></img>Due Date',
 			color: 'black',
 			bold: true
         },
         {
-            text: '<img class="add-attachment-icon add-comment-icon" src="./image/images/add-attachment.png"></img>附件',
+            text: '<img class="add-attachment-icon add-comment-icon" src="./image/images/add-attachment.png"></img>Attachment',
 			color: 'black',
 			bold: true
         },
         {
-            text: '<img class="add-list-icon add-comment-icon" src="./image/images/add-list.png"></img>清单',
+            text: '<img class="add-list-icon add-comment-icon" src="./image/images/add-list.png"></img>Checklist',
 			color: 'black',
 			bold: true
         }
@@ -402,22 +402,25 @@ $(document).on('click','.js-card-ellipsis-icon',function(){
 			label: true
 		},
         {
-            text: '移动卡片...',
+            text: 'Move Card...',
         },
         {
-            text: '复制卡片',
+            text: 'Duplicate Card',
         },
         {
-            text: '复制链接',
+            text: 'Copy Link',
         },
         {
-            text: '取消订阅',
+            text: 'Subsribe',
         },
         {
-            text: '归档卡片',
+            text: 'Archive Card',
         },
         {
-            text: '删除卡片',
+            text: 'Send Feedback...',
+        },
+        {
+            text: 'Delete Card',
             color: 'red'
         }
     ];
