@@ -9,8 +9,14 @@
 input {      
      -webkit-user-select:auto; /*webkit浏览器*/     
 } 
+.modal-overlay{
+	z-index: 1300;
+}
 .page-index{
 	background:#2474ab;
+}
+.view,.views{
+	z-index: auto;
 }
 /*navbar*/
 .navbar{
@@ -195,17 +201,19 @@ color: #ddd;
 /*popover*/
 .popover{
 	width: 90%;
-	background-color: #f6f7f9;
+	background-color: #f0eff5;
 }
 .popover-inner{
 	border-radius: 15px;
 }
 .popover-head{
+	background: #f6f6f6;
 	height: 50px;
 	line-height: 50px;
 	text-align: center;
 	margin-bottom: 20px;
 	font-weight: bold;
+	border-bottom: 1px solid #acacae;
 }
 .list-block .item-link.list-button{
 	text-align: left;
