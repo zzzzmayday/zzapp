@@ -218,6 +218,20 @@ color: #ddd;
 .list-block .item-link.list-button{
 	text-align: left;
 }
+.popover-body .item-title{
+	color: #007aff;
+}
+.popover .popover-body ul{
+	margin-bottom: 10px;
+	background: #fff;
+	border-bottom: 1px solid #c8c7cc;
+}
+.popover .popover-body ul:last-child{
+	margin-bottom: 20px;
+}
+.popover .list-block:last-child ul{
+	border-radius: 0;
+}
 
 /*panel*/
 .panel{

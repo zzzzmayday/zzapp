@@ -453,123 +453,36 @@ function calHeight(index,flag){
 	swiperContent[index].style.height = swiperContent.find('.js-card-content')[index].offsetHeight+swiperContent.find('.card-header')[index].offsetHeight+swiperContent.find('.card-footer')[index].offsetHeight+'px';
 }
 
-var drag = {
-	bindDragEvent: function (isF) {
-            var father = $("card-content-inner");//父容器
-            var btns = father.find("public-drag-btn");//事件源对象
-            var items = father.find("card");//拖拽目标
-
-            for (var i = 0; i < items.length; i++) {
-                items[i].index = i;//给拖拽目标加index属性
-                if (isF) {//是否是第一次绑定
-                	drag.bindTouchEvent(btns[i], items[i], items);
-                }else{
-                    if (items[i].getAttribute("data-isBind") == "yes") {//如果是需要绑定的再绑定事件
-                    	items[i].removeAttribute("data-isBind");
-                    	drag.bindTouchEvent(btns[i], items[i], items);
-                    }
-                }
-            }
-
-            /*
-            * 1.循环绑定事件
-            * 2.用分支绑定是为了避免重复绑定事件 造成重复调用的BUG
-            * */
-        },
-        bindTouchEvent: function (ele, target, items) {
-            var dragObj = target;//拖拽目标
-            var btn = ele;//事件源对象
-            var canMove = true;
-            var startY, direction;
-
-            btn.addEventListener("touchstart", touchStart, false);
-
-            function touchStart(event) {
-            	dragObj.className = "item draging";
-                /*
-                 * .draging
-                * 当手指触摸时给个 拖拽中的效果
-                * transform:scale(0.8,0.8);
-                * z-index: 999;
-                * transition: all 1s;
-                * */
-
-                startY = event.touches[0].clientY;//记录初次触摸位置 用以判断移动方向
-                dragObj.addEventListener("touchmove", touchMove, false);//给拖拽目标绑定touchmove 因为要操作拖拽目标
-            }
-
-
-            function touchMove(event) {
-                var i = dragObj.index;//用到index
-                if (event.touches[0].clientY < startY && canMove) {
-                    /*移动<开始  就是向上移动
-                     *canMove是在完成效果后禁止再向下移动
-                     * 也就是说用户移动一次就确定方向了 禁止先 拖到上方，在拖到下方
-                     * */
-                    if (i != 0) {//如果不是第一个项
-                        direction = 1;//有效1 up
-                        dragObj.className = "item draging up";
-                        /*
-                        * .up
-                        *  transform: translate3d(20px,-100%,10px)
-                        *  给一个自身向上移动百分百
-                        * */
-                        items[i - 1].className = "item draging down";
-                        /*当前被拖拽目标的上一个项 给一个向下移动的动效
-                        * .down
-                        *  transform: translate3d(20px,100%,10px)
-                        * */
-                        canMove = false;
-                    }
-                }
-                else if (event.touches[0].clientY > startY && canMove) {
-                    direction = 0;//向下移动
-                    dragObj.className = "item draging down";
-                    items[i + 1].className = "item draging up";
-                    canMove = false;
-                }
-                dragObj.addEventListener("touchend", touchEnd, false);
-            }
-
-            function touchEnd() {
-            	var father = document.getElementById("public_theme_list");
-                var clone = null;//克隆空对象
-                var i = dragObj.index;
-                var newItems;
-                dragObj.className = "item";//清除拖拽目标移动效果
-                clone = dragObj.cloneNode(true);//克隆移动目标
-                if (direction) {
-                    //向上
-                    items[i - 1].className = "item";//当前被拖拽目标的上一个项 给一个向下移动的动效
-                    clone.index = i - 1;//给克隆对象index 为当前上一个项index
-                    items[i - 1].index = i + 1;//拖拽对象前上一个项index+1
-
-                    clone.setAttribute("data-isBind","yes");//dom 不能克隆事件 所以在递归的时候要给克隆绑定事件
-
-                    father.insertBefore(clone,items[i - 1]);
-                    /*将克隆对象插入当前拖拽目标 前一项之前*/
-                    newItems = father.getElementsByClassName("item");
-                    /*因为新增了项 所以获取新项数组*/
-                    father.removeChild(newItems[i + 1]);
-                    /*删除当前拖拽项*/
-                }
-                else {
-                	items[i + 1].className = "item";
-                	clone.index = i + 1;
-                	clone.setAttribute("data-index", i + 1);
-                	items[i + 1].index = i;
-                	items[i + 1].setAttribute("data-index", i);
-
-                	clone.setAttribute("data-isBind","yes");
-
-                	father.insertBefore(clone, items[i + 2]);
-                	newItems = father.getElementsByClassName("item");
-                	father.removeChild(newItems[i]);
-                }
-
-                drag.bindDragEvent(false);//递归调用
-            }
-        }
-    };
-
-    drag.bindDragEvent(true);
+// var block = $(".card");
+  var oW,oH;
+  // 绑定touchstart事件
+  $(".card").on("touchstart", function(e) {
+  	var block = $(this);
+   console.log(e);
+   var touches = e.touches[0];
+   oW = touches.clientX - block.offsetLeft;
+   oH = touches.clientY - block.offsetTop;
+   //阻止页面的滑动默认事件
+   // document.on("touchmove",defaultEvent,false);
+  },false)
+ 
+  $(".card").on("touchmove", function(e) {
+  	var block = $(this);
+   var touches = e.touches[0];
+   var oLeft = touches.clientX - oW;
+   var oTop = touches.clientY - oH;
+   if(oLeft < 0) {
+    oLeft = 0;
+   }else if(oLeft > document.documentElement.clientWidth - block.offsetWidth) {
+    oLeft = (document.documentElement.clientWidth - block.offsetWidth);
+   }
+   block.style.left = oLeft + "px";
+   block.style.top = oTop + "px";
+  },false);
+   
+  $(".card").on("touchend",function() {
+   // document.off("touchmove",defaultEvent,false);
+  },false);
+  function defaultEvent(e) {
+   e.preventDefault();
+  }
