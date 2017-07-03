@@ -381,8 +381,8 @@ color: #ddd;
 	margin-left: 12%;
 }
 .blue-cancel-icon{
-	width: 20px;
-	margin: 8px 0 0 2%;
+	width: 16px;
+	margin: 13px 0 0 3%;
 }
 .popup-alert .button{
 	border: 1px solid #2474ab;
@@ -584,6 +584,34 @@ color: #ddd;
 }
 .add-comment-action .actions-modal-group .bg-gray{
 	background: #e3e4e6;
+}
+
+/*board-setting-popup*/
+.popup-setting{
+	background: #f9f9f9;
+}
+.board-setting-head{
+	text-align: center;
+	height: 45px;
+	line-height: 45px;
+	background: #fff;
+	border-bottom: 1px solid #c8c7cc;
+	font-size: 18px;
+	font-weight: bold;
+}
+.selectd-bgcolor{
+	display: inline-block;
+	background: #2474ab;
+	height: 30px;
+	width: 30px;
+	vertical-align: middle;
+	border-radius: 5px;
+	margin-right: 5px;
+}
+.explain{
+	font-size: 14px;
+	color: #878a8f;
+	margin-left: 15px;
 }
 
 /*list*/

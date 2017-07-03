@@ -439,6 +439,14 @@ $(document).on('touchstart','.actions-modal-button',function(){
 $(document).on('touchend','.actions-modal-button',function(){
 	$(this).removeClass('bg-gray');
 });
+$(document).on('click','.subscribe-radio',function(){
+	var radio = $(this).find('input[name="my-radio"]');
+	if(radio.siblings().hasClass('item-inner')){
+		radio.siblings().removeClass('item-inner');
+	} else {
+		radio.siblings().addClass('item-inner');
+	}
+});
 
 
 function calHeight(index,flag){

@@ -179,9 +179,9 @@
 					<!-- popup-setting begin-->
 					<div class="popup popup-setting">
 						<div class="popup-content">
-							<div class="popup-head">
+							<div class="popup-head board-setting-head">
 								<img class="js-popup-cancel blue-cancel-icon fl" src="./image/blue-cancel.png"></img>
-								setting
+								Board Settings
 							</div>
 						</div>
 						<div class="popup-body">
@@ -202,15 +202,129 @@
 											<div class="item-inner">
 												<div class="item-title label">Team</div>
 												<div class="item-input">
-													<input type="text">
+													<input type="text" value="(none)" disabled style="text-align: right;">
 												</div>
 											</div>
 										</div>
 									</li>
 									<li>
+										<a href="#" class="item-link smart-select">
+											<!-- <select name="addingMembers">
+												<option value="apple" selected>Admin</option>
+												<option value="pineapple">Members</option>
+											</select> -->
+											<div class="item-content">
+												<div class="item-inner">
+													<div class="item-title">
+														<div class="selectd-bgcolor"></div>Background
+													</div>
+													<div class="item-after"></div>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
 										<div class="item-content">
 											<div class="item-inner">
-												<div class="item-title label">Switch</div>
+												<div class="item-title label">Show Card Covers</div>
+												<div class="item-input">
+													<label class="label-switch fr">
+														<input type="checkbox">
+														<div class="checkbox"></div>
+													</label>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#" class="item-link smart-select">
+											<!-- <select name="addingMembers">
+												<option value="apple" selected>Admin</option>
+												<option value="pineapple">Members</option>
+											</select> -->
+											<div class="item-content">
+												<div class="item-inner">
+													<div class="item-title">
+														Edit Labels
+													</div>
+													<div class="item-after"></div>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<label class="subscribe-radio label-radio item-content">
+											<!-- Checked by default -->
+											<input type="radio" name="my-radio" value="subscribe">
+											<div class="">
+											<div class="item-title">Subscribe</div>
+											</div>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<div class="list-block">
+								<ul>
+									<li>
+										<a href="#" class="item-link smart-select">
+											<select name="Visibility">
+												<option value="apple" selected>Private</option>
+												<option value="pineapple">Public</option>
+											</select>
+											<div class="item-content">
+												<div class="item-inner">
+													<div class="item-title">Visibility</div>
+													<div class="item-after">Private</div>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="item-link smart-select">
+											<select name="commenting">
+												<option value="apple" selected>Disabled</option>
+												<option value="pineapple">Members</option>
+											</select>
+											<div class="item-content">
+												<div class="item-inner">
+													<div class="item-title">Commenting</div>
+													<div class="item-after">Members</div>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title label">Voting</div>
+												<div class="item-input">
+													<input type="text" value="Members" disabled style="text-align: right;">
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#" class="item-link smart-select">
+											<select name="addingMembers">
+												<option value="apple" selected>Admin</option>
+												<option value="pineapple">Members</option>
+											</select>
+											<div class="item-content">
+												<div class="item-inner">
+													<div class="item-title">Adding Members</div>
+													<div class="item-after">Members</div>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="list-block">
+								<ul>
+									<li>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title label">Self Join</div>
 												<div class="item-input">
 													<label class="label-switch fr">
 														<input type="checkbox">
@@ -221,24 +335,9 @@
 										</div>
 									</li>
 								</ul>
-							</div>
-							<div class="list-block">
-								<ul>
-									<li>
-										<a href="#" class="item-link smart-select">
-											<select name="范围">
-												<option value="apple" selected>private</option>
-												<option value="pineapple">common</option>
-											</select>
-											<div class="item-content">
-												<div class="item-inner">
-													<div class="item-title">可见范围</div>
-													<div class="item-after">private</div>
-												</div>
-											</div>
-										</a>
-									</li>
-								</ul>
+								<div class="explain">
+									This setting only applied to boards in a team.
+								</div>
 							</div>
 						</div>
 					</div>
@@ -347,7 +446,7 @@
 						<li>
 							<a href="#" class="item-link item-content">
 								<div class="item-inner">
-									<div class="item-title">ove All Cards in This List</div>
+									<div class="item-title">Move All Cards in This List</div>
 									<div class="item-after"></div>
 								</div>
 							</a>
