@@ -121,7 +121,7 @@
 									</div>
 									<div class="add-member-button">Add Members</div>
 								</div>
-								<div class="power-up-block">
+								<div class="power-up-block js-power-up">
 									<div class="power-up-title panel-title">
 										<img class="rocket-icon" src="./image/images/rocket.png"></img>
 										Power-Ups
@@ -216,7 +216,7 @@
 											<div class="item-content">
 												<div class="item-inner">
 													<div class="item-title">
-														<div class="selectd-bgcolor"></div>Background
+														<div class="selected-bgcolor"></div>Background
 													</div>
 													<div class="item-after"></div>
 												</div>
@@ -256,7 +256,6 @@
 										<label class="subscribe-radio label-radio item-content">
 											<!-- Checked by default -->
 											<input type="radio" name="my-radio" value="subscribe">
-											<div class="">
 											<div class="item-title">Subscribe</div>
 											</div>
 										</label>
@@ -342,6 +341,65 @@
 						</div>
 					</div>
 					<!-- popup-setting end-->
+
+					<!-- popup-power-up begin-->
+					<div class="popup popup-power-up">
+						<div class="popup-content">
+							<div class="popup-head power-up-head">
+								<img class="js-popup-cancel blue-cancel-icon fl" src="./image/blue-cancel.png"></img>
+								Power-Ups
+							</div>
+						</div>
+						<div class="popup-body">
+							<div class="list-block" style="margin-top: 0">
+								<ul>
+									<li>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title label">
+													<img src="./image/calendar.png" class="power-up-img" />
+													<div class="inline-block" style="width: 82%">
+														Calendar
+														<div class="calendar-state">
+															See your work over time!The Trello calendar view displays all cards with due dates by month.
+														</div>
+													</div>
+												</div>
+												<div class="item-input">
+													<label class="label-switch fr">
+														<input type="checkbox">
+														<div class="checkbox"></div>
+													</label>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title label">
+													<img src="./image/voting.png" class="power-up-img" />
+													<div class="inline-block" style="width: 82%">
+														Voting
+														<div class="voting-state">
+															Give power to the people,and allow users to vote on cards.
+														</div>
+													</div>
+												</div>
+												<div class="item-input">
+													<label class="label-switch fr">
+														<input type="checkbox">
+														<div class="checkbox"></div>
+													</label>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- popup-power-up end-->
 
 					<!-- popup-card-content begin-->
 					<div class="popup popup-card-content">

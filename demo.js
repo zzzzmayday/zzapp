@@ -279,6 +279,10 @@ $('.js-setting').on('click',function(){
 	myApp.popup('.popup-setting');
 	$('.popup-overlay').hide();
 });
+$('.js-power-up').on('click',function(){
+	myApp.popup('.popup-power-up');
+	$('.popup-overlay').hide();
+});
 $('.panel-body').on('scroll',function(){
 	var top = $(this).scrollTop();
 	var memberTitle = $('.member-title');
@@ -333,17 +337,17 @@ $(document).on('click','.js-activity-setting',function(){
 $(document).on('click','.js-add-image',function(){
 	var buttons1 = [
 	{
-		text: '上传附件',
+		text: 'Upload Attachment',
 		label: true
 	},
 	{
-		text: '使用最近一张图片',
+		text: 'Use Last Photo',
 	},
 	{
-		text: '拍照',
+		text: 'Take Photo',
 	},
 	{
-		text: '从资料库选择',
+		text: 'Choose From Library',
 	}
 	];
 	var buttons2 = [
