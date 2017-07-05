@@ -170,7 +170,7 @@ $(document).on('click','.js-add',function(){
 	var i = $(this).parents('.swiper-slide').index();
 	$(this).hide();
 	$(this).siblings(".add-items").show();
-	$(this).siblings(".add-items").find(".add-item").val('');
+	$(this).siblings(".add-items").find(".add-item").val('').focus();
 	flag = false;
 	calHeight(i,flag);
 });
@@ -451,6 +451,20 @@ $(document).on('click','.subscribe-radio',function(){
 		radio.siblings().addClass('item-inner');
 	}
 });
+$(document).on('click','.js-list-name',function(){
+	var listName = $(this).text();
+	$(this).parents('.card-header').css('padding','5px');
+	$(this).hide();
+	$(this).siblings('.more').hide();
+	$(this).siblings('.list-name-input').show().val(listName).focus();
+});
+$('.list-name-input').blur(function(){
+	var listName = $(this).val();
+	$(this).hide();
+	$(this).parents('.card-header').css('padding','10px');
+	$(this).siblings('.js-list-name,.more').show();
+	$(this).siblings('.js-list-name').text(listName);
+});
 
 
 function calHeight(index,flag){
@@ -465,36 +479,36 @@ function calHeight(index,flag){
 	swiperContent[index].style.height = swiperContent.find('.js-card-content')[index].offsetHeight+swiperContent.find('.card-header')[index].offsetHeight+swiperContent.find('.card-footer')[index].offsetHeight+'px';
 }
 
-// var block = $(".card");
-  var oW,oH;
-  // 绑定touchstart事件
-  $(".card").on("touchstart", function(e) {
-  	var block = $(this);
-   console.log(e);
-   var touches = e.touches[0];
-   oW = touches.clientX - block.offsetLeft;
-   oH = touches.clientY - block.offsetTop;
-   //阻止页面的滑动默认事件
-   // document.on("touchmove",defaultEvent,false);
-  },false)
+// // var block = $(".card");
+//   var oW,oH;
+//   // 绑定touchstart事件
+//   $(".card").on("touchstart", function(e) {
+//   	var block = $(this);
+//    console.log(e);
+//    var touches = e.touches[0];
+//    oW = touches.clientX - block.offsetLeft;
+//    oH = touches.clientY - block.offsetTop;
+//    //阻止页面的滑动默认事件
+//    // document.on("touchmove",defaultEvent,false);
+//   },false)
  
-  $(".card").on("touchmove", function(e) {
-  	var block = $(this);
-   var touches = e.touches[0];
-   var oLeft = touches.clientX - oW;
-   var oTop = touches.clientY - oH;
-   if(oLeft < 0) {
-    oLeft = 0;
-   }else if(oLeft > document.documentElement.clientWidth - block.offsetWidth) {
-    oLeft = (document.documentElement.clientWidth - block.offsetWidth);
-   }
-   block.style.left = oLeft + "px";
-   block.style.top = oTop + "px";
-  },false);
+//   $(".card").on("touchmove", function(e) {
+//   	var block = $(this);
+//    var touches = e.touches[0];
+//    var oLeft = touches.clientX - oW;
+//    var oTop = touches.clientY - oH;
+//    if(oLeft < 0) {
+//     oLeft = 0;
+//    }else if(oLeft > document.documentElement.clientWidth - block.offsetWidth) {
+//     oLeft = (document.documentElement.clientWidth - block.offsetWidth);
+//    }
+//    block.style.left = oLeft + "px";
+//    block.style.top = oTop + "px";
+//   },false);
    
-  $(".card").on("touchend",function() {
-   // document.off("touchmove",defaultEvent,false);
-  },false);
-  function defaultEvent(e) {
-   e.preventDefault();
-  }
+//   $(".card").on("touchend",function() {
+//    // document.off("touchmove",defaultEvent,false);
+//   },false);
+//   function defaultEvent(e) {
+//    e.preventDefault();
+//   }
