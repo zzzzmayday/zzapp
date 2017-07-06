@@ -69,7 +69,7 @@ var alertTabData1 = {
 		time:'yesterday at 10:00'
 	},
 	{
-		img:'./image/bob2.png',
+		img:'./image/bob3.jpg',
 		name:'Cc',
 		cardName:'ccccccccccccccccccccccccccccccccccccccccccccccccc',
 		board:'index',
@@ -77,20 +77,12 @@ var alertTabData1 = {
 		time:'2 days ago at 00:00'
 	},
 	{
-		img:'./image/bob2.png',
+		img:'./image/bob4.jpg',
 		name:'Dd',
 		cardName:'ddddddddddddddddddddddddddddddddddd',
 		board:'index',
 		content:'Display the alert information',
 		time:'3 days ago at 03:00'
-	},
-	{
-		img:'./image/bob2.png',
-		name:'Ee',
-		cardName:'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
-		board:'index',
-		content:'Display the alert information',
-		time:'4 days ago at 07:00'
 	}
 	]
 };
@@ -125,13 +117,37 @@ var alertTabData3 = {
 		time:'yesterday at 10:00'
 	},
 	{
-		img:'./image/bob2.png',
+		img:'./image/bob3.jpg',
 		name:'Cc',
 		cardName:'ccccccccccccccccccccccccccccccccccccccccccccccccc',
 		board:'index',
 		content:'Display the alert information',
 		time:'2 days ago at 00:00'
 	}
+	]
+}
+var members = {
+	member:[
+	{
+		name:'Aa',
+		img:'./image/bob.jpg',
+		id:1
+	},
+	{
+		name:'Bb',
+		img:'./image/bob2.png',
+		id:2
+	},
+	{
+		name:'Cc',
+		img:'./image/bob3.jpg',
+		id:3
+	},
+	{
+		name:'Dd',
+		img:'./image/bob4.jpg',
+		id:4
+	},
 	]
 }
 var template = $('#newList').html();
@@ -187,7 +203,9 @@ $(document).on('click','.js-confirm',function(){
 	if(addContent != ""){
 		$(this).siblings(".item-input").find(".add-item").val('');
 		$(this).parents('.card-footer').siblings('.js-card-content').find('.card-content-inner').append('<div class="card">'+
-			'<div class="card-content">'+addContent+'</div>'+
+			'<div class="card-content">'+
+			'<div class="content-card-title">'+addContent+'</div>'+
+			'</div>'+
 			'</div>');
 		calHeight(i,flag);
 	} else {
@@ -272,8 +290,21 @@ $('.js-star').on('click',function(){
 	}
 });
 $(document).on('click','.js-card-content .card',function(){
+	var cardTitle = $(this).find('.content-card-title').text();
+	var cardPlace = $(this).parents('.card-content').siblings('.card-header').find('.list-name').text();
+	var cardMemberArray = [];
+	var headImg = $(this).find('.head-img');
 	myApp.popup('.popup-card-content');
 	$('.popup-overlay').hide();
+	$('.card-member-img-list').html('');
+	if(headImg){
+		$('.card-member').show();
+		for(var i=headImg.length-1;i>=0;i--){
+			$('.card-member-img-list').append('<img class="member-head-img" src='+headImg[i].src+'>');
+		}
+	}
+	$('.card-title').text(cardTitle);
+	$('.card-place').text('In List '+cardPlace);
 })
 $('.js-setting').on('click',function(){
 	myApp.popup('.popup-setting');
@@ -304,7 +335,7 @@ $('.scroll-part').on('scroll',function(){
 	var top = $(this).scrollTop();
 	var cardTitle = $('.card-title').text();
 	var headerHeight = $('.popup-header')[0].offsetHeight;
-	var otherBlockHeight = $('.popup-header')[0].offsetHeight + $('.card-description')[0].offsetHeight; 
+	var otherBlockHeight = $('.popup-header')[0].offsetHeight + $('.card-description')[0].offsetHeight + $('.card-member')[0].offsetHeight+10; 
 	if(top >= headerHeight){
 		$('.card-name').text(cardTitle);
 	} else {
@@ -364,7 +395,10 @@ $(document).on('click','.js-add-comment',function(){
 	{
 		text: '<img class="add-member-icon add-comment-icon" src="./image/images/add-member.png"></img>Members',
 		color: 'black',
-		bold: true
+		bold: true,
+		onClick:function (){
+			addMember();
+		}
 	},
 	{
 		text: '<img class="add-tag-icon add-comment-icon" src="./image/images/add-tag.png"></img>Labels',
@@ -465,6 +499,12 @@ $('.list-name-input').blur(function(){
 	$(this).siblings('.js-list-name,.more').show();
 	$(this).siblings('.js-list-name').text(listName);
 });
+$(document).on('click','.js-card-member',function(){
+	addMember();
+});
+$('.js-popup-member-cancel').on('click',function(){
+	myApp.closeModal('.popup-card-add-member');
+});
 
 
 function calHeight(index,flag){
@@ -479,6 +519,15 @@ function calHeight(index,flag){
 	swiperContent[index].style.height = swiperContent.find('.js-card-content')[index].offsetHeight+swiperContent.find('.card-header')[index].offsetHeight+swiperContent.find('.card-footer')[index].offsetHeight+'px';
 }
 
+function addMember(){
+	var addMemberTemplate = $('#addMemberTemplate').html();
+	var compiledMemberTemplate = Template7.compile(addMemberTemplate);
+	var htmlStrMember = compiledMemberTemplate(members);
+	myApp.popup('.popup-card-add-member');
+	$('.popup-overlay').hide();
+	$('.add-member-list').html(htmlStrMember);
+}
+
 // // var block = $(".card");
 //   var oW,oH;
 //   // 绑定touchstart事件
@@ -491,7 +540,7 @@ function calHeight(index,flag){
 //    //阻止页面的滑动默认事件
 //    // document.on("touchmove",defaultEvent,false);
 //   },false)
- 
+
 //   $(".card").on("touchmove", function(e) {
 //   	var block = $(this);
 //    var touches = e.touches[0];
@@ -505,7 +554,7 @@ function calHeight(index,flag){
 //    block.style.left = oLeft + "px";
 //    block.style.top = oTop + "px";
 //   },false);
-   
+
 //   $(".card").on("touchend",function() {
 //    // document.off("touchmove",defaultEvent,false);
 //   },false);

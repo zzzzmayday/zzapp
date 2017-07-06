@@ -156,21 +156,9 @@
 								</div>
 							</div>
 							<div class="tabs">
-								<div id="tab1" class="tab active">
-
-								</div>
-								<div id="tab2" class="tab">
-									<div class="content-block">
-										<p>This is tab 2 content</p>
-										...
-									</div>
-								</div>
-								<div id="tab3" class="tab">
-									<div class="content-block">
-										<p>This is tab 3 content</p>
-										...
-									</div>
-								</div>
+								<div id="tab1" class="tab active"></div>
+								<div id="tab2" class="tab"></div>
+								<div id="tab3" class="tab"></div>
 							</div>
 						</div>
 					</div>
@@ -411,15 +399,15 @@
 						</div>
 						<div class="scroll-part">
 							<div class="popup-header">
-								<div class="card-title">
-									blahblah blahblah blahblah blahblah blahblah
-								</div>
-								<div class="card-place">
-									In List backlog
-								</div>
+								<div class="card-title"></div>
+								<div class="card-place"></div>
 							</div>
 							<div class="card-description">
-								<input class="card-description-input" type="text" placeholder="click to add description"></input>
+								<input class="card-description-input" type="text" placeholder="Tap to add a description"></input>
+							</div>
+							<div class="card-member js-card-member">
+								<img class="member-icon" src="./image/images/member.png"></img>
+								<div class="card-member-img-list"></div>
 							</div>
 							<div class="card-activity-title">
 								<img class="card-activity-list-icon" src="./image/images/activity-list.png"></img>
@@ -438,6 +426,18 @@
 					</div>
 				</div>
 				<!-- popup-card-content end -->
+
+				<!-- popup-card-add-member begin-->
+				<div class="popup popup-card-add-member">
+					<div class="popup-content">
+						<div class="popup-member-header">
+							<img class="js-popup-member-cancel white-cancel fl" src="./image/cancel.png"></img>
+							Members
+						</div>
+						<div class="add-member-list"></div>
+					</div>
+				</div>
+				<!-- popup-card-add-member end -->
 
 			</div>	
 		</div>
@@ -535,7 +535,9 @@
 							{{#each this.items}}
 							<div class="card">
 								<div class="card-content">
-									{{content}}
+									<div class="content-card-title">
+										{{content}}
+									</div>
 									<div class="card-information">
 										{{#if list}}
 										<img class="list-icon" src="./image/list.png">
@@ -643,6 +645,15 @@
 				</div>
 			</div>
 			{{/each}}
+		</script>
+		<script type="text/template7" id="addMemberTemplate">
+		{{#each member}}
+		<div class="member-info">
+			<img class="member-img" src="{{img}}"></img>
+			{{name}}
+			<input type="hidden" value="{{id}}"></input>
+		</div>
+		{{/each}}
 		</script>
 		<script type="text/javascript" src="./demo.js"></script>
 	</body>
