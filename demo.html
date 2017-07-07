@@ -547,7 +547,10 @@
 										{{/if}}
 										{{#if img}}
 										{{#each img}}
-										<img class="head-img fr" src={{this}}>
+										<span>
+										<img class="head-img fr" src={{this.imgSrc}} />
+										<input class="img-id" type="hidden" value="{{this.id}}"></input>
+										</span>
 										{{/each}}
 										{{/if}}
 									</div>
@@ -651,7 +654,7 @@
 		<div class="member-info">
 			<img class="member-img" src="{{img}}"></img>
 			{{name}}
-			<input type="hidden" value="{{id}}"></input>
+			<input class="member-id" type="hidden" value="{{id}}"></input>
 		</div>
 		{{/each}}
 		</script>

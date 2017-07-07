@@ -12,7 +12,10 @@ var data = {
 			content:'blahblah',
 			list:true,
 			talk:1,
-			img:['./image/bob.jpg','./image/bob2.png']
+			img:[
+			{imgSrc:'./image/bob.jpg',id:1},
+			{imgSrc:'./image/bob2.png',id:2}
+			]
 		},
 		{
 			content:'blahblah',
@@ -21,7 +24,7 @@ var data = {
 		},
 		{
 			content:'blahblah',
-			img:['./image/bob2.png']
+			img:[{imgSrc:'./image/bob2.png',id:2}]
 		},
 		{
 			content:'blahblah',
@@ -292,15 +295,15 @@ $('.js-star').on('click',function(){
 $(document).on('click','.js-card-content .card',function(){
 	var cardTitle = $(this).find('.content-card-title').text();
 	var cardPlace = $(this).parents('.card-content').siblings('.card-header').find('.list-name').text();
-	var cardMemberArray = [];
 	var headImg = $(this).find('.head-img');
+	var memberId = $(this).find('.img-id');
 	myApp.popup('.popup-card-content');
 	$('.popup-overlay').hide();
 	$('.card-member-img-list').html('');
 	if(headImg){
 		$('.card-member').show();
 		for(var i=headImg.length-1;i>=0;i--){
-			$('.card-member-img-list').append('<img class="member-head-img" src='+headImg[i].src+'>');
+			$('.card-member-img-list').append('<span><img class="member-head-img" src='+headImg[i].src+'><input class="card-member-id" type="hidden" value='+memberId[i].value+'></span>');
 		}
 	}
 	$('.card-title').text(cardTitle);
@@ -503,9 +506,12 @@ $(document).on('click','.js-card-member',function(){
 	addMember();
 });
 $('.js-popup-member-cancel').on('click',function(){
+	// var choosedId = $
 	myApp.closeModal('.popup-card-add-member');
 });
-
+$(document).on('click','.member-info',function(){
+	$(this).toggleClass('member-info-background');
+});
 
 function calHeight(index,flag){
 	var cardContent = $('.js-card-content');
@@ -520,12 +526,21 @@ function calHeight(index,flag){
 }
 
 function addMember(){
+	var cardMemberID = $('.card-member-id');
 	var addMemberTemplate = $('#addMemberTemplate').html();
 	var compiledMemberTemplate = Template7.compile(addMemberTemplate);
 	var htmlStrMember = compiledMemberTemplate(members);
 	myApp.popup('.popup-card-add-member');
 	$('.popup-overlay').hide();
 	$('.add-member-list').html(htmlStrMember);
+	var memberId = $('.member-id');
+	memberId.each(function(){
+		for(var j=0;j<cardMemberID.length;j++){
+			if($(this).val() == cardMemberID[j].value){
+				$(this).parent('.member-info').addClass('member-info-background');
+			}
+		}
+	});
 }
 
 // // var block = $(".card");
