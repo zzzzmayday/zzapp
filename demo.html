@@ -391,9 +391,11 @@
 
 				<!-- popup-card-content begin-->
 				<div class="popup popup-card-content">
+					<input class="swiper-index" type="hidden"></input>
+					<input class="card-index" type="hidden"></input>
 					<div class="popup-content">
 						<div class="popup-header-above">
-							<img class="js-popup-cancel white-cancel fl" src="./image/cancel.png"></img>
+							<img class="js-popup-content-cancel white-cancel fl" src="./image/cancel.png"></img>
 							<div class="card-name"></div>
 							<img class="js-card-ellipsis-icon card-ellipsis-icon fr"src="./image/ellipsis.png"></img>
 						</div>
@@ -548,8 +550,8 @@
 										{{#if img}}
 										{{#each img}}
 										<span>
-										<img class="head-img fr" src={{this.imgSrc}} />
-										<input class="img-id" type="hidden" value="{{this.id}}"></input>
+											<img class="head-img fr" src={{this.imgSrc}} />
+											<input class="img-id" type="hidden" value="{{this.id}}"></input>
 										</span>
 										{{/each}}
 										{{/if}}
@@ -650,13 +652,13 @@
 			{{/each}}
 		</script>
 		<script type="text/template7" id="addMemberTemplate">
-		{{#each member}}
-		<div class="member-info">
-			<img class="member-img" src="{{img}}"></img>
-			{{name}}
-			<input class="member-id" type="hidden" value="{{id}}"></input>
-		</div>
-		{{/each}}
+			{{#each member}}
+			<div class="member-info">
+				<img class="member-img" src="{{img}}"></img>
+				{{name}}
+				<input class="member-id" type="hidden" value="{{id}}"></input>
+			</div>
+			{{/each}}
 		</script>
 		<script type="text/javascript" src="./demo.js"></script>
 	</body>

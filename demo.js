@@ -297,14 +297,20 @@ $(document).on('click','.js-card-content .card',function(){
 	var cardPlace = $(this).parents('.card-content').siblings('.card-header').find('.list-name').text();
 	var headImg = $(this).find('.head-img');
 	var memberId = $(this).find('.img-id');
+	var showMemberArray = [];
+	var swiperIndex = $(this).parents('.swiper-slide').index();
+	var cardIndex = $(this).index();
 	myApp.popup('.popup-card-content');
+	$('.swiper-index').val(swiperIndex);
+	$('.card-index').val(cardIndex);
 	$('.popup-overlay').hide();
 	$('.card-member-img-list').html('');
-	if(headImg){
+	if(headImg.length>0){
 		$('.card-member').show();
-		for(var i=headImg.length-1;i>=0;i--){
-			$('.card-member-img-list').append('<span><img class="member-head-img" src='+headImg[i].src+'><input class="card-member-id" type="hidden" value='+memberId[i].value+'></span>');
+		for(var i=0;i<headImg.length;i++){
+			showMemberArray.push({src:headImg[i].src,id:memberId[i].value});
 		}
+		showMemberImg(showMemberArray);
 	}
 	$('.card-title').text(cardTitle);
 	$('.card-place').text('In List '+cardPlace);
@@ -505,9 +511,28 @@ $('.list-name-input').blur(function(){
 $(document).on('click','.js-card-member',function(){
 	addMember();
 });
+$('.js-popup-content-cancel').on('click',function(){
+	var memberIdArray = [];
+	var choosedSrc = $('.member-head-img');
+	var choosedId = $('.card-member-id');
+	var swiperIndex = $('.swiper-index').val();
+	var cardIndex = $('.card-index').val();
+	myApp.closeModal();
+	$('.swiper-slide').eq(swiperIndex).find('.card-information').eq(cardIndex).find('span').remove();
+	for(var i=0;i<choosedId.length;i++){
+		$('.swiper-slide').eq(swiperIndex).find('.card-information').eq(cardIndex).append('<span><img class="head-img fr" src='+choosedSrc[i].src+'><input class="img-id" type="hidden" value='+choosedId[i].value+'></span>');
+	}
+	calHeight(swiperIndex,flag);
+});
 $('.js-popup-member-cancel').on('click',function(){
-	// var choosedId = $
+	var memberIdArray = [];
+	var choosedId = $('.member-info-background').find('.member-id');
+	var choosedSrc = $('.member-info-background').find('.member-img');
+	for(var i=0;i<choosedId.length;i++){
+		memberIdArray.push({src:choosedSrc[i].src,id:choosedId[i].value});
+	}
 	myApp.closeModal('.popup-card-add-member');
+	showMemberImg(memberIdArray);
 });
 $(document).on('click','.member-info',function(){
 	$(this).toggleClass('member-info-background');
@@ -541,6 +566,18 @@ function addMember(){
 			}
 		}
 	});
+}
+
+function showMemberImg(memberIdArray){
+	$('.card-member-img-list').html('');
+	if(memberIdArray.length>0){
+		$('.card-member').show();
+		for(var i=0;i<memberIdArray.length;i++){
+			$('.card-member-img-list').append('<span><img class="member-head-img" src='+memberIdArray[i].src+'><input class="card-member-id" type="hidden" value='+memberIdArray[i].id+'></span>');
+		}
+	} else {
+		$('.card-member').hide();
+	}
 }
 
 // // var block = $(".card");
