@@ -517,6 +517,7 @@ $('.js-popup-content-cancel').on('click',function(){
 	var choosedId = $('.card-member-id');
 	var swiperIndex = $('.swiper-index').val();
 	var cardIndex = $('.card-index').val();
+	$('.card-member').hide();
 	myApp.closeModal();
 	$('.swiper-slide').eq(swiperIndex).find('.card-information').eq(cardIndex).find('span').remove();
 	for(var i=0;i<choosedId.length;i++){
