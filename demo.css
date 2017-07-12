@@ -491,12 +491,19 @@ color: #ddd;
 	width: 92%;
 	border: 0;
 	border-bottom: 1px solid #e8e8e8;
-	font-size: 18px;
+	font-size: 16px;
 	margin-bottom: 10px;
 }
 .card-description-input::-webkit-input-placeholder{
 	color: #adadad;
 	font-style: italic;
+}
+.card-description-content{
+	background: #fff;
+	font-size: 16px;
+	padding: 10px;
+	border-bottom: 1px solid #e8e8e8;
+	margin-bottom: 10px;
 }
 .card-activity-block{
 	margin-top: 56px;
@@ -699,7 +706,6 @@ color: #ddd;
 	border-top: 1px solid #e6e6e6;
 	border-bottom: 1px solid #e6e6e6;
 	background: #fff;
-
 }
 .member-info{
 	position: relative;
@@ -725,10 +731,30 @@ color: #ddd;
 	left: -40px;
 }
 
+/*popup-card-description*/
+.popup-description-header{
+	text-align: center;
+	background: #0278be;
+	width: 94%;
+	height: 40px;
+	line-height: 40px;
+	padding:0 10px 0 12px;
+	font-size: 18px;
+	color: #fff;
+}
+
 /*list*/
 .smart-select-page .navbar{
 	background-color: #e8e7e7;
 	color: #000;
+}
+.description-input-area{
+	width: 94.5%;
+	height: 400px;
+	resize: none;
+	border: 0;
+	padding: 10px;
+	font-size: 16px;
 }
 
 /*common*/

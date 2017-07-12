@@ -15,7 +15,8 @@ var data = {
 			img:[
 			{imgSrc:'./image/bob.jpg',id:1},
 			{imgSrc:'./image/bob2.png',id:2}
-			]
+			],
+			description:'Just have a try'
 		},
 		{
 			content:'blahblah',
@@ -300,11 +301,19 @@ $(document).on('click','.js-card-content .card',function(){
 	var showMemberArray = [];
 	var swiperIndex = $(this).parents('.swiper-slide').index();
 	var cardIndex = $(this).index();
+	var cardDescription = $(this).find('.card-description-not-display').val();
 	myApp.popup('.popup-card-content');
 	$('.swiper-index').val(swiperIndex);
 	$('.card-index').val(cardIndex);
 	$('.popup-overlay').hide();
 	$('.card-member-img-list').html('');
+	if(cardDescription){
+		$('.card-description-input').hide();
+		$('.card-description-content').show().text(cardDescription);
+	} else {
+		$('.card-description-input').show();
+		$('.card-description-content').hide().text("");
+	}
 	if(headImg.length>0){
 		$('.card-member').show();
 		for(var i=0;i<headImg.length;i++){
@@ -537,6 +546,31 @@ $('.js-popup-member-cancel').on('click',function(){
 });
 $(document).on('click','.member-info',function(){
 	$(this).toggleClass('member-info-background');
+});
+$(document).on('click','.card-description',function(){
+	var cardDescription = $('.card-description-content').text();
+	myApp.popup('.popup-card-description');
+	var descriptionInputArea = $('.description-input-area');
+	descriptionInputArea.focus();
+	if(cardDescription){
+		descriptionInputArea.val(cardDescription);
+	} else {
+		descriptionInputArea.val("");
+	}
+});
+$(document).on('click','.js-cancel-description',function(){
+	myApp.closeModal('.popup-card-description');
+});
+$(document).on('click','.js-finish-description',function(){
+	var inputDescription = $(this).parent().siblings('.description-input-area').val();
+	myApp.closeModal('.popup-card-description');
+	if(inputDescription){
+		$('.card-description-input').hide();
+		$('.card-description-content').show().text(inputDescription);
+	} else {
+		$('.card-description-input').show();
+		$('.card-description-content').hide().text("");
+	}
 });
 
 function calHeight(index,flag){

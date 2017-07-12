@@ -402,6 +402,7 @@
 							</div>
 							<div class="card-description">
 								<input class="card-description-input" type="text" placeholder="Tap to add a description"></input>
+								<div class="card-description-content"></div>
 							</div>
 							<div class="card-member js-card-member">
 								<img class="member-icon" src="./image/images/member.png"></img>
@@ -436,6 +437,19 @@
 					</div>
 				</div>
 				<!-- popup-card-add-member end -->
+
+				<!-- popup-card-description begin-->
+				<div class="popup popup-card-description">
+					<div class="popup-content">
+						<div class="popup-description-header">
+							<div class="js-cancel-description fl">Cancel</div>
+							Description
+							<div class="js-finish-description fr bold">Done</div>
+						</div>
+						<textarea class="description-input-area"></textarea>
+					</div>
+				</div>
+				<!-- popup-card-description end -->
 
 			</div>	
 		</div>
@@ -550,6 +564,9 @@
 											<input class="img-id" type="hidden" value="{{this.id}}"></input>
 										</span>
 										{{/each}}
+										{{/if}}
+										{{#if description}}
+										<input class="card-description-not-display" type="hidden" value="{{description}}"></input>
 										{{/if}}
 									</div>
 								</div>
