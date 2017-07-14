@@ -96,9 +96,11 @@
 					<div class="panel panel-right panel-cover">
 						<div class="panel-content">
 							<div class="panel-head">
-								<img class="vertical-middle star-icon js-star" src="./image/images/star.png"></img>
-								<img class="vertical-middle lock-icon" src="./image/images/lock.png"></img>
-								private
+								<img class="vertical-middle star-icon js-star white-star" src="./image/images/star.png"></img>
+								<span class="open-popover" data-popover=".popover-privacy">
+									<img class="vertical-middle lock-icon" src="./image/images/lock.png"></img>
+									<span class="privacy-setting vertical-middle">Private</span>
+								</span>
 								<img class="vertical-middle setting-icon icon fr js-setting" src="./image/images/setting.png"></img>
 								<img class="vertical-middle icon share-icon fr" src="./image/images/share.png"></img>
 								<img class="vertical-middle icon file-icon fr" src="./image/images/file.png"></img>
@@ -444,7 +446,7 @@
 						<div class="popup-description-header">
 							<div class="js-cancel-description fl">Cancel</div>
 							Description
-							<div class="js-finish-description fr bold">Done</div>
+							<div class="js-finish-description fr bolder">Done</div>
 						</div>
 						<textarea class="description-input-area"></textarea>
 					</div>
@@ -454,225 +456,207 @@
 			</div>	
 		</div>
 	</div>
-		<!-- <div class="login-screen">
-			<div class="view">
-				<div class="page">
-					<div class="page-content login-screen-content">
-						<div class="login-screen-title">Login In</div>
-						<a href="#" class="close-login-screen cancel-button">cancel</a>
-						<form>
-							<div class="list-block">
-								<ul>
-									<li class="item-content">
-										<div class="item-inner">
-											<div class="item-title label">Username</div>
-											<div class="item-input">
-												<input type="text" name="username" placeholder="Your username">
-											</div>
-										</div>
-									</li>
-									<li class="item-content">
-										<div class="item-inner">
-											<div class="item-title label">Password</div>
-											<div class="item-input">
-												<input type="password" name="password" placeholder="Your password">
-											</div>
-										</div>
-									</li>
-								</ul>
+
+	<!-- privacy-setting popover -->
+	<div class="popover popover-privacy">
+		<div class="popover-angle"></div>
+		<div class="popover-inner">
+			<div class="list-block popover-body popover-privacy-body">
+				<ul style="margin-bottom: 0">
+					<li><a href="#" class="list-button item-link privacy-chosen js-privacy-chosen">
+						<img class="blue-lock-icon" src="./image/images/blue-lock.png" />
+						<div class="bold privacy-list-title">Private</div>
+						<div>Only members of the board will be able to view it.</div>
+					</a></li>
+					<li><a href="#" class="list-button item-link js-privacy-chosen">
+						<img class="public-icon" src="./image/images/public.png" />
+						<div class="bold privacy-list-title">Public</div>
+						<div>Anyone will be able to view the board.</div>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- more popover -->
+	<div class="popover popover-more">
+		<div class="popover-angle"></div>
+		<div class="popover-inner">
+			<div class="popover-head">
+				Backlog
+			</div>
+			<div class="list-block popover-body">
+				<ul>
+					<li><a href="#" class="list-button item-link">Duplicate List</a></li>
+					<li>
+						<a href="#" class="item-link item-content">
+							<div class="item-inner">
+								<div class="item-title">Move List</div>
+								<div class="item-after"></div>
 							</div>
-							<div class="list-block">
-								<ul>
-									<li><a href="#index" class="item-link list-button js-list">Login In</a></li>
-								</ul>
+						</a>
+					</li>
+					<li><a href="#" class="list-button item-link">Subscribe</a></li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#" class="item-link item-content">
+							<div class="item-inner">
+								<div class="item-title">Move All Cards in This List</div>
+								<div class="item-after"></div>
 							</div>
-						</form>
+						</a>
+					</li>
+					<li><a href="#" class="list-button item-link">Archive All Cards in This List</a></li>
+				</ul>
+				<ul>
+					<li><a href="#" class="list-button item-link">Archive List</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="./Framework7-1.5.2/dist/js/framework7.min.js"></script>
+	<script type="text/javascript" src="./template7.min.js"></script>
+	<script type="text/template7" id="newList">
+		{{#each lists}}
+		<div class="swiper-slide">
+			<div class="card">
+				<div class="card-header">
+					<div class="js-list-name list-name">
+						{{listName}}
+					</div>
+					<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
+					<input class="list-name-input" type="text" hidden></input>
+				</div>
+				<div class="card-content js-card-content">
+					<div class="card-content-inner">
+						{{#each this.items}}
+						<div class="card">
+							<div class="card-content">
+								<div class="content-card-title">
+									{{content}}
+								</div>
+								<div class="card-information">
+									{{#if list}}
+									<img class="list-icon" src="./image/list.png">
+									{{/if}}
+									{{#if talk}}
+									<img class="talk-icon" src="./image/talk.png">{{talk}}
+									{{/if}}
+									{{#if img}}
+									{{#each img}}
+									<span>
+										<img class="head-img fr" src={{this.imgSrc}} />
+										<input class="img-id" type="hidden" value="{{this.id}}"></input>
+									</span>
+									{{/each}}
+									{{/if}}
+									<input class="card-description-not-display" type="hidden" value="{{description}}"></input>
+								</div>
+							</div>
+						</div>
+						{{/each}}
 					</div>
 				</div>
-			</div>
-		</div> -->
-
-		<!-- more popover -->
-		<div class="popover popover-more">
-			<div class="popover-angle"></div>
-			<div class="popover-inner">
-				<div class="popover-head">
-					Backlog
-				</div>
-				<div class="list-block popover-body">
-					<ul>
-						<li><a href="#" class="list-button item-link">Duplicate List</a></li>
-						<li>
-							<a href="#" class="item-link item-content">
-								<div class="item-inner">
-									<div class="item-title">Move List</div>
-									<div class="item-after"></div>
-								</div>
-							</a>
-						</li>
-						<li><a href="#" class="list-button item-link">Subscribe</a></li>
-					</ul>
-					<ul>
-						<li>
-							<a href="#" class="item-link item-content">
-								<div class="item-inner">
-									<div class="item-title">Move All Cards in This List</div>
-									<div class="item-after"></div>
-								</div>
-							</a>
-						</li>
-						<li><a href="#" class="list-button item-link">Archive All Cards in This List</a></li>
-					</ul>
-					<ul>
-						<li><a href="#" class="list-button item-link">Archive List</a></li>
-					</ul>
+				<div class="card-footer">
+					<a class="add-button js-add">Add card</a>
+					<div class="add-items">
+						<div class="item-input">
+							<textarea class="add-item"></textarea>
+						</div>   
+						<a class="add-cancel-button js-cancel">cancel</a>
+						<a class="add-confirm-button js-confirm">add</a>
+					</div>
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript" src="./Framework7-1.5.2/dist/js/framework7.min.js"></script>
-		<script type="text/javascript" src="./template7.min.js"></script>
-		<script type="text/template7" id="newList">
-			{{#each lists}}
-			<div class="swiper-slide">
-				<div class="card">
-					<div class="card-header">
-						<div class="js-list-name list-name">
-							{{listName}}
-						</div>
-						<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
-						<input class="list-name-input" type="text" hidden></input>
+		{{/each}}
+	</script>
+	<script type="text/template7" id="newListTemplate">
+		<div class="swiper-slide">
+			<div class="card">
+				<div class="card-header">{{newListName}}
+					<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
+				</div>
+				<div class="card-content js-card-content">
+					<div class="card-content-inner">
 					</div>
-					<div class="card-content js-card-content">
-						<div class="card-content-inner">
-							{{#each this.items}}
-							<div class="card">
-								<div class="card-content">
-									<div class="content-card-title">
-										{{content}}
-									</div>
-									<div class="card-information">
-										{{#if list}}
-										<img class="list-icon" src="./image/list.png">
-										{{/if}}
-										{{#if talk}}
-										<img class="talk-icon" src="./image/talk.png">{{talk}}
-										{{/if}}
-										{{#if img}}
-										{{#each img}}
-										<span>
-											<img class="head-img fr" src={{this.imgSrc}} />
-											<input class="img-id" type="hidden" value="{{this.id}}"></input>
-										</span>
-										{{/each}}
-										{{/if}}
-										{{#if description}}
-										<input class="card-description-not-display" type="hidden" value="{{description}}"></input>
-										{{/if}}
-									</div>
-								</div>
-							</div>
-							{{/each}}
-						</div>
-					</div>
-					<div class="card-footer">
-						<a class="add-button js-add">Add card</a>
-						<div class="add-items">
-							<div class="item-input">
-								<textarea class="add-item"></textarea>
-							</div>   
-							<a class="add-cancel-button js-cancel">cancel</a>
-							<a class="add-confirm-button js-confirm">add</a>
-						</div>
+				</div>
+				<div class="card-footer">
+					<a class="add-button js-add">Add card</a>
+					<div class="add-items">
+						<div class="item-input">
+							<textarea class="add-item"></textarea>
+						</div>   
+						<a class="add-cancel-button js-cancel">cancel</a>
+						<a class="add-confirm-button js-confirm">add</a>
 					</div>
 				</div>
 			</div>
-			{{/each}}
-		</script>
-		<script type="text/template7" id="newListTemplate">
-			<div class="swiper-slide">
-				<div class="card">
-					<div class="card-header">{{newListName}}
-						<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
-					</div>
-					<div class="card-content js-card-content">
-						<div class="card-content-inner">
-						</div>
-					</div>
-					<div class="card-footer">
-						<a class="add-button js-add">Add card</a>
-						<div class="add-items">
-							<div class="item-input">
-								<textarea class="add-item"></textarea>
-							</div>   
-							<a class="add-cancel-button js-cancel">cancel</a>
-							<a class="add-confirm-button js-confirm">add</a>
-						</div>
-					</div>
+		</div>
+	</script>
+	<script type="text/template7" id="alertTemplate">
+		{{#each lists}}
+		<div class="alert-info">
+			<img class="alert-img" src="{{img}}"></img>
+			<div class="alert-info-content">
+				<div class="alert-content-title">
+					<span class="alert-name bolder">{{name}}</span> commented on the card 
+					<span class="alert-card-name bolder">{{cardName}}</span> on 
+					<span class="board-name bolder">{{board}}</span>
+				</div>
+				<div class="alert-content-content">
+					{{content}}
+				</div>
+				<div class="alert-time">
+					{{time}}
 				</div>
 			</div>
-		</script>
-		<script type="text/template7" id="alertTemplate">
-			{{#each lists}}
-			<div class="alert-info">
-				<img class="alert-img" src="{{img}}"></img>
-				<div class="alert-info-content">
-					<div class="alert-content-title">
-						<span class="alert-name bold">{{name}}</span> commented on the card 
-						<span class="alert-card-name bold">{{cardName}}</span> on 
-						<span class="board-name bold">{{board}}</span>
-					</div>
-					<div class="alert-content-content">
-						{{content}}
-					</div>
-					<div class="alert-time">
-						{{time}}
-					</div>
+		</div>
+		{{/each}}
+	</script>
+	<script type="text/template7" id="activityTemplate">
+		{{#each lists}}
+		<div class="activity-info">
+			<img class="activity-img" src="{{img}}"></img>
+			<div class="activity-info-content">
+				<div class="activity-content-title">
+					<span class="activity-name bolder">{{name}}</span> commented on the card 
+					<span class="activity-card-name bolder">{{cardName}}</span> on 
+					<span class="board-name bolder">{{board}}</span>
+				</div>
+				<div class="activity-time">
+					{{time}}
 				</div>
 			</div>
-			{{/each}}
-		</script>
-		<script type="text/template7" id="activityTemplate">
-			{{#each lists}}
-			<div class="activity-info">
-				<img class="activity-img" src="{{img}}"></img>
-				<div class="activity-info-content">
-					<div class="activity-content-title">
-						<span class="activity-name bold">{{name}}</span> commented on the card 
-						<span class="activity-card-name bold">{{cardName}}</span> on 
-						<span class="board-name bold">{{board}}</span>
-					</div>
-					<div class="activity-time">
-						{{time}}
-					</div>
+		</div>
+		{{/each}}
+	</script>
+	<script type="text/template7" id="cardActivityTemplate">
+		{{#each lists}}
+		<div class="card-activity-info">
+			<img class="card-activity-img" src="{{img}}"></img>
+			<div class="card-activity-info-content">
+				<div class="card-activity-content-title">
+					<div class="card-activity-name bolder">{{name}}</div>
+					<div class="card-activity-detail">{{content}}</div>
+				</div>
+				<div class="activity-time">
+					{{time}}
 				</div>
 			</div>
-			{{/each}}
-		</script>
-		<script type="text/template7" id="cardActivityTemplate">
-			{{#each lists}}
-			<div class="card-activity-info">
-				<img class="card-activity-img" src="{{img}}"></img>
-				<div class="card-activity-info-content">
-					<div class="card-activity-content-title">
-						<div class="card-activity-name bold">{{name}}</div>
-						<div class="card-activity-detail">{{content}}</div>
-					</div>
-					<div class="activity-time">
-						{{time}}
-					</div>
-				</div>
-			</div>
-			{{/each}}
-		</script>
-		<script type="text/template7" id="addMemberTemplate">
-			{{#each member}}
-			<div class="member-info">
-				<img class="member-img" src="{{img}}"></img>
-				{{name}}
-				<input class="member-id" type="hidden" value="{{id}}"></input>
-			</div>
-			{{/each}}
-		</script>
-		<script type="text/javascript" src="./demo.js"></script>
-	</body>
-	</html>
+		</div>
+		{{/each}}
+	</script>
+	<script type="text/template7" id="addMemberTemplate">
+		{{#each member}}
+		<div class="member-info">
+			<img class="member-img" src="{{img}}"></img>
+			{{name}}
+			<input class="member-id" type="hidden" value="{{id}}"></input>
+		</div>
+		{{/each}}
+	</script>
+	<script type="text/javascript" src="./demo.js"></script>
+</body>
+</html>

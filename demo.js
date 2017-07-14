@@ -287,10 +287,13 @@ $('.js-popup-cancel').on('click',function(){
 });
 $('.js-star').on('click',function(){
 	var src = this.src;
-	if(src == 'https://zzapp.herokuapp.com/image/star.png'){
-		src = 'https://zzapp.herokuapp.com/image/blue-star.png';
+	var domain = window.location.host;
+	if($(this).hasClass('white-star')){
+		$(this).attr('src','http://'+ domain + '/image/images/blue-star.png');
+		$(this).removeClass('white-star');
 	} else {
-		src = 'https://zzapp.herokuapp.com/image/star.png';
+		$(this).attr('src','http://'+ domain + '/image/images/star.png');
+		$(this).addClass('white-star');
 	}
 });
 $(document).on('click','.js-card-content .card',function(){
@@ -353,7 +356,12 @@ $('.scroll-part').on('scroll',function(){
 	var top = $(this).scrollTop();
 	var cardTitle = $('.card-title').text();
 	var headerHeight = $('.popup-header')[0].offsetHeight;
-	var otherBlockHeight = $('.popup-header')[0].offsetHeight + $('.card-description')[0].offsetHeight + $('.card-member')[0].offsetHeight+10; 
+	var otherBlockHeight;
+	if($('.card-member')[0].offsetHeight>0){
+		otherBlockHeight = $('.popup-header')[0].offsetHeight + $('.card-description')[0].offsetHeight + $('.card-member')[0].offsetHeight+20; 
+	} else {
+		otherBlockHeight = $('.popup-header')[0].offsetHeight + $('.card-description')[0].offsetHeight+10; 
+	}
 	if(top >= headerHeight){
 		$('.card-name').text(cardTitle);
 	} else {
@@ -526,12 +534,14 @@ $('.js-popup-content-cancel').on('click',function(){
 	var choosedId = $('.card-member-id');
 	var swiperIndex = $('.swiper-index').val();
 	var cardIndex = $('.card-index').val();
+	var cardDescription = $('.card-description-content').text();
 	$('.card-member').hide();
 	myApp.closeModal();
 	$('.swiper-slide').eq(swiperIndex).find('.card-information').eq(cardIndex).find('span').remove();
 	for(var i=0;i<choosedId.length;i++){
 		$('.swiper-slide').eq(swiperIndex).find('.card-information').eq(cardIndex).append('<span><img class="head-img fr" src='+choosedSrc[i].src+'><input class="img-id" type="hidden" value='+choosedId[i].value+'></span>');
 	}
+	$('.swiper-slide').eq(swiperIndex).find('.card-information').eq(cardIndex).find('.card-description-not-display').val(cardDescription);
 	calHeight(swiperIndex,flag);
 });
 $('.js-popup-member-cancel').on('click',function(){
@@ -570,6 +580,14 @@ $(document).on('click','.js-finish-description',function(){
 	} else {
 		$('.card-description-input').show();
 		$('.card-description-content').hide().text("");
+	}
+});
+$(document).on('click','.js-privacy-chosen',function(){
+	var changeTitle = $(this).find('.privacy-list-title').text();
+	if(!$(this).hasClass('privacy-chosen')){
+		$(this).addClass('privacy-chosen');
+		$(this).parent('li').siblings().find('.js-privacy-chosen').removeClass('privacy-chosen');
+		$('.privacy-setting').text(changeTitle);
 	}
 });
 

@@ -757,6 +757,37 @@ color: #ddd;
 	font-size: 16px;
 }
 
+/*popover-privacy*/
+.popover-privacy-body .item-link.list-button{
+	position: relative;
+	padding: 5px 55px 5px 0;
+	margin-left: 60px;
+	line-height: 22px;
+	font-size: 16px;
+	color: #646464;
+}
+.privacy-list-title{
+	font-size: 18px;
+	color: #000;
+}
+.blue-lock-icon,.public-icon{
+	position: absolute;
+	top: 20px;
+}
+.blue-lock-icon{
+	width: 20px;
+	left: -40px;
+}
+.public-icon{
+	width: 25px;
+	left: -42px;
+}
+.privacy-chosen{
+	background: no-repeat 93%;
+	background-size: 18px 14px;
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2013%2010'%3E%3Cpolygon%20fill%3D'%23007aff'%20points%3D'11.6%2C0%204.4%2C7.2%201.4%2C4.2%200%2C5.6%204.4%2C10%204.4%2C10%204.4%2C10%2013%2C1.4%20'%2F%3E%3C%2Fsvg%3E");
+}
+
 /*common*/
 .bgc-white{
 	background-color: white;
@@ -767,8 +798,11 @@ color: #ddd;
 .fl{
 	float: left;
 }
-.bold{
+.bolder{
 	font-weight: bolder;
+}
+.bold{
+	font-weight: bold;
 }
 .vertical-middle{
 	vertical-align: middle;
