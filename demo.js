@@ -308,7 +308,7 @@ $(document).on('click','.js-card-content .card',function(){
 	myApp.popup('.popup-card-content');
 	$('.swiper-index').val(swiperIndex);
 	$('.card-index').val(cardIndex);
-	$('.popup-overlay').hide();
+	// $('.popup-overlay').hide();
 	$('.card-member-img-list').html('');
 	if(cardDescription){
 		$('.card-description-input').hide();
@@ -585,9 +585,15 @@ $(document).on('click','.js-finish-description',function(){
 $(document).on('click','.js-privacy-chosen',function(){
 	var changeTitle = $(this).find('.privacy-list-title').text();
 	if(!$(this).hasClass('privacy-chosen')){
-		$(this).addClass('privacy-chosen');
-		$(this).parent('li').siblings().find('.js-privacy-chosen').removeClass('privacy-chosen');
+		$(this).addClass('privacy-chosen').css('padding-right' ,'55px');
+		$(this).parent('li').siblings().find('.js-privacy-chosen').removeClass('privacy-chosen').css('padding-right' ,'15px');
 		$('.privacy-setting').text(changeTitle);
+		var domain = window.location.host;
+		if(changeTitle == 'Public'){
+			$('.lock-icon').attr('src','http://'+ domain + '/image/images/public-grey.png');
+		} else {
+			$('.lock-icon').attr('src','http://'+ domain + '/image/images/lock.png');
+		}
 	}
 });
 
