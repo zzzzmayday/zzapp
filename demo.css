@@ -789,6 +789,64 @@ color: #ddd;
 	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2013%2010'%3E%3Cpolygon%20fill%3D'%23007aff'%20points%3D'11.6%2C0%204.4%2C7.2%201.4%2C4.2%200%2C5.6%204.4%2C10%204.4%2C10%204.4%2C10%2013%2C1.4%20'%2F%3E%3C%2Fsvg%3E");
 }
 
+/*board-archive*/
+.popup-archive{
+}
+.board-archive-head{
+	text-align: center;
+	height: 45px;
+	line-height: 45px;
+	background: #fff;
+	border-bottom: 1px solid #c8c7cc;
+	font-size: 18px;
+	font-weight: bold;
+}
+.search-bar{
+	padding: 10px;
+	background: #f9f9f9;
+}
+.archive-search-input{
+	position: relative;
+	width: 99%;
+	outline: none;
+	border: 0;
+	height: 25px;
+	border-radius: 5px;
+}
+.archive-search-input::-webkit-input-placeholder{
+	color: #adadad;
+}
+.center-text::-webkit-input-placeholder{
+	text-align: center;
+}
+.search-input-icon{
+	position: absolute;
+	width: 10px;
+	top: 64px;
+	left: 100px;
+}
+.archive-search-cancel{
+	display: none;
+	color: #2474ab;
+	font-size: 16px;
+	margin-left: 8px;
+}
+.search-bar-buttons{
+	margin: 15px 0 0;
+}
+.search-bar-buttons .active{
+	background: #2474ab;
+}
+.search-bar-buttons .button:first-child{
+	border-right: 0;
+}
+.search-result{
+	text-align: center;
+	padding: 50px;
+	font-size: 18px;
+	background: #fff;
+}
+
 /*common*/
 .bgc-white{
 	background-color: white;

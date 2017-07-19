@@ -21,25 +21,6 @@
 	<div class="views">
 		<div class="view view-main">
 			<div class="pages">
-				<!-- page1 -->
-				<!-- <div class="page navbar-fixed" data-page="login">
-					top navbar start
-					<div class="navbar">
-						<div class="navbar-inner">
-							<div class="center">zz's app</div>
-						</div>
-					</div>
-					top navbar end
-				
-					page content start
-					<div class="page-content">
-						<a href="#" class="button button-big open-login-screen button-login">LOGIN IN</a>
-						<a href="#" class="button button-big button-sign">SIGN IN</a>
-					</div>
-					
-					page content end
-				</div> -->
-
 				<!-- page2 -->
 				<div class="page navbar-fixed page-index" data-page="index">
 					<div class="navbar">
@@ -102,7 +83,7 @@
 									<span class="privacy-setting vertical-middle">Private</span>
 								</span>
 								<img class="vertical-middle setting-icon icon fr js-setting" src="./image/images/setting.png"></img>
-								<img class="vertical-middle icon share-icon fr" src="./image/images/share.png"></img>
+								<img class="vertical-middle icon share-icon fr js-archive" src="./image/images/share.png"></img>
 								<img class="vertical-middle icon file-icon fr" src="./image/images/file.png"></img>
 							</div>
 							<div class="panel-body">
@@ -453,6 +434,37 @@
 				</div>
 				<!-- popup-card-description end -->
 
+				<!-- popup-archive begin-->
+				<div class="popup popup-archive">
+					<div class="popup-content">
+						<div class="popup-head board-archive-head">
+							<img class="js-popup-cancel blue-cancel-icon fl" src="./image/blue-cancel.png"></img>
+							Archive
+						</div>
+					</div>
+					<div class="popup-body">
+						<div class="search-bar">
+							<div class="archive-search">
+								<input type="text" class="archive-search-input center-text" placeholder="Filter cards by name...">
+									<img src="./image/search-input.png" class="search-input-icon">
+								</input>
+								<div class="archive-search-cancel">Cancel</div>
+							</div>
+							<div class="buttons-row search-bar-buttons">
+								<a href="#cardTab" class="tab-link active button">Cards</a>
+								<a href="#listTab" class="tab-link button">Lists</a>
+							</div>
+						</div>
+						<div class="search-result">
+							<div class="tabs">
+								<div id="cardTab" class="tab active">No archived cards</div>
+								<div id="listTab" class="tab">No archived lists</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- popup-archive end-->
+
 			</div>	
 		</div>
 	</div>
@@ -575,8 +587,12 @@
 	<script type="text/template7" id="newListTemplate">
 		<div class="swiper-slide">
 			<div class="card">
-				<div class="card-header">{{newListName}}
+				<div class="card-header">
+					<div class="js-list-name list-name">
+						{{newListName}}
+					</div>
 					<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
+					<input class="list-name-input" type="text" hidden></input>
 				</div>
 				<div class="card-content js-card-content">
 					<div class="card-content-inner">
