@@ -339,6 +339,10 @@ $('.js-archive').on('click',function(){
 	myApp.popup('.popup-archive');
 	$('.popup-overlay').hide();
 });
+$('.js-add-member').on('click',function(){
+	myApp.popup('.popup-add-member');
+	$('.popup-overlay').hide();
+});
 $('.panel-body').on('scroll',function(){
 	var top = $(this).scrollTop();
 	var memberTitle = $('.member-title');
@@ -600,7 +604,7 @@ $(document).on('click','.js-privacy-chosen',function(){
 		}
 	}
 });
-$(document).on('click','.search-bar-buttons .button',function(){
+$(document).on('click','.archive-search-bar-buttons .button',function(){
 	var tapText = $(this).text();
 	$(this).parents().siblings('.archive-search').find('.archive-search-input').attr('placeholder','Filter '+tapText+' by name...');
 	$('.archive-search-input').focus();
@@ -615,6 +619,29 @@ $('.archive-search-cancel').click(function(){
 	$('.archive-search-input').css({'width':'99%','padding':'0'}).addClass('center-text');
 	$('.search-input-icon').css('left','100px');
 });
+$(document).on('click','.add-member-search-bar-buttons .button',function(){
+	var index = $(this).index();
+	var inputText = $(this).parents().siblings('.add-member-search').find('.add-member-search-input');
+	if(index == 0){
+		inputText.attr('placeholder','Search by name or email...');
+		$('.add-member-search-input').focus();
+	} else if(index == 2){
+		inputText.attr('placeholder','Filter by name...');
+		$('.add-member-search-input').focus();
+	}
+	// $(this).parents().siblings('.archive-search').find('.archive-search-input').attr('placeholder','Filter '+tapText+' by name...');
+});
+$('.add-member-search-input').focus(function(){
+	$('.add-member-search-input').css({'width':'70%','padding':'0 20px'}).removeClass('center-text');
+	$('.add-member-search-cancel').css('display','inline-block');
+	$('.search-input-icon').css('left','15px');
+});
+$('.add-member-search-cancel').click(function(){
+	$(this).hide();
+	$('.add-member-search-input').css({'width':'99%','padding':'0'}).addClass('center-text');
+	$('.search-input-icon').css('left','90px');
+});
+
 
 function calHeight(index,flag){
 	var cardContent = $('.js-card-content');

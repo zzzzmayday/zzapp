@@ -98,7 +98,7 @@
 										<img src="./image/bob3.jpg" class="panel-head-img">
 										<img src="./image/bob4.jpg" class="panel-head-img">
 									</div>
-									<div class="add-member-button">Add Members</div>
+									<div class="add-member-button js-add-member">Add Members</div>
 								</div>
 								<div class="power-up-block js-power-up">
 									<div class="power-up-title panel-title">
@@ -127,7 +127,7 @@
 					<div class="popup popup-alert">
 						<div class="popup-content">
 							<div class="popup-head">
-								<img class="js-popup-cancel blue-cancel-icon fl" src="./image/blue-cancel.png"></img>
+								<img class="js-popup-cancel blue-cancel-icon" src="./image/blue-cancel.png" style="top: 20px"></img>
 								<div class="buttons-row">
 									<a href="#tab1" class="tab-link active button">All</a>
 									<a href="#tab2" class="tab-link button">Me</a>
@@ -147,7 +147,7 @@
 					<div class="popup popup-setting">
 						<div class="popup-content">
 							<div class="popup-head board-setting-head">
-								<img class="js-popup-cancel blue-cancel-icon fl" src="./image/blue-cancel.png"></img>
+								<img class="js-popup-cancel blue-cancel-icon" src="./image/blue-cancel.png"></img>
 								Board Settings
 							</div>
 						</div>
@@ -313,7 +313,7 @@
 				<div class="popup popup-power-up">
 					<div class="popup-content">
 						<div class="popup-head power-up-head">
-							<img class="js-popup-cancel blue-cancel-icon fl" src="./image/blue-cancel.png"></img>
+							<img class="js-popup-cancel blue-cancel-icon" src="./image/blue-cancel.png"></img>
 							Power-Ups
 						</div>
 					</div>
@@ -438,7 +438,7 @@
 				<div class="popup popup-archive">
 					<div class="popup-content">
 						<div class="popup-head board-archive-head">
-							<img class="js-popup-cancel blue-cancel-icon fl" src="./image/blue-cancel.png"></img>
+							<img class="js-popup-cancel blue-cancel-icon" src="./image/blue-cancel.png"></img>
 							Archive
 						</div>
 					</div>
@@ -446,233 +446,268 @@
 						<div class="search-bar">
 							<div class="archive-search">
 								<input type="text" class="archive-search-input center-text" placeholder="Filter cards by name...">
-									<img src="./image/search-input.png" class="search-input-icon">
-								</input>
-								<div class="archive-search-cancel">Cancel</div>
-							</div>
-							<div class="buttons-row search-bar-buttons">
-								<a href="#cardTab" class="tab-link active button">Cards</a>
-								<a href="#listTab" class="tab-link button">Lists</a>
-							</div>
+								<img src="./image/search-input.png" class="search-input-icon">
+							</input>
+							<div class="archive-search-cancel">Cancel</div>
 						</div>
-						<div class="search-result">
-							<div class="tabs">
-								<div id="cardTab" class="tab active">No archived cards</div>
-								<div id="listTab" class="tab">No archived lists</div>
-							</div>
+						<div class="buttons-row search-bar-buttons archive-search-bar-buttons">
+							<a href="#cardTab" class="tab-link active button">Cards</a>
+							<a href="#listTab" class="tab-link button">Lists</a>
 						</div>
 					</div>
-				</div>
-				<!-- popup-archive end-->
-
-			</div>	
-		</div>
-	</div>
-
-	<!-- privacy-setting popover -->
-	<div class="popover popover-privacy">
-		<div class="popover-angle"></div>
-		<div class="popover-inner">
-			<div class="list-block popover-body popover-privacy-body">
-				<ul style="margin-bottom: 0">
-					<li><a href="#" class="list-button item-link privacy-chosen js-privacy-chosen">
-						<img class="blue-lock-icon" src="./image/images/blue-lock.png" />
-						<div class="bold privacy-list-title">Private</div>
-						<div>Only members of the board will be able to view it.</div>
-					</a></li>
-					<li><a href="#" class="list-button item-link js-privacy-chosen">
-						<img class="public-icon" src="./image/images/public.png" />
-						<div class="bold privacy-list-title">Public</div>
-						<div>Anyone will be able to view the board.</div>
-					</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-
-	<!-- more popover -->
-	<div class="popover popover-more">
-		<div class="popover-angle"></div>
-		<div class="popover-inner">
-			<div class="popover-head">
-				Backlog
-			</div>
-			<div class="list-block popover-body">
-				<ul>
-					<li><a href="#" class="list-button item-link">Duplicate List</a></li>
-					<li>
-						<a href="#" class="item-link item-content">
-							<div class="item-inner">
-								<div class="item-title">Move List</div>
-								<div class="item-after"></div>
-							</div>
-						</a>
-					</li>
-					<li><a href="#" class="list-button item-link">Subscribe</a></li>
-				</ul>
-				<ul>
-					<li>
-						<a href="#" class="item-link item-content">
-							<div class="item-inner">
-								<div class="item-title">Move All Cards in This List</div>
-								<div class="item-after"></div>
-							</div>
-						</a>
-					</li>
-					<li><a href="#" class="list-button item-link">Archive All Cards in This List</a></li>
-				</ul>
-				<ul>
-					<li><a href="#" class="list-button item-link">Archive List</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<script type="text/javascript" src="./Framework7-1.5.2/dist/js/framework7.min.js"></script>
-	<script type="text/javascript" src="./template7.min.js"></script>
-	<script type="text/template7" id="newList">
-		{{#each lists}}
-		<div class="swiper-slide">
-			<div class="card">
-				<div class="card-header">
-					<div class="js-list-name list-name">
-						{{listName}}
+					<div class="search-result">
+						<div class="tabs">
+							<div id="cardTab" class="tab active">No archived cards</div>
+							<div id="listTab" class="tab">No archived lists</div>
+						</div>
 					</div>
-					<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
-					<input class="list-name-input" type="text" hidden></input>
 				</div>
-				<div class="card-content js-card-content">
-					<div class="card-content-inner">
-						{{#each this.items}}
-						<div class="card">
-							<div class="card-content">
-								<div class="content-card-title">
-									{{content}}
-								</div>
-								<div class="card-information">
-									{{#if list}}
-									<img class="list-icon" src="./image/list.png">
-									{{/if}}
-									{{#if talk}}
-									<img class="talk-icon" src="./image/talk.png">{{talk}}
-									{{/if}}
-									{{#if img}}
-									{{#each img}}
-									<span>
-										<img class="head-img fr" src={{this.imgSrc}} />
-										<input class="img-id" type="hidden" value="{{this.id}}"></input>
-									</span>
-									{{/each}}
-									{{/if}}
-									<input class="card-description-not-display" type="hidden" value="{{description}}"></input>
-								</div>
+			</div>
+			<!-- popup-archive end-->
+
+			<!-- popup-add-member begin-->
+			<div class="popup popup-add-member">
+				<div class="popup-content">
+					<div class="popup-head board-add-member-head">
+						<img class="js-popup-cancel blue-cancel-icon" src="./image/blue-cancel.png"></img>
+						Add Members
+					</div>
+				</div>
+				<div class="popup-body">
+					<div class="search-bar">
+						<div class="add-member-search">
+							<input type="text" class="add-member-search-input center-text" placeholder="Search by name or email...">
+							<img src="./image/search-input.png" class="search-input-icon">
+						</input>
+						<div class="add-member-search-cancel">Cancel</div>
+					</div>
+					<div class="buttons-row search-bar-buttons add-member-search-bar-buttons">
+						<a href="#everyoneTab" class="tab-link active button">Everyone</a>
+						<a href="#" class="button cannot-click-tab">Team</a>
+						<a href="#contactTab" class="tab-link button">Contacts</a>
+					</div>
+				</div>
+				<div class="search-result">
+					<div class="tabs">
+						<div id="everyoneTab" class="tab active">Search for people by name or email address to add them to your board.</div>
+						<div id="contactTab" class="tab">
+							<div class="canot-contact">Unable to Access Contacts</div>
+							You can grant access from the Settings app.Select Privacy,then Contacts,and switch Trello to "On."
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- popup-add-member end-->
+
+	</div>	
+</div>
+</div>
+
+<!-- privacy-setting popover -->
+<div class="popover popover-privacy">
+	<div class="popover-angle"></div>
+	<div class="popover-inner">
+		<div class="list-block popover-body popover-privacy-body">
+			<ul style="margin-bottom: 0">
+				<li><a href="#" class="list-button item-link privacy-chosen js-privacy-chosen">
+					<img class="blue-lock-icon" src="./image/images/blue-lock.png" />
+					<div class="bold privacy-list-title">Private</div>
+					<div>Only members of the board will be able to view it.</div>
+				</a></li>
+				<li><a href="#" class="list-button item-link js-privacy-chosen">
+					<img class="public-icon" src="./image/images/public.png" />
+					<div class="bold privacy-list-title">Public</div>
+					<div>Anyone will be able to view the board.</div>
+				</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- more popover -->
+<div class="popover popover-more">
+	<div class="popover-angle"></div>
+	<div class="popover-inner">
+		<div class="popover-head">
+			Backlog
+		</div>
+		<div class="list-block popover-body">
+			<ul>
+				<li><a href="#" class="list-button item-link">Duplicate List</a></li>
+				<li>
+					<a href="#" class="item-link item-content">
+						<div class="item-inner">
+							<div class="item-title">Move List</div>
+							<div class="item-after"></div>
+						</div>
+					</a>
+				</li>
+				<li><a href="#" class="list-button item-link">Subscribe</a></li>
+			</ul>
+			<ul>
+				<li>
+					<a href="#" class="item-link item-content">
+						<div class="item-inner">
+							<div class="item-title">Move All Cards in This List</div>
+							<div class="item-after"></div>
+						</div>
+					</a>
+				</li>
+				<li><a href="#" class="list-button item-link">Archive All Cards in This List</a></li>
+			</ul>
+			<ul>
+				<li><a href="#" class="list-button item-link">Archive List</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="./Framework7-1.5.2/dist/js/framework7.min.js"></script>
+<script type="text/javascript" src="./template7.min.js"></script>
+<script type="text/template7" id="newList">
+	{{#each lists}}
+	<div class="swiper-slide">
+		<div class="card">
+			<div class="card-header">
+				<div class="js-list-name list-name">
+					{{listName}}
+				</div>
+				<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
+				<input class="list-name-input" type="text" hidden></input>
+			</div>
+			<div class="card-content js-card-content">
+				<div class="card-content-inner">
+					{{#each this.items}}
+					<div class="card">
+						<div class="card-content">
+							<div class="content-card-title">
+								{{content}}
+							</div>
+							<div class="card-information">
+								{{#if list}}
+								<img class="list-icon" src="./image/list.png">
+								{{/if}}
+								{{#if talk}}
+								<img class="talk-icon" src="./image/talk.png">{{talk}}
+								{{/if}}
+								{{#if img}}
+								{{#each img}}
+								<span>
+									<img class="head-img fr" src={{this.imgSrc}} />
+									<input class="img-id" type="hidden" value="{{this.id}}"></input>
+								</span>
+								{{/each}}
+								{{/if}}
+								<input class="card-description-not-display" type="hidden" value="{{description}}"></input>
 							</div>
 						</div>
-						{{/each}}
 					</div>
+					{{/each}}
 				</div>
-				<div class="card-footer">
-					<a class="add-button js-add">Add card</a>
-					<div class="add-items">
-						<div class="item-input">
-							<textarea class="add-item"></textarea>
-						</div>   
-						<a class="add-cancel-button js-cancel">cancel</a>
-						<a class="add-confirm-button js-confirm">add</a>
-					</div>
+			</div>
+			<div class="card-footer">
+				<a class="add-button js-add">Add card</a>
+				<div class="add-items">
+					<div class="item-input">
+						<textarea class="add-item"></textarea>
+					</div>   
+					<a class="add-cancel-button js-cancel">cancel</a>
+					<a class="add-confirm-button js-confirm">add</a>
 				</div>
 			</div>
 		</div>
-		{{/each}}
-	</script>
-	<script type="text/template7" id="newListTemplate">
-		<div class="swiper-slide">
-			<div class="card">
-				<div class="card-header">
-					<div class="js-list-name list-name">
-						{{newListName}}
-					</div>
-					<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
-					<input class="list-name-input" type="text" hidden></input>
+	</div>
+	{{/each}}
+</script>
+<script type="text/template7" id="newListTemplate">
+	<div class="swiper-slide">
+		<div class="card">
+			<div class="card-header">
+				<div class="js-list-name list-name">
+					{{newListName}}
 				</div>
-				<div class="card-content js-card-content">
-					<div class="card-content-inner">
-					</div>
+				<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
+				<input class="list-name-input" type="text" hidden></input>
+			</div>
+			<div class="card-content js-card-content">
+				<div class="card-content-inner">
 				</div>
-				<div class="card-footer">
-					<a class="add-button js-add">Add card</a>
-					<div class="add-items">
-						<div class="item-input">
-							<textarea class="add-item"></textarea>
-						</div>   
-						<a class="add-cancel-button js-cancel">cancel</a>
-						<a class="add-confirm-button js-confirm">add</a>
-					</div>
+			</div>
+			<div class="card-footer">
+				<a class="add-button js-add">Add card</a>
+				<div class="add-items">
+					<div class="item-input">
+						<textarea class="add-item"></textarea>
+					</div>   
+					<a class="add-cancel-button js-cancel">cancel</a>
+					<a class="add-confirm-button js-confirm">add</a>
 				</div>
 			</div>
 		</div>
-	</script>
-	<script type="text/template7" id="alertTemplate">
-		{{#each lists}}
-		<div class="alert-info">
-			<img class="alert-img" src="{{img}}"></img>
-			<div class="alert-info-content">
-				<div class="alert-content-title">
-					<span class="alert-name bolder">{{name}}</span> commented on the card 
-					<span class="alert-card-name bolder">{{cardName}}</span> on 
-					<span class="board-name bolder">{{board}}</span>
-				</div>
-				<div class="alert-content-content">
-					{{content}}
-				</div>
-				<div class="alert-time">
-					{{time}}
-				</div>
+	</div>
+</script>
+<script type="text/template7" id="alertTemplate">
+	{{#each lists}}
+	<div class="alert-info">
+		<img class="alert-img" src="{{img}}"></img>
+		<div class="alert-info-content">
+			<div class="alert-content-title">
+				<span class="alert-name bolder">{{name}}</span> commented on the card 
+				<span class="alert-card-name bolder">{{cardName}}</span> on 
+				<span class="board-name bolder">{{board}}</span>
+			</div>
+			<div class="alert-content-content">
+				{{content}}
+			</div>
+			<div class="alert-time">
+				{{time}}
 			</div>
 		</div>
-		{{/each}}
-	</script>
-	<script type="text/template7" id="activityTemplate">
-		{{#each lists}}
-		<div class="activity-info">
-			<img class="activity-img" src="{{img}}"></img>
-			<div class="activity-info-content">
-				<div class="activity-content-title">
-					<span class="activity-name bolder">{{name}}</span> commented on the card 
-					<span class="activity-card-name bolder">{{cardName}}</span> on 
-					<span class="board-name bolder">{{board}}</span>
-				</div>
-				<div class="activity-time">
-					{{time}}
-				</div>
+	</div>
+	{{/each}}
+</script>
+<script type="text/template7" id="activityTemplate">
+	{{#each lists}}
+	<div class="activity-info">
+		<img class="activity-img" src="{{img}}"></img>
+		<div class="activity-info-content">
+			<div class="activity-content-title">
+				<span class="activity-name bolder">{{name}}</span> commented on the card 
+				<span class="activity-card-name bolder">{{cardName}}</span> on 
+				<span class="board-name bolder">{{board}}</span>
+			</div>
+			<div class="activity-time">
+				{{time}}
 			</div>
 		</div>
-		{{/each}}
-	</script>
-	<script type="text/template7" id="cardActivityTemplate">
-		{{#each lists}}
-		<div class="card-activity-info">
-			<img class="card-activity-img" src="{{img}}"></img>
-			<div class="card-activity-info-content">
-				<div class="card-activity-content-title">
-					<div class="card-activity-name bolder">{{name}}</div>
-					<div class="card-activity-detail">{{content}}</div>
-				</div>
-				<div class="activity-time">
-					{{time}}
-				</div>
+	</div>
+	{{/each}}
+</script>
+<script type="text/template7" id="cardActivityTemplate">
+	{{#each lists}}
+	<div class="card-activity-info">
+		<img class="card-activity-img" src="{{img}}"></img>
+		<div class="card-activity-info-content">
+			<div class="card-activity-content-title">
+				<div class="card-activity-name bolder">{{name}}</div>
+				<div class="card-activity-detail">{{content}}</div>
+			</div>
+			<div class="activity-time">
+				{{time}}
 			</div>
 		</div>
-		{{/each}}
-	</script>
-	<script type="text/template7" id="addMemberTemplate">
-		{{#each member}}
-		<div class="member-info">
-			<img class="member-img" src="{{img}}"></img>
-			{{name}}
-			<input class="member-id" type="hidden" value="{{id}}"></input>
-		</div>
-		{{/each}}
-	</script>
-	<script type="text/javascript" src="./demo.js"></script>
+	</div>
+	{{/each}}
+</script>
+<script type="text/template7" id="addMemberTemplate">
+	{{#each member}}
+	<div class="member-info">
+		<img class="member-img" src="{{img}}"></img>
+		{{name}}
+		<input class="member-id" type="hidden" value="{{id}}"></input>
+	</div>
+	{{/each}}
+</script>
+<script type="text/javascript" src="./demo.js"></script>
 </body>
 </html>

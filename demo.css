@@ -395,8 +395,10 @@ color: #ddd;
 	margin-left: 12%;
 }
 .blue-cancel-icon{
+	position: absolute;
 	width: 16px;
-	margin: 13px 0 0 3%;
+	left: 16px;
+	top: 14px;
 }
 .popup-alert .button{
 	border: 1px solid #2474ab;
@@ -449,6 +451,7 @@ color: #ddd;
 	background: #f9f9f9;
 }
 .popup-card-content .popup-header{
+	position: relative;
 	background: #0278be;
 	color: #fff;
 	padding: 15px;
@@ -746,7 +749,7 @@ color: #ddd;
 
 /*list*/
 .smart-select-page .navbar{
-	background-color: #e8e7e7;
+	background-color: #fff;
 	color: #000;
 }
 .description-input-area{
@@ -790,8 +793,6 @@ color: #ddd;
 }
 
 /*board-archive*/
-.popup-archive{
-}
 .board-archive-head{
 	text-align: center;
 	height: 45px;
@@ -837,7 +838,7 @@ color: #ddd;
 .search-bar-buttons .active{
 	background: #2474ab;
 }
-.search-bar-buttons .button:first-child{
+.archive-search-bar-buttons .button:first-child{
 	border-right: 0;
 }
 .search-result{
@@ -845,6 +846,72 @@ color: #ddd;
 	padding: 50px;
 	font-size: 18px;
 	background: #fff;
+	color: #adadad;
+}
+
+/*board-add-member*/
+.board-add-member-head{
+	text-align: center;
+	height: 45px;
+	line-height: 45px;
+	background: #fff;
+	border-bottom: 1px solid #c8c7cc;
+	font-size: 18px;
+	font-weight: bold;
+}
+.search-bar{
+	padding: 10px;
+	background: #f9f9f9;
+}
+.add-member-search-input{
+	position: relative;
+	width: 99%;
+	outline: none;
+	border: 0;
+	height: 25px;
+	border-radius: 5px;
+}
+.add-member-search-input::-webkit-input-placeholder{
+	color: #adadad;
+}
+.center-text::-webkit-input-placeholder{
+	text-align: center;
+}
+.search-input-icon{
+	position: absolute;
+	width: 10px;
+	top: 64px;
+	left: 90px;
+}
+.add-member-search-cancel{
+	display: none;
+	color: #2474ab;
+	font-size: 16px;
+	margin-left: 8px;
+}
+.search-bar-buttons{
+	margin: 15px 0 0;
+}
+.search-bar-buttons .active{
+	background: #2474ab;
+}
+.add-member-search-bar-buttons .button:not(:first-child){
+	border-left: 0;
+}
+.popup-add-member .search-result{
+	text-align: center;
+	padding: 20px 30px;
+	font-size: 15px;
+	color: #adadad;
+}
+.cannot-click-tab{
+	color: #cdcdcd;
+}
+.canot-contact{
+	font-size: 18px;
+	margin: 20px 0 30px;
+	color: #666;
+	font-weight: bold;
 }
 
 /*common*/
