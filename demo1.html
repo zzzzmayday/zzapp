@@ -1,0 +1,545 @@
+	<div class="pages">
+		<!-- page2 -->
+		<div class="page navbar-fixed page-index" data-page="index">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<!-- Search Bar -->
+					<form class="searchbar js-search">
+						<div class="searchbar-input">
+							<input type="search" placeholder="Search">
+							<a href="#" class="searchbar-clear"></a>
+						</div>
+						<img class="js-search-cancel cancel-icon icon" src="./image/cancel.png"></img>
+					</form>
+					<div class="left">
+						<a href="#" class="back">
+							<img class="js-cancel-board cancel-board" src="./image/cancel.png"></img>
+						</a>
+						index
+					</div>
+					<div class="center"></div>
+					<div class="right">
+						<img class="js-search-icon icon" src="./image/search.png"></img>
+						<img class="js-alert-icon icon" data-popup='.popup-alert' src="./image/alert.png"></img>
+						<img class="js-ellipsis-icon icon open-panel" data-panel="right" src="./image/ellipsis.png"></img>
+					</div>
+				</div>
+			</div>
+
+			<!-- page-content -->
+			<div class="page-content">
+				<div class="swiper-container">
+					<!-- Slides wrapper -->
+					<div class="swiper-wrapper">
+						<!-- Slides -->
+						<div class="swiper-slide">
+							<div class="new-list">
+								<div class="add-list-button js-add-lists">
+									Add List
+								</div>
+								<div class="add-lists">
+									<div class="item-input">
+										<input type="text" class="add-list"></input>
+									</div>   
+									<a class="add-cancel-button js-list-cancel">cancel</a>
+									<a class="add-confirm-button js-list-confirm">add</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Pagination, if required -->
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+
+			<!-- panel begin-->
+			<div class="panel-overlay"></div>
+			<div class="panel panel-right panel-cover">
+				<div class="panel-content">
+					<div class="panel-head">
+						<img class="vertical-middle star-icon js-star white-star" src="./image/images/star.png"></img>
+						<span class="open-popover" data-popover=".popover-privacy">
+							<img class="vertical-middle lock-icon" src="./image/images/lock.png"></img>
+							<span class="privacy-setting vertical-middle">Private</span>
+						</span>
+						<img class="vertical-middle setting-icon icon fr js-setting" src="./image/images/setting.png"></img>
+						<img class="vertical-middle icon share-icon fr js-archive" src="./image/images/share.png"></img>
+						<img class="vertical-middle icon file-icon fr" src="./image/images/file.png"></img>
+					</div>
+					<div class="panel-body">
+						<div class="member-title panel-title">
+							<img class="member-icon" src="./image/images/member.png"></img>
+							Members
+						</div>
+						<div class="member-block">
+							<div class="member-head-imgs">
+								<img src="./image/bob.jpg" class="panel-head-img">
+								<img src="./image/bob2.png" class="panel-head-img">
+								<img src="./image/bob3.jpg" class="panel-head-img">
+								<img src="./image/bob4.jpg" class="panel-head-img">
+							</div>
+							<div class="add-member-button js-add-member">Add Members</div>
+						</div>
+						<div class="power-up-block js-power-up">
+							<div class="power-up-title panel-title">
+								<img class="rocket-icon" src="./image/images/rocket.png"></img>
+								Power-Ups
+								<img class="right-icon fr" src="./image/right.png"></img>
+							</div>
+						</div>
+						<div class="activity-title panel-title">
+							<img class="activity-list-icon" src="./image/images/activity-list.png"></img>
+							Activity
+						</div>
+						<div class="activity-block">
+							<div class="activity-content"></div>
+						</div>
+					</div>
+					<div class="panel-bottom">
+						<img class="sync-icon" src="./image/sync.png"></img>
+						Synced
+					</div>
+				</div>
+			</div>
+			<!-- panel end -->
+
+			<!-- popup-alert begin-->
+			<div class="popup popup-alert">
+				<div class="popup-content">
+					<div class="popup-head">
+						<img class="js-popup-cancel blue-cancel-icon" src="./image/blue-cancel.png" style="top: 20px"></img>
+						<div class="buttons-row">
+							<a href="#tab1" class="tab-link active button">All</a>
+							<a href="#tab2" class="tab-link button">Me</a>
+							<a href="#tab3" class="tab-link button">Comments</a>
+						</div>
+					</div>
+					<div class="tabs">
+						<div id="tab1" class="tab active"></div>
+						<div id="tab2" class="tab"></div>
+						<div id="tab3" class="tab"></div>
+					</div>
+				</div>
+			</div>
+			<!-- popup-alert end-->
+
+			<!-- popup-setting begin-->
+			<div class="popup popup-setting">
+				<div class="popup-content">
+					<div class="popup-head board-setting-head">
+						<img class="js-popup-cancel blue-cancel-icon" src="./image/blue-cancel.png"></img>
+						Board Settings
+					</div>
+				</div>
+				<div class="popup-body">
+					<div class="list-block">
+						<ul>
+							<li>
+								<div class="item-content">
+									<div class="item-inner">
+										<div class="item-title label">Name</div>
+										<div class="item-input">
+											<input type="text">
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-inner">
+										<div class="item-title label">Team</div>
+										<div class="item-input">
+											<input type="text" value="(none)" disabled style="text-align: right;">
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="#" class="item-link smart-select">
+											<!-- <select name="addingMembers">
+												<option value="apple" selected>Admin</option>
+												<option value="pineapple">Members</option>
+											</select> -->
+											<div class="item-content">
+												<div class="item-inner">
+													<div class="item-title">
+														<div class="selected-bgcolor"></div>Background
+													</div>
+													<div class="item-after"></div>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title label">Show Card Covers</div>
+												<div class="item-input">
+													<label class="label-switch fr">
+														<input type="checkbox">
+														<div class="checkbox"></div>
+													</label>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#" class="item-link smart-select">
+											<!-- <select name="addingMembers">
+												<option value="apple" selected>Admin</option>
+												<option value="pineapple">Members</option>
+											</select> -->
+											<div class="item-content">
+												<div class="item-inner">
+													<div class="item-title">
+														Edit Labels
+													</div>
+													<div class="item-after"></div>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<label class="subscribe-radio label-radio item-content">
+											<!-- Checked by default -->
+											<input type="radio" name="my-radio" value="subscribe">
+											<div class="item-title">Subscribe</div>
+										</div>
+									</label>
+								</li>
+							</ul>
+						</div>
+						<div class="list-block">
+							<ul>
+								<li>
+									<a href="#" class="item-link smart-select">
+										<select name="Visibility">
+											<option value="apple" selected>Private</option>
+											<option value="pineapple">Public</option>
+										</select>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title">Visibility</div>
+												<div class="item-after">Private</div>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="item-link smart-select">
+										<select name="commenting">
+											<option value="apple" selected>Disabled</option>
+											<option value="pineapple">Members</option>
+										</select>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title">Commenting</div>
+												<div class="item-after">Members</div>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-inner">
+											<div class="item-title label">Voting</div>
+											<div class="item-input">
+												<input type="text" value="Members" disabled style="text-align: right;">
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<a href="#" class="item-link smart-select">
+										<select name="addingMembers">
+											<option value="apple" selected>Admin</option>
+											<option value="pineapple">Members</option>
+										</select>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title">Adding Members</div>
+												<div class="item-after">Members</div>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="list-block">
+							<ul>
+								<li>
+									<div class="item-content">
+										<div class="item-inner">
+											<div class="item-title label">Self Join</div>
+											<div class="item-input">
+												<label class="label-switch fr">
+													<input type="checkbox">
+													<div class="checkbox"></div>
+												</label>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<div class="explain">
+								This setting only applied to boards in a team.
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- popup-setting end-->
+
+				<!-- popup-power-up begin-->
+				<div class="popup popup-power-up">
+					<div class="popup-content">
+						<div class="popup-head power-up-head">
+							<img class="js-popup-cancel blue-cancel-icon" src="./image/blue-cancel.png"></img>
+							Power-Ups
+						</div>
+					</div>
+					<div class="popup-body">
+						<div class="list-block" style="margin-top: 0">
+							<ul>
+								<li>
+									<div class="item-content">
+										<div class="item-inner">
+											<div class="item-title label">
+												<img src="./image/calendar.png" class="power-up-img" />
+												<div class="inline-block" style="width: 82%">
+													Calendar
+													<div class="calendar-state">
+														See your work over time!The Trello calendar view displays all cards with due dates by month.
+													</div>
+												</div>
+											</div>
+											<div class="item-input">
+												<label class="label-switch fr">
+													<input type="checkbox">
+													<div class="checkbox"></div>
+												</label>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-inner">
+											<div class="item-title label">
+												<img src="./image/voting.png" class="power-up-img" />
+												<div class="inline-block" style="width: 82%">
+													Voting
+													<div class="voting-state">
+														Give power to the people,and allow users to vote on cards.
+													</div>
+												</div>
+											</div>
+											<div class="item-input">
+												<label class="label-switch fr">
+													<input type="checkbox">
+													<div class="checkbox"></div>
+												</label>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- popup-power-up end-->
+
+				<!-- popup-card-content begin-->
+				<div class="popup popup-card-content">
+					<input class="swiper-index" type="hidden"></input>
+					<input class="card-index" type="hidden"></input>
+					<div class="popup-content">
+						<div class="popup-header-above">
+							<img class="js-popup-content-cancel white-cancel fl" src="./image/cancel.png"></img>
+							<div class="card-name"></div>
+							<img class="js-card-ellipsis-icon card-ellipsis-icon fr"src="./image/ellipsis.png"></img>
+						</div>
+						<div class="scroll-part">
+							<div class="popup-header">
+								<div class="card-title"></div>
+								<div class="card-place"></div>
+							</div>
+							<div class="card-description">
+								<input class="card-description-input" type="text" placeholder="Tap to add a description"></input>
+								<div class="card-description-content"></div>
+							</div>
+							<div class="card-member js-card-member">
+								<img class="member-icon" src="./image/images/member.png"></img>
+								<div class="card-member-img-list"></div>
+							</div>
+							<div class="card-activity-title">
+								<img class="card-activity-list-icon" src="./image/images/activity-list.png"></img>
+								Activity
+								<img class="card-activity-setting-icon js-activity-setting fr" src="./image/images/setting.png"></img>
+							</div>
+							<div class="card-activity-block">
+								<div class="card-activity-list"></div>
+							</div>
+						</div>
+						<div class="comment-block">
+							<img class="comment-add-button js-add-comment"src="./image/add-comment.png"></img>
+							<input class="comment-input" type="text" placeholder="Add comment..."></input>
+							<img class="add-image js-add-image" src="./image/add-image.png"></img>
+						</div>
+					</div>
+				</div>
+				<!-- popup-card-content end -->
+
+				<!-- popup-card-add-member begin-->
+				<div class="popup popup-card-add-member">
+					<div class="popup-content">
+						<div class="popup-member-header">
+							<img class="js-popup-member-cancel white-cancel fl" src="./image/cancel.png"></img>
+							Members
+						</div>
+						<div class="add-member-list"></div>
+					</div>
+				</div>
+				<!-- popup-card-add-member end -->
+
+				<!-- popup-card-description begin-->
+				<div class="popup popup-card-description">
+					<div class="popup-content">
+						<div class="popup-description-header">
+							<div class="js-cancel-description fl">Cancel</div>
+							Description
+							<div class="js-finish-description fr bolder">Done</div>
+						</div>
+						<textarea class="description-input-area"></textarea>
+					</div>
+				</div>
+				<!-- popup-card-description end -->
+
+				<!-- popup-archive begin-->
+				<div class="popup popup-archive">
+					<div class="popup-content">
+						<div class="popup-head board-archive-head">
+							<img class="js-popup-cancel blue-cancel-icon" src="./image/blue-cancel.png"></img>
+							Archive
+						</div>
+					</div>
+					<div class="popup-body">
+						<div class="search-bar">
+							<div class="archive-search">
+								<input type="text" class="archive-search-input center-text" placeholder="Filter cards by name...">
+								<img src="./image/search-input.png" class="search-input-icon">
+							</input>
+							<div class="archive-search-cancel">Cancel</div>
+						</div>
+						<div class="buttons-row search-bar-buttons archive-search-bar-buttons">
+							<a href="#cardTab" class="tab-link active button">Cards</a>
+							<a href="#listTab" class="tab-link button">Lists</a>
+						</div>
+					</div>
+					<div class="search-result">
+						<div class="tabs">
+							<div id="cardTab" class="tab active">No archived cards</div>
+							<div id="listTab" class="tab">No archived lists</div>
+						</div>
+					</div>
+				</div>
+				<!-- popup-archive end-->
+
+			</div>
+
+			<!-- popup-add-member begin-->
+			<div class="popup popup-add-member">
+				<div class="popup-content">
+					<div class="popup-head board-add-member-head">
+						<img class="js-popup-cancel blue-cancel-icon" src="./image/blue-cancel.png"></img>
+						Add Members
+					</div>
+				</div>
+				<div class="popup-body">
+					<div class="search-bar">
+						<div class="add-member-search">
+							<input type="text" class="add-member-search-input center-text" placeholder="Search by name or email...">
+							<img src="./image/search-input.png" class="search-input-icon">
+						</input>
+						<div class="add-member-search-cancel">Cancel</div>
+					</div>
+					<div class="buttons-row search-bar-buttons add-member-search-bar-buttons">
+						<a href="#everyoneTab" class="tab-link active button">Everyone</a>
+						<a href="#" class="button cannot-click-tab">Team</a>
+						<a href="#contactTab" class="tab-link button">Contacts</a>
+					</div>
+				</div>
+				<div class="search-result">
+					<div class="tabs">
+						<div id="everyoneTab" class="tab active">Search for people by name or email address to add them to your board.</div>
+						<div id="contactTab" class="tab">
+							<div class="canot-contact">Unable to Access Contacts</div>
+							You can grant access from the Settings app.Select Privacy,then Contacts,and switch Trello to "On."
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- popup-add-member end-->
+
+		</div>
+	</div>
+
+	<!-- privacy-setting popover -->
+	<div class="popover popover-privacy">
+		<div class="popover-angle"></div>
+		<div class="popover-inner">
+			<div class="list-block popover-body popover-privacy-body">
+				<ul style="margin-bottom: 0">
+					<li><a href="#" class="list-button item-link privacy-chosen js-privacy-chosen">
+						<img class="blue-lock-icon" src="./image/images/blue-lock.png" />
+						<div class="bold privacy-list-title">Private</div>
+						<div>Only members of the board will be able to view it.</div>
+					</a></li>
+					<li><a href="#" class="list-button item-link js-privacy-chosen">
+						<img class="public-icon" src="./image/images/public.png" />
+						<div class="bold privacy-list-title">Public</div>
+						<div>Anyone will be able to view the board.</div>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- more popover -->
+	<div class="popover popover-more">
+		<div class="popover-angle"></div>
+		<div class="popover-inner">
+			<div class="popover-head">
+				Backlog
+			</div>
+			<div class="list-block popover-body">
+				<ul>
+					<li><a href="#" class="list-button item-link">Duplicate List</a></li>
+					<li>
+						<a href="#" class="item-link item-content">
+							<div class="item-inner">
+								<div class="item-title">Move List</div>
+								<div class="item-after"></div>
+							</div>
+						</a>
+					</li>
+					<li><a href="#" class="list-button item-link">Subscribe</a></li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#" class="item-link item-content">
+							<div class="item-inner">
+								<div class="item-title">Move All Cards in This List</div>
+								<div class="item-after"></div>
+							</div>
+						</a>
+					</li>
+					<li><a href="#" class="list-button item-link">Archive All Cards in This List</a></li>
+				</ul>
+				<ul>
+					<li><a href="#" class="list-button item-link">Archive List</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	

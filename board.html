@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<head>
+		<!-- Required meta tags-->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!-- Your app title -->
+		<title>My App</title>
+		<!-- Path to Framework7 iOS CSS theme styles-->
+		<link rel="stylesheet" href="./Framework7-1.5.2/dist/css/framework7.ios.min.css" type="text/css">
+		<!-- Path to Framework7 iOS related color styles -->
+		<link rel="stylesheet" href="./Framework7-1.5.2/dist/css/framework7.ios.colors.min.css" type="text/css">
+		<!-- Path to your custom app styles-->
+		<link rel="stylesheet" href="./demo.css" type="text/css">
+	</head>
+</head>
+<body>
+	<div class="views">
+		<div class="view view-main">
+			<div class="pages">
+				<div class="page page-boards" data-page="boards">
+					<div class="page-content page-content-boards">
+						<div class="navbar navbar-board-page">
+							<div class="navbar-inner">
+								<div class="center">Trello</div>
+							</div>
+						</div>
+						<div class="content-board">
+							<div class="boards-search-bar">
+								<input type="text" class="search-board" placeholder="Boards"></input>
+							</div>
+							<div class="boards-list">
+								<div class="boards-list-title bold">PERSONAL BOARDS</div>
+								<div class="boards-list-content">
+									<a href="./demo1.html">
+										<div class="boards-list-item">
+											<div class="color-square color-square-blue"></div>
+											zzz
+										</div>
+									</a>
+									<div class="boards-list-item">
+										<div class="color-square color-square-green"></div>
+										Welcome
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="toolbar tabbar toolbar-boards">
+						<div class="toolbar-inner">
+							<a href="#tab1" class="tab-link active">
+								<!-- <i class="icon demo-icon-1"></i> -->
+								<span class="tabbar-label">Boards</span>
+							</a>
+							<a href="#tab2" class="tab-link">
+								<!-- <i class="icon demo-icon-2">
+									<span class="badge bg-red">5</span>
+								</i> -->
+								<span class="tabbar-label">Search</span>
+							</a>
+							<a href="#tab3" class="tab-link">
+								<!-- <i class="icon demo-icon-3"></i> -->
+								<span class="tabbar-label">Notifications</span>
+							</a>
+							<a href="#tab4" class="tab-link">
+								<!-- <i class="icon demo-icon-4"></i> -->
+								<span class="tabbar-label">Account</span>
+							</a>
+						</div>
+					</div>
+					<!-- <a href="demo1.html">aaa</a> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="./Framework7-1.5.2/dist/js/framework7.min.js"></script>
+<script type="text/javascript" src="./template7.min.js"></script>
+<script type="text/template7" id="newList">
+	{{#each lists}}
+	<div class="swiper-slide">
+		<div class="card">
+			<div class="card-header">
+				<div class="js-list-name list-name">
+					{{listName}}
+				</div>
+				<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
+				<input class="list-name-input" type="text" hidden></input>
+			</div>
+			<div class="card-content js-card-content">
+				<div class="card-content-inner">
+					{{#each this.items}}
+					<div class="card">
+						<div class="card-content">
+							<div class="content-card-title">
+								{{content}}
+							</div>
+							<div class="card-information">
+								{{#if list}}
+								<img class="list-icon" src="./image/list.png">
+								{{/if}}
+								{{#if talk}}
+								<img class="talk-icon" src="./image/talk.png">{{talk}}
+								{{/if}}
+								{{#if img}}
+								{{#each img}}
+								<span>
+									<img class="head-img fr" src={{this.imgSrc}} />
+									<input class="img-id" type="hidden" value="{{this.id}}"></input>
+								</span>
+								{{/each}}
+								{{/if}}
+								<input class="card-description-not-display" type="hidden" value="{{description}}"></input>
+							</div>
+						</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+			<div class="card-footer">
+				<a class="add-button js-add">Add card</a>
+				<div class="add-items">
+					<div class="item-input">
+						<textarea class="add-item"></textarea>
+					</div>   
+					<a class="add-cancel-button js-cancel">cancel</a>
+					<a class="add-confirm-button js-confirm">add</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</script>
+<script type="text/template7" id="newListTemplate">
+	<div class="swiper-slide">
+		<div class="card">
+			<div class="card-header">
+				<div class="js-list-name list-name">
+					{{newListName}}
+				</div>
+				<img class="more open-popover" data-popover=".popover-more" src="./image/more.png"></img>
+				<input class="list-name-input" type="text" hidden></input>
+			</div>
+			<div class="card-content js-card-content">
+				<div class="card-content-inner">
+				</div>
+			</div>
+			<div class="card-footer">
+				<a class="add-button js-add">Add card</a>
+				<div class="add-items">
+					<div class="item-input">
+						<textarea class="add-item"></textarea>
+					</div>   
+					<a class="add-cancel-button js-cancel">cancel</a>
+					<a class="add-confirm-button js-confirm">add</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+<script type="text/template7" id="alertTemplate">
+	{{#each lists}}
+	<div class="alert-info">
+		<img class="alert-img" src="{{img}}"></img>
+		<div class="alert-info-content">
+			<div class="alert-content-title">
+				<span class="alert-name bolder">{{name}}</span> commented on the card 
+				<span class="alert-card-name bolder">{{cardName}}</span> on 
+				<span class="board-name bolder">{{board}}</span>
+			</div>
+			<div class="alert-content-content">
+				{{content}}
+			</div>
+			<div class="alert-time">
+				{{time}}
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</script>
+<script type="text/template7" id="activityTemplate">
+	{{#each lists}}
+	<div class="activity-info">
+		<img class="activity-img" src="{{img}}"></img>
+		<div class="activity-info-content">
+			<div class="activity-content-title">
+				<span class="activity-name bolder">{{name}}</span> commented on the card 
+				<span class="activity-card-name bolder">{{cardName}}</span> on 
+				<span class="board-name bolder">{{board}}</span>
+			</div>
+			<div class="activity-time">
+				{{time}}
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</script>
+<script type="text/template7" id="cardActivityTemplate">
+	{{#each lists}}
+	<div class="card-activity-info">
+		<img class="card-activity-img" src="{{img}}"></img>
+		<div class="card-activity-info-content">
+			<div class="card-activity-content-title">
+				<div class="card-activity-name bolder">{{name}}</div>
+				<div class="card-activity-detail">{{content}}</div>
+			</div>
+			<div class="activity-time">
+				{{time}}
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</script>
+<script type="text/template7" id="addMemberTemplate">
+	{{#each member}}
+	<div class="member-info">
+		<img class="member-img" src="{{img}}"></img>
+		{{name}}
+		<input class="member-id" type="hidden" value="{{id}}"></input>
+	</div>
+	{{/each}}
+</script>
+
+<script type="text/javascript" src="./demo.js"></script>
+</body>
+</html>

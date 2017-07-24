@@ -3,179 +3,180 @@ var myApp = new Framework7();
 var mainView = myApp.addView('.view-main',{
 	domCache: true
 });
-var data = {
-	lists:[
-	{
-		listName:"Backlog",
-		items:[
+myApp.onPageInit('index',function(page){
+	var data = {
+		lists:[
 		{
-			content:'blahblah',
-			list:true,
-			talk:1,
-			img:[
-			{imgSrc:'./image/bob.jpg',id:1},
-			{imgSrc:'./image/bob2.png',id:2}
-			],
-			description:'Just have a try'
+			listName:"Backlog",
+			items:[
+			{
+				content:'blahblah',
+				list:true,
+				talk:1,
+				img:[
+				{imgSrc:'./image/bob.jpg',id:1},
+				{imgSrc:'./image/bob2.png',id:2}
+				],
+				description:'Just have a try'
+			},
+			{
+				content:'blahblah',
+				list:false,
+				talk:2
+			},
+			{
+				content:'blahblah',
+				img:[{imgSrc:'./image/bob2.png',id:2}]
+			},
+			{
+				content:'blahblah',
+				list:true,
+				talk:3
+			}
+			]
 		},
 		{
-			content:'blahblah',
-			list:false,
-			talk:2
+			listName:"Todo",
+			items:[
+			{content:'1'},
+			{content:'2'},
+			{content:'3'},
+			{content:'4'}
+			]
 		},
 		{
-			content:'blahblah',
-			img:[{imgSrc:'./image/bob2.png',id:2}]
-		},
-		{
-			content:'blahblah',
-			list:true,
-			talk:3
+			listName:"Doing",
+			items:[
+			{content:'a'},
+			{content:'b'},
+			{content:'c'},
+			{content:'d'}
+			]
 		}
 		]
-	},
-	{
-		listName:"Todo",
-		items:[
-		{content:'1'},
-		{content:'2'},
-		{content:'3'},
-		{content:'4'}
+	};
+	var alertTabData1 = {
+		lists:[
+		{
+			img:'./image/bob.jpg',
+			name:'Aa',
+			cardName:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+			board:'index',
+			content:'Display the alert information.Display the alert information.Display the alert information',
+			time:'yesterday at 00:00'
+		},
+		{
+			img:'./image/bob2.png',
+			name:'Bb',
+			cardName:'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+			board:'index',
+			content:'Display the alert information',
+			time:'yesterday at 10:00'
+		},
+		{
+			img:'./image/bob3.jpg',
+			name:'Cc',
+			cardName:'ccccccccccccccccccccccccccccccccccccccccccccccccc',
+			board:'index',
+			content:'Display the alert information',
+			time:'2 days ago at 00:00'
+		},
+		{
+			img:'./image/bob4.jpg',
+			name:'Dd',
+			cardName:'ddddddddddddddddddddddddddddddddddd',
+			board:'index',
+			content:'Display the alert information',
+			time:'3 days ago at 03:00'
+		}
 		]
-	},
-	{
-		listName:"Doing",
-		items:[
-		{content:'a'},
-		{content:'b'},
-		{content:'c'},
-		{content:'d'}
+	};
+	var alertTabData2 = {
+		lists:[
+		{
+			img:'./image/bob.jpg',
+			name:'Aa',
+			cardName:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+			board:'index',
+			content:'Display the alert information.Display the alert information.Display the alert information',
+			time:'yesterday at 00:00'
+		},
+		{
+			img:'./image/bob2.png',
+			name:'Bb',
+			cardName:'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+			board:'index',
+			content:'Display the alert information',
+			time:'yesterday at 10:00'
+		},
+		]
+	};
+	var alertTabData3 = {
+		lists:[
+		{
+			img:'./image/bob2.png',
+			name:'Bb',
+			cardName:'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+			board:'index',
+			content:'Display the alert information',
+			time:'yesterday at 10:00'
+		},
+		{
+			img:'./image/bob3.jpg',
+			name:'Cc',
+			cardName:'ccccccccccccccccccccccccccccccccccccccccccccccccc',
+			board:'index',
+			content:'Display the alert information',
+			time:'2 days ago at 00:00'
+		}
 		]
 	}
-	]
-};
-var alertTabData1 = {
-	lists:[
-	{
-		img:'./image/bob.jpg',
-		name:'Aa',
-		cardName:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-		board:'index',
-		content:'Display the alert information.Display the alert information.Display the alert information',
-		time:'yesterday at 00:00'
-	},
-	{
-		img:'./image/bob2.png',
-		name:'Bb',
-		cardName:'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
-		board:'index',
-		content:'Display the alert information',
-		time:'yesterday at 10:00'
-	},
-	{
-		img:'./image/bob3.jpg',
-		name:'Cc',
-		cardName:'ccccccccccccccccccccccccccccccccccccccccccccccccc',
-		board:'index',
-		content:'Display the alert information',
-		time:'2 days ago at 00:00'
-	},
-	{
-		img:'./image/bob4.jpg',
-		name:'Dd',
-		cardName:'ddddddddddddddddddddddddddddddddddd',
-		board:'index',
-		content:'Display the alert information',
-		time:'3 days ago at 03:00'
+	var members = {
+		member:[
+		{
+			name:'Aa',
+			img:'./image/bob.jpg',
+			id:1
+		},
+		{
+			name:'Bb',
+			img:'./image/bob2.png',
+			id:2
+		},
+		{
+			name:'Cc',
+			img:'./image/bob3.jpg',
+			id:3
+		},
+		{
+			name:'Dd',
+			img:'./image/bob4.jpg',
+			id:4
+		},
+		]
 	}
-	]
-};
-var alertTabData2 = {
-	lists:[
-	{
-		img:'./image/bob.jpg',
-		name:'Aa',
-		cardName:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-		board:'index',
-		content:'Display the alert information.Display the alert information.Display the alert information',
-		time:'yesterday at 00:00'
-	},
-	{
-		img:'./image/bob2.png',
-		name:'Bb',
-		cardName:'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
-		board:'index',
-		content:'Display the alert information',
-		time:'yesterday at 10:00'
-	},
-	]
-};
-var alertTabData3 = {
-	lists:[
-	{
-		img:'./image/bob2.png',
-		name:'Bb',
-		cardName:'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
-		board:'index',
-		content:'Display the alert information',
-		time:'yesterday at 10:00'
-	},
-	{
-		img:'./image/bob3.jpg',
-		name:'Cc',
-		cardName:'ccccccccccccccccccccccccccccccccccccccccccccccccc',
-		board:'index',
-		content:'Display the alert information',
-		time:'2 days ago at 00:00'
+	var template = $('#newList').html();
+	var compiledTemplate = Template7.compile(template);
+	var htmlStrCard = compiledTemplate(data);
+	$('.swiper-wrapper').prepend(htmlStrCard);
+	var mySwiper = myApp.swiper('.swiper-container', {
+		pagination: '.swiper-pagination',
+		centeredSlides: true,
+		slidesPerView: 'auto',
+		spaceBetween: 10
+	});
+	var flag = true;
+	for(var i=0;i<$('.js-card-content').length;i++){
+		calHeight(i,flag);
 	}
-	]
-}
-var members = {
-	member:[
-	{
-		name:'Aa',
-		img:'./image/bob.jpg',
-		id:1
-	},
-	{
-		name:'Bb',
-		img:'./image/bob2.png',
-		id:2
-	},
-	{
-		name:'Cc',
-		img:'./image/bob3.jpg',
-		id:3
-	},
-	{
-		name:'Dd',
-		img:'./image/bob4.jpg',
-		id:4
-	},
-	]
-}
-var template = $('#newList').html();
-var compiledTemplate = Template7.compile(template);
-var htmlStrCard = compiledTemplate(data);
-$('.swiper-wrapper').prepend(htmlStrCard);
-var mySwiper = myApp.swiper('.swiper-container', {
-	pagination: '.swiper-pagination',
-	centeredSlides: true,
-	slidesPerView: 'auto',
-	spaceBetween: 10
-});
-var flag = true;
-for(var i=0;i<$('.js-card-content').length;i++){
-	calHeight(i,flag);
-}
-var activityTemplate = $('#activityTemplate').html();
-var compiledActivityTemplate = Template7.compile(activityTemplate);
-var htmlStrActivity = compiledActivityTemplate(alertTabData1);
-$('.activity-content').html(htmlStrActivity);
-var cardActivityTemplate = $('#cardActivityTemplate').html();
-var compiledCardActivityTemplate = Template7.compile(cardActivityTemplate);
-var htmlCardActivity = compiledCardActivityTemplate(alertTabData1);
-$('.card-activity-list').html(htmlCardActivity);
+	var activityTemplate = $('#activityTemplate').html();
+	var compiledActivityTemplate = Template7.compile(activityTemplate);
+	var htmlStrActivity = compiledActivityTemplate(alertTabData1);
+	$('.activity-content').html(htmlStrActivity);
+	var cardActivityTemplate = $('#cardActivityTemplate').html();
+	var compiledCardActivityTemplate = Template7.compile(cardActivityTemplate);
+	var htmlCardActivity = compiledCardActivityTemplate(alertTabData1);
+	$('.card-activity-list').html(htmlCardActivity);
 // $('.js-list').on('click',function(){
 // 	if($('input[name="username"]').val()=='zz' && $('input[name="password"]').val()=='123'){
 // 		myApp.closeModal();
@@ -685,36 +686,4 @@ function showMemberImg(memberIdArray){
 	}
 }
 
-// // var block = $(".card");
-//   var oW,oH;
-//   // 绑定touchstart事件
-//   $(".card").on("touchstart", function(e) {
-//   	var block = $(this);
-//    console.log(e);
-//    var touches = e.touches[0];
-//    oW = touches.clientX - block.offsetLeft;
-//    oH = touches.clientY - block.offsetTop;
-//    //阻止页面的滑动默认事件
-//    // document.on("touchmove",defaultEvent,false);
-//   },false)
-
-//   $(".card").on("touchmove", function(e) {
-//   	var block = $(this);
-//    var touches = e.touches[0];
-//    var oLeft = touches.clientX - oW;
-//    var oTop = touches.clientY - oH;
-//    if(oLeft < 0) {
-//     oLeft = 0;
-//    }else if(oLeft > document.documentElement.clientWidth - block.offsetWidth) {
-//     oLeft = (document.documentElement.clientWidth - block.offsetWidth);
-//    }
-//    block.style.left = oLeft + "px";
-//    block.style.top = oTop + "px";
-//   },false);
-
-//   $(".card").on("touchend",function() {
-//    // document.off("touchmove",defaultEvent,false);
-//   },false);
-//   function defaultEvent(e) {
-//    e.preventDefault();
-//   }
+});

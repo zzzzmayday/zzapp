@@ -1,3 +1,4 @@
+/*page-index*/
 *{   
     -webkit-touch-callout:none;  /*系统默认菜单被禁用*/   
     -webkit-user-select:none; /*webkit浏览器*/   
@@ -941,4 +942,59 @@ color: #ddd;
 }
 .inline-block{
 	display: inline-block;
+}
+
+/*page-board*/
+.navbar-board-page{
+	background: #0278be;
+}
+.page-content-boards{
+	background: #f9f9f9;
+}
+.toolbar-boards{
+	background: #fff;
+}
+.boards-search-bar{
+	padding: 8px 10px;
+}
+.search-board{
+	box-sizing:border-box;
+	background: #e4e5e7;
+	border: 0;
+	width: 100%;
+	height: 30px;
+	border-radius: 8px;
+	text-align: center;
+}
+.boards-list-title{
+	padding: 15px 10px;
+	color: #8d9796;
+}
+.boards-list-content{
+	background: #fff;
+	border-top: 1px solid #ededed;
+	border-bottom: 1px solid #ededed;
+	font-size: 16px;
+}
+.boards-list-item{
+	position: relative;
+	margin-left: 50px;
+	height: 45px;
+	line-height: 45px;
+	border-bottom: 1px solid #efefef;
+	color: #000;
+}
+.color-square{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	border-radius: 5px;
+	top: 10px;
+	left: -40px;
+}
+.color-square-blue{
+	background: #0278be;
+}
+.color-square-green{
+	background: #4bbf6c;
 }

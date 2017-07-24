@@ -8,7 +8,7 @@ var server = http.createServer(function (req, res) {
         pathname+="/";
     }
     if (pathname.charAt(pathname.length-1)=="/"){
-        pathname+="demo.html";
+        pathname+="board.html";
     }
 
     fs.exists(pathname,function(exists){
