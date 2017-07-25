@@ -1,0 +1,10 @@
+$('.search-board').click(function(){
+	$(this).removeClass('center-text').css('width','82%');
+	$('.board-search-cancel').css('display','inline-block');
+	$('.input-search-icon').css('left','15px');
+});
+$('.board-search-cancel').click(function(){
+	$(this).hide();
+	$('.search-board').addClass('center-text').css('width','100%');
+	$('.input-search-icon').css('left','146px');
+});

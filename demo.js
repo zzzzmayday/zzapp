@@ -3,7 +3,7 @@ var myApp = new Framework7();
 var mainView = myApp.addView('.view-main',{
 	domCache: true
 });
-myApp.onPageInit('index',function(page){
+myApp.onPageBeforeInit('index',function(page){
 	var data = {
 		lists:[
 		{
@@ -297,7 +297,7 @@ $('.js-star').on('click',function(){
 		$(this).addClass('white-star');
 	}
 });
-$(document).on('click','.js-card-content .card',function(){
+$('.js-card-content .card').on('click',function(){
 	var cardTitle = $(this).find('.content-card-title').text();
 	var cardPlace = $(this).parents('.card-content').siblings('.card-header').find('.list-name').text();
 	var headImg = $(this).find('.head-img');
@@ -591,7 +591,7 @@ $(document).on('click','.js-finish-description',function(){
 		$('.card-description-content').hide().text("");
 	}
 });
-$(document).on('click','.js-privacy-chosen',function(){
+$('.js-privacy-chosen').on('click',function(){
 	var changeTitle = $(this).find('.privacy-list-title').text();
 	if(!$(this).hasClass('privacy-chosen')){
 		$(this).addClass('privacy-chosen').css('padding-right' ,'55px');
