@@ -3,158 +3,158 @@ var myApp = new Framework7();
 var mainView = myApp.addView('.view-main',{
 	domCache: true
 });
+var data = {
+	lists:[
+	{
+		listName:"Backlog",
+		items:[
+		{
+			content:'blahblah',
+			list:true,
+			talk:1,
+			img:[
+			{imgSrc:'./image/bob.jpg',id:1},
+			{imgSrc:'./image/bob2.png',id:2}
+			],
+			description:'Just have a try'
+		},
+		{
+			content:'blahblah',
+			list:false,
+			talk:2
+		},
+		{
+			content:'blahblah',
+			img:[{imgSrc:'./image/bob2.png',id:2}]
+		},
+		{
+			content:'blahblah',
+			list:true,
+			talk:3
+		}
+		]
+	},
+	{
+		listName:"Todo",
+		items:[
+		{content:'1'},
+		{content:'2'},
+		{content:'3'},
+		{content:'4'}
+		]
+	},
+	{
+		listName:"Doing",
+		items:[
+		{content:'a'},
+		{content:'b'},
+		{content:'c'},
+		{content:'d'}
+		]
+	}
+	]
+};
+var alertTabData1 = {
+	lists:[
+	{
+		img:'./image/bob.jpg',
+		name:'Aa',
+		cardName:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+		board:'index',
+		content:'Display the alert information.Display the alert information.Display the alert information',
+		time:'yesterday at 00:00'
+	},
+	{
+		img:'./image/bob2.png',
+		name:'Bb',
+		cardName:'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+		board:'index',
+		content:'Display the alert information',
+		time:'yesterday at 10:00'
+	},
+	{
+		img:'./image/bob3.jpg',
+		name:'Cc',
+		cardName:'ccccccccccccccccccccccccccccccccccccccccccccccccc',
+		board:'index',
+		content:'Display the alert information',
+		time:'2 days ago at 00:00'
+	},
+	{
+		img:'./image/bob4.jpg',
+		name:'Dd',
+		cardName:'ddddddddddddddddddddddddddddddddddd',
+		board:'index',
+		content:'Display the alert information',
+		time:'3 days ago at 03:00'
+	}
+	]
+};
+var alertTabData2 = {
+	lists:[
+	{
+		img:'./image/bob.jpg',
+		name:'Aa',
+		cardName:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+		board:'index',
+		content:'Display the alert information.Display the alert information.Display the alert information',
+		time:'yesterday at 00:00'
+	},
+	{
+		img:'./image/bob2.png',
+		name:'Bb',
+		cardName:'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+		board:'index',
+		content:'Display the alert information',
+		time:'yesterday at 10:00'
+	},
+	]
+};
+var alertTabData3 = {
+	lists:[
+	{
+		img:'./image/bob2.png',
+		name:'Bb',
+		cardName:'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+		board:'index',
+		content:'Display the alert information',
+		time:'yesterday at 10:00'
+	},
+	{
+		img:'./image/bob3.jpg',
+		name:'Cc',
+		cardName:'ccccccccccccccccccccccccccccccccccccccccccccccccc',
+		board:'index',
+		content:'Display the alert information',
+		time:'2 days ago at 00:00'
+	}
+	]
+}
+var members = {
+	member:[
+	{
+		name:'Aa',
+		img:'./image/bob.jpg',
+		id:1
+	},
+	{
+		name:'Bb',
+		img:'./image/bob2.png',
+		id:2
+	},
+	{
+		name:'Cc',
+		img:'./image/bob3.jpg',
+		id:3
+	},
+	{
+		name:'Dd',
+		img:'./image/bob4.jpg',
+		id:4
+	},
+	]
+}
 myApp.onPageBeforeInit('index',function(page){
-	var data = {
-		lists:[
-		{
-			listName:"Backlog",
-			items:[
-			{
-				content:'blahblah',
-				list:true,
-				talk:1,
-				img:[
-				{imgSrc:'./image/bob.jpg',id:1},
-				{imgSrc:'./image/bob2.png',id:2}
-				],
-				description:'Just have a try'
-			},
-			{
-				content:'blahblah',
-				list:false,
-				talk:2
-			},
-			{
-				content:'blahblah',
-				img:[{imgSrc:'./image/bob2.png',id:2}]
-			},
-			{
-				content:'blahblah',
-				list:true,
-				talk:3
-			}
-			]
-		},
-		{
-			listName:"Todo",
-			items:[
-			{content:'1'},
-			{content:'2'},
-			{content:'3'},
-			{content:'4'}
-			]
-		},
-		{
-			listName:"Doing",
-			items:[
-			{content:'a'},
-			{content:'b'},
-			{content:'c'},
-			{content:'d'}
-			]
-		}
-		]
-	};
-	var alertTabData1 = {
-		lists:[
-		{
-			img:'./image/bob.jpg',
-			name:'Aa',
-			cardName:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-			board:'index',
-			content:'Display the alert information.Display the alert information.Display the alert information',
-			time:'yesterday at 00:00'
-		},
-		{
-			img:'./image/bob2.png',
-			name:'Bb',
-			cardName:'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
-			board:'index',
-			content:'Display the alert information',
-			time:'yesterday at 10:00'
-		},
-		{
-			img:'./image/bob3.jpg',
-			name:'Cc',
-			cardName:'ccccccccccccccccccccccccccccccccccccccccccccccccc',
-			board:'index',
-			content:'Display the alert information',
-			time:'2 days ago at 00:00'
-		},
-		{
-			img:'./image/bob4.jpg',
-			name:'Dd',
-			cardName:'ddddddddddddddddddddddddddddddddddd',
-			board:'index',
-			content:'Display the alert information',
-			time:'3 days ago at 03:00'
-		}
-		]
-	};
-	var alertTabData2 = {
-		lists:[
-		{
-			img:'./image/bob.jpg',
-			name:'Aa',
-			cardName:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-			board:'index',
-			content:'Display the alert information.Display the alert information.Display the alert information',
-			time:'yesterday at 00:00'
-		},
-		{
-			img:'./image/bob2.png',
-			name:'Bb',
-			cardName:'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
-			board:'index',
-			content:'Display the alert information',
-			time:'yesterday at 10:00'
-		},
-		]
-	};
-	var alertTabData3 = {
-		lists:[
-		{
-			img:'./image/bob2.png',
-			name:'Bb',
-			cardName:'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
-			board:'index',
-			content:'Display the alert information',
-			time:'yesterday at 10:00'
-		},
-		{
-			img:'./image/bob3.jpg',
-			name:'Cc',
-			cardName:'ccccccccccccccccccccccccccccccccccccccccccccccccc',
-			board:'index',
-			content:'Display the alert information',
-			time:'2 days ago at 00:00'
-		}
-		]
-	}
-	var members = {
-		member:[
-		{
-			name:'Aa',
-			img:'./image/bob.jpg',
-			id:1
-		},
-		{
-			name:'Bb',
-			img:'./image/bob2.png',
-			id:2
-		},
-		{
-			name:'Cc',
-			img:'./image/bob3.jpg',
-			id:3
-		},
-		{
-			name:'Dd',
-			img:'./image/bob4.jpg',
-			id:4
-		},
-		]
-	}
 	var template = $('#newList').html();
 	var compiledTemplate = Template7.compile(template);
 	var htmlStrCard = compiledTemplate(data);

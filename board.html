@@ -21,56 +21,84 @@
 	<div class="views">
 		<div class="view view-main">
 			<div class="pages">
-				<div class="page page-boards" data-page="boards">
+				<div class="page page-boards navbar-fixed toolbar-fixed" data-page="boards">
 					<div class="page-content page-content-boards">
-						<div class="navbar navbar-board-page">
-							<div class="navbar-inner">
-								<div class="center">
-									<img src="./image/board/board-title.png" class="board-title">
-								</div>
-								<div class="right">
-									<img src="./image/board/add.png" class="add-board js-add-board">
-								</div>
-							</div>
-						</div>
 						<div class="content-board">
-							<div class="boards-search-bar">
-								<input type="text" class="search-board center-text" placeholder="Boards">
-								<img src="./image/board/input-search-icon.png" class="input-search-icon" />
-								<div class="board-search-cancel">Cancel</div>
-							</div>
-							<div class="boards-list">
-								<div class="boards-list-title bold">PERSONAL BOARDS</div>
-								<div class="boards-list-content">
-									<a href="./demo1.html">
-										<div class="boards-list-item">
-											<div class="color-square color-square-blue"></div>
-											zzz
+							<div class="tabs">
+								<div id="tab-board" class="tab active">
+									<div class="navbar navbar-board-page">
+										<div class="navbar-inner">
+											<div class="center">
+												<img src="./image/board/board-title.png" class="board-title">
+											</div>
+											<div class="right">
+												<img src="./image/board/add.png" class="add-board js-add-board">
+											</div>
 										</div>
-									</a>
-									<div class="boards-list-item">
-										<div class="color-square color-square-green"></div>
-										Welcome
+									</div>
+									<div class="boards-search-bar">
+										<input type="text" class="search-board center-text" placeholder="Boards">
+										<img src="./image/board/input-search-icon.png" class="input-search-icon" />
+										<div class="board-search-cancel vertical-middle">Cancel</div>
+									</div>
+									<div class="boards-list">
+										<div class="boards-list-title bold">PERSONAL BOARDS</div>
+										<div class="boards-list-content">
+											<a href="./demo1.html">
+												<div class="boards-list-item">
+													<div class="color-square color-square-blue"></div>
+													zzz
+												</div>
+											</a>
+											<div class="boards-list-item">
+												<div class="color-square color-square-green"></div>
+												Welcome
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
+								<div id="tab-search" class="tab">
+									<div class="tab-search-head">
+										<input type="text" class="search-tab-box center-text" placeholder="Search">
+										<img src="./image/board/search.png" class="input-tab-search-icon" />
+										<div class="tab-search-cancel vertical-middle">Cancel</div>
+									</div>
+								</div>
+								<div id="tab-notification" class="tab">
+									<div class="tab-notification-head">
+										<div class="buttons-row">
+											<a href="#tab-all" class="tab-link active button">All</a>
+											<a href="#tab-me" class="tab-link button">Me</a>
+											<a href="#tab-comment" class="tab-link button">Comments</a>
+										</div>
+									</div>
+									<div class="tab-notification-body tabs">
+										<div id="tab-all" class="tab active"></div>
+										<div id="tab-me" class="tab"></div>
+										<div id="tab-comment" class="tab"></div>
+									</div>
+								</div>
+								<div id="tab-account" class="tab">
+									
+								</div>
+							</div>	
 						</div>
 					</div>
 					<div class="toolbar tabbar tabbar-labels toolbar-boards">
 						<div class="toolbar-inner">
-							<a href="#tab1" class="tab-link active">
+							<a href="#tab-board" class="tab-link active">
 								<i class="icon icon-board"></i>
 								<span class="tabbar-label">Boards</span>
 							</a>
-							<a href="#tab2" class="tab-link">
+							<a href="#tab-search" class="tab-link">
 								<i class="icon icon-search"></i>
 								<span class="tabbar-label">Search</span>
 							</a>
-							<a href="#tab3" class="tab-link">
+							<a href="#tab-notification" class="tab-link">
 								<i class="icon icon-notification"></i>
 								<span class="tabbar-label">Notifications</span>
 							</a>
-							<a href="#tab4" class="tab-link">
+							<a href="#tab-account" class="tab-link">
 								<i class="icon icon-account"></i>
 								<span class="tabbar-label">Account</span>
 							</a>
@@ -78,9 +106,66 @@
 					</div>
 					<!-- <a href="demo1.html">aaa</a> -->
 				</div>
+				<!-- popup-add-board begin-->
+				<div class="popup popup-add-board">
+					<div class="popup-content">
+						<div class="popup-head board-add-head">
+							<img class="js-popup-cancel white-cancel fl" src="./image/cancel.png"></img>
+							Board
+						</div>
+					</div>
+					<div class="popup-body">
+						<div class="list-block">
+							<ul>
+								<li>
+									<div class="item-content">
+										<div class="item-inner">
+											<div class="item-title label">Name</div>
+											<div class="item-input">
+												<input type="text" placeholder="New Board">
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="list-block">
+							<ul>
+								<li>
+									<a href="#" class="item-link smart-select">
+										<select name="Visibility">
+											<option value="private" selected>Private</option>
+											<option value="public">Public</option>
+										</select>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title">Visibility</div>
+												<div class="item-after">Private</div>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="item-link smart-select">
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title">
+													Background
+												</div>
+												<div class="item-after"></div>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
+			<!-- popup-add-board end-->
 		</div>
 	</div>
+</div>
 </body>
 <script type="text/javascript" src="./Framework7-1.5.2/dist/js/framework7.min.js"></script>
 <script type="text/javascript" src="./template7.min.js"></script>
