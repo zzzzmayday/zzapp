@@ -309,7 +309,7 @@ $('.js-card-content .card').on('click',function(){
 	myApp.popup('.popup-card-content');
 	$('.swiper-index').val(swiperIndex);
 	$('.card-index').val(cardIndex);
-	// $('.popup-overlay').hide();
+	$('.popup-overlay').hide();
 	$('.card-member-img-list').html('');
 	if(cardDescription){
 		$('.card-description-input').hide();
